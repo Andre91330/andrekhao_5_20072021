@@ -1,21 +1,9 @@
-body {
-    font-family: "Comic sans MS" , Verdana, Tahoma, sans-serif;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    width: 100%;
-    }
+@import "./utils/mixins";
+@import "./base/confs";
 
-html {
-    font-size: 100%;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-  }
 
 header{
-    background-color: orange;
+    @include fondhead;
 }
 
 .logohead{
@@ -26,6 +14,7 @@ header{
 .logohead_logo{
     font-family: "Shrikhand";
     font-size: 1.5rem;
+    color: white;
     width: auto;
     display: flex;
     justify-content: center;
@@ -46,4 +35,7 @@ li{
     width: 25%;
     height: 4rem;
     color: black;
+    li i{
+        color: white;  // a terminer 
+    }
 }
