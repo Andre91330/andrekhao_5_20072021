@@ -1,5 +1,9 @@
-@mixin fondhead{
-    background-image: url("/image/fond.jpg");
-    opacity: .9;
-    z-index: -1;
+@import "./variables";
+
+@mixin fond_body{
+    background-image: url("/image/oak_4.jpg");
+}
+
+@mixin itemshadow($color: white){
+    box-shadow: .2rem .2rem 1rem lighten($color: $color, $amount: 10%);
 }

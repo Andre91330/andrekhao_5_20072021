@@ -1,14 +1,19 @@
+@import "./utils/variables";
 @import "./utils/mixins";
 @import "./base/confs";
+@font-face{
+    font-family: 'shrikhand';
+    src:url('/fonts/shrikhand/Shrikhand-Regular.ttf');
+}
 
-
-header{
-    @include fondhead;
+body{
+    @include fond_body;
+    opacity: .9;
 }
 
 .logohead{
     width: 100%;
-    height: 5rem;
+    height: 4rem;
 }
 
 .logohead_logo{
@@ -33,9 +38,59 @@ li{
     justify-content: center;
     align-items: stretch;
     width: 25%;
-    height: 4rem;
-    color: black;
-    li i{
-        color: white;  // a terminer 
+    height: 3rem;
+}
+
+i{
+    color: white;
+    font-size: 1.2rem;
+    width: 25%;
+    &:hover{
+        color: black;
     }
 }
+
+.navbarre{
+    border-bottom: 0.125rem solid grey; 
+}
+
+.notice{
+    color: white;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.item{
+    width: 15rem;
+    height: 12rem;
+    background: white;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 5%;
+    transform: scale(1);
+    transition: transform 1s;
+    &:hover{
+        @include itemshadow;
+        transform: scale(1.1);
+    }
+}
+
+.item img {
+    width: 14.5rem;
+    height: 8rem;
+    object-fit: cover;
+    margin: .25rem;
+    border-radius: 5% 5% 0 0;
+}
+
+.descriprice{
+    display: flex;
+    width: 15rem;
+    align-content: space-between;
+}
+
+
+
+   // .restcard:hover {transform: scale(1.05);box-shadow: 0 0.2rem 0.9rem #999999;
+   //<article class="item"> <div id=""> <h2>name</h2> <img /> <p>description</p> <p>price</p> </div> </article>  
