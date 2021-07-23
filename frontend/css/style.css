@@ -57,11 +57,6 @@ i {
 i:hover {
   color: black;
 }
-i:active {
-  color: black;
-  border-bottom: 0.1rem solid white;
-  padding-top: 2rem;
-}
 
 .navbarre {
   border-bottom: 0.125rem solid grey;
