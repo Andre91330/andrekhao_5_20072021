@@ -4,6 +4,10 @@
     background-image: url("/image/oak_4.jpg");
 }
 
-@mixin itemshadow($color: white){
-    box-shadow: .2rem .2rem 1rem lighten($color: $color, $amount: 10%);
+@mixin itemshadow($color: black){
+    box-shadow: 0 .3rem 1rem lighten($color: $color, $amount: 10%);
+}
+
+@mixin iconeshadow{
+    text-shadow: 0.1rem .3rem .8rem white;
 }

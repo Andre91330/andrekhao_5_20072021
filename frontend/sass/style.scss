@@ -45,8 +45,12 @@ i{
     color: white;
     font-size: 1.2rem;
     width: 25%;
+    transform: scale(1);
+    transition: transform 1s;
     &:hover{
         color: black;
+        @include iconeshadow;
+        transform: scale(1.3);
     }
 }
 
