@@ -96,10 +96,12 @@ i:hover {
   border-radius: 5% 5% 0 0;
 }
 
-.descriprice {
+.nameprice {
   display: flex;
   width: 15rem;
-  align-content: space-between;
+  height: 4rem;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 /*# sourceMappingURL=style.css.map */

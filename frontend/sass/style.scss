@@ -80,7 +80,7 @@ i{
     }
 }
 
-.item img {
+.item img{
     width: 14.5rem;
     height: 8rem;
     object-fit: cover;
@@ -88,13 +88,10 @@ i{
     border-radius: 5% 5% 0 0;
 }
 
-.descriprice{
+.nameprice{
     display: flex;
     width: 15rem;
-    align-content: space-between;
+    height: 4rem;
+    justify-content: space-between;
+    align-items: flex-end;
 }
-
-
-
-   // .restcard:hover {transform: scale(1.05);box-shadow: 0 0.2rem 0.9rem #999999;
-   //<article class="item"> <div id=""> <h2>name</h2> <img /> <p>description</p> <p>price</p> </div> </article>  

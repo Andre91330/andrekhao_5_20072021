@@ -1,6 +1,6 @@
 (async function() {
-    const articles = await getArticles()
-    for (article of articles) {
+    const ARTICLES = await getArticles()
+    for (article of ARTICLES) {
         displayArticle(article)
     }
 })()
@@ -22,9 +22,15 @@ function displayArticle(article) {
     const templateItem = document.getElementById("templateArticle")
     const cloneItem = document.importNode(templateItem.content, true)
     
-    cloneItem.getElementById("imageUrl").textContent = article.imageUrl
-    cloneItem.getElementById("name").textContent = article.name
-    cloneItem.getElementById("price").textContent = article.price
+    cloneItem.getElementById("imageUrl").textContent= article.imageUrl
+    cloneItem.getElementById("name").textContent= article.name
+    cloneItem.getElementById("price").textContent= article.price
 
     document.getElementById("furniture").appendChild(cloneItem)
 }
+
+//let price = 'article.price';
+//function number() {
+//   return Number.parseFloat(${price}).toFixed(2);
+// }
+//   console.log(`Prix : + number + €`);  // expected output: "xx.xx €"/
