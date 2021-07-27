@@ -1,23 +1,30 @@
-// manipulation du DOM
+(async function() {
+    const articles = await getArticles()
+    for (article of articles) {
+        displayArticle(article)
+    }
+})()
 
-furniture()
-// code de base des le chargement
-function furniture() {
-    const articles = getArticles()
-    displayArticles(articles)
+function getArticles() {
+    return fetch("http://localhost:3000/api/furniture")
+        .then(function(httpBodyResponse) {
+            return httpBodyResponse.json()
+        })
+        .then(function(articles) {
+            return articles              
+        })
+        .catch(function(error) {
+            alert(error)
+        })
 }
 
-//promesse
-function getArticles(){
-    fetch("http://localhost:3000/api/furniture")
-        .then(function(httpBodyResponse){
-            return httpBodyResponse.json()      //transform en json
-        })
-        .then(function(articles){
-            console.log(articles)               //verifie que ca fonctionne bien
-        })
-}
+function displayArticle(article) {
+    const templateItem = document.getElementById("templateArticle")
+    const cloneItem = document.importNode(templateItem.content, true)
+    
+    cloneItem.getElementById("imageUrl").textContent = article.imageUrl
+    cloneItem.getElementById("name").textContent = article.name
+    cloneItem.getElementById("price").textContent = article.price
 
-function displayArticles() {
-    return ""
+    document.getElementById("furniture").appendChild(cloneItem)
 }
