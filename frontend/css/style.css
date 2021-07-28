@@ -10,6 +10,58 @@ body {
   padding: 0;
 }
 
+body {
+  background-image: url("/image/oak_4.jpg");
+  opacity: 0.9;
+}
+
+.logohead {
+  width: 100%;
+  height: 4rem;
+}
+
+.logohead_logo {
+  font-family: "Shrikhand";
+  font-size: 1.5rem;
+  color: white;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+ul {
+  display: flex;
+  padding-top: 2rem;
+  list-style: none;
+  width: auto;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 25%;
+  height: 3rem;
+}
+
+i {
+  color: white;
+  font-size: 1.2rem;
+  width: 25%;
+  transform: scale(1);
+  transition: transform 1s;
+}
+i:hover {
+  color: black;
+  text-shadow: 0.1rem 0.3rem 0.8rem white;
+  transform: scale(1.3);
+}
+
+.navbarre {
+  border-bottom: 0.125rem solid grey;
+}
+
 @font-face {
   font-family: "shrikhand";
   src: url("/fonts/shrikhand/Shrikhand-Regular.ttf");

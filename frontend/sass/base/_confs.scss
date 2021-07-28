@@ -9,3 +9,55 @@ body {
     margin: 0;
     padding: 0;
   }
+
+body{
+    @include fond_body;
+    opacity: .9;
+}
+
+.logohead{
+    width: 100%;
+    height: 4rem;
+}
+
+.logohead_logo{
+    font-family: "Shrikhand";
+    font-size: 1.5rem;
+    color: white;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+ul{
+    display: flex;
+    padding-top: 2rem;
+    list-style: none;
+    width: auto;
+}
+
+li{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 25%;
+    height: 3rem;
+}
+
+i{
+    color: white;
+    font-size: 1.2rem;
+    width: 25%;
+    transform: scale(1);
+    transition: transform 1s;
+    &:hover{
+        color: black;
+        @include iconeshadow;
+        transform: scale(1.3);
+    }
+}
+
+.navbarre{
+    border-bottom: 0.125rem solid grey; 
+}
