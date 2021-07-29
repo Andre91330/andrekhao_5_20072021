@@ -10,7 +10,6 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
         crossorigin="anonymous">   
       <link rel="stylesheet" href="../css/style.css"> 
-      <link rel="styleshhet" href="/sass/layout/_product.scss">;
       <title>Orioakfurniture, ameublement en chêne massif, personnalisable. </title>
   </head>
   <body>
@@ -27,7 +26,7 @@
                 <a href="../index.html" title="Retour à l'accueil"><i class="fas fa-home"></i></a>
               </li>
               <li>
-                <a href="" title="Choix du vernis"><i class="fas fa-brush"></i></a>
+                <a href="" title="Choix du vernis"><i id="brush" class="fas fa-brush"></i></a>
               </li>
               <li>
                 <a href="./basket.html" title="Votre panier"><i class="fas fa-cart-arrow-down"></i></a>
@@ -41,27 +40,27 @@
     </header> 
       
     <main>
-        <div class="model">
-          <h2>Votre produit à personnaliser.<br /><br /></h2>
-          
-        </div>
-        <div class="furniture">
+      <h2 class="model">Personnalisez votre article.</h2>
+      <div class="furniture" id="furniture"> 
+        <template id="templateArticle">
           <article class="item">
-            <div id="imageUrl"><img src="" alt="" /></div>   
+            <div><img src="" alt="" id="imageUrl" class="picture"/></div></a>   
             <div class="nameprice">
-              <h3 id="name" class="name"><a href=" "></a></h3> 
-              <div id="price" class="price"></div>  
+              <h3 id="name" class="name"></h3> 
+              <div id="price" class="price"></div>
             </div>               
           </article>
-          <p>Veuillez choisir votre vernis.</p>
-          <div class="verni">
-          </div>
-        </div>
+          <form method="post" action="traitement.php" id="varnish-form">
+            <p>
+              <label for="varnish-label">Customisez le !</label><br />
+              <select name="varnish_ton" id="varnish_ton">
+                <option value=""></option>
+              </select>
+            </p>
+          </form>
+        </template>
+      </div>  
     </main>
-
-    <footer>
-
-    </footer>
     <script src="../js/product.js"></script>
 </body>
 </html>

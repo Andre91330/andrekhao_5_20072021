@@ -10,12 +10,12 @@
 function getArticles() {
     return fetch("http://localhost:3000/api/furniture") // requete vers le lien et reponse
         .then(function(httpResponse) {              // promise 1
-            return httpResponse.json()              // typage des données de la réponse
+            return httpResponse.json()              // type des données de la réponse
         })
-        .then(function(articles) {                      // promise 2 grace au retour du 1
+        .then(function(articles) {                  // promise 2 grace au retour du 1
             return articles              
         })
-        .catch(function(error) {                        // capture des erreur                
+        .catch(function(error) {                    // renvoi d'erreur                
             alert(error)
         })
 }
@@ -35,8 +35,8 @@ function displayArticle(article) {
 
 console.log(document.getElementById('home'));
 
-//let price = 'article.price';
-//function number() {
+//  let price = 'article.price';
+// function number() {
 //   return Number.parseFloat(${price}).toFixed(2);
 // }
 //   console.log(`Prix : + number + €`);  // expected output: "xx.xx €"/
