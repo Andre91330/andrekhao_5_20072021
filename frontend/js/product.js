@@ -1,18 +1,21 @@
-monStokage = localStorage;
+(async function() {                     // recupere id d'entree dans l'url - puis fetch l'article
+    const articleId = getArticle()
+    const article = getArticle(articleId)  // fecht
+    hydrateArticle(article)                // hydrate car on change le contenu
+})()
 
-fetch("http://localhost:3000/api/furniture")
-    .then(function(httpResponse) {
-        if (httpResponse.ok) {
-            return httpResponse.json();
-        }
-    })
-    .then(function(articles) {
-        console.log(articles);
-    })
+function getArticleId() {
+    return new URL(location.href).searchParams.get("id")
+}
 
-    .catch(function(error) {
-     alert(error)
-    });
+function getArticle(articleId) {
+}
+
+function hydrateArticle(article) {
+}
+
+
+
 
 
 

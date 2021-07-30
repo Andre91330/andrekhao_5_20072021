@@ -1,7 +1,7 @@
 // fonction permettant de se lancer seul
 (async function() {                         // async pour attendre les reponse des promises
-    const ARTICLES = await getArticles()    // constantes + et attente des reponses
-    for (article of ARTICLES) {             // boucle pour crée chaque produits
+    const articles = await getArticles()    // constantes + et attente des reponses
+    for (article of articles) {             // boucle pour crée chaque produits
         displayArticle(article)             // affichage des produits
     }
 })()
@@ -12,8 +12,8 @@ function getArticles() {
         .then(function(httpResponse) {              // promise 1
             return httpResponse.json()              // type des données de la réponse
         })
-        .then(function(ARTICLES) {                  // promise 2 grace au retour du 1
-            return ARTICLES              
+        .then(function(articles) {                  // promise 2 grace au retour du 1
+            return articles              
         })
         .catch(function(error) {                    // renvoi d'erreur                
             alert(error)
@@ -25,10 +25,10 @@ function displayArticle(article) {
     const templateItem = document.getElementById("templateArticle")
     const cloneItem = document.importNode(templateItem.content, true)
     
-    cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl)
+    cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     cloneItem.getElementById("name").textContent= article.name
     cloneItem.getElementById("price").textContent= article.price
-    cloneItem.getElementById("productLink").href += `?id=${article._id}`
+    cloneItem.getElementById("productLink").href += `?id=${article.id}`  // pour lier la page product concatené
 
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
