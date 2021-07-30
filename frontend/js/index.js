@@ -12,8 +12,8 @@ function getArticles() {
         .then(function(httpResponse) {              // promise 1
             return httpResponse.json()              // type des données de la réponse
         })
-        .then(function(articles) {                  // promise 2 grace au retour du 1
-            return articles              
+        .then(function(ARTICLES) {                  // promise 2 grace au retour du 1
+            return ARTICLES              
         })
         .catch(function(error) {                    // renvoi d'erreur                
             alert(error)
@@ -33,7 +33,6 @@ function displayArticle(article) {
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
 
-console.log(document.getElementById('home'));
 
 //  let price = 'article.price';
 // function number() {

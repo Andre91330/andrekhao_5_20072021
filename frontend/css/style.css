@@ -47,7 +47,7 @@ li {
 
 i {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   width: 25%;
   transform: scale(1);
   transition: transform 1s;
@@ -100,16 +100,27 @@ i:hover {
   transform: scale(1.1);
 }
 
-.item {
-  width: 14.6rem;
-  height: 11.5rem;
+.item-prod {
+  width: 17rem;
+  height: 14rem;
+  background: white;
+  margin: auto;
+  margin-bottom: 1.5rem;
   border-radius: 5%;
 }
 
 .picture {
-  width: 14rem;
+  width: 14.4rem;
   height: 8rem;
   border-radius: 5% 5% 0 0;
+  margin: 0.3rem;
+  object-fit: cover;
+}
+
+.picture-prod {
+  width: 16.4rem;
+  height: 13.4rem;
+  border-radius: 5%;
   margin: 0.3rem;
   object-fit: cover;
 }
@@ -124,6 +135,28 @@ i:hover {
 
 .name, .price {
   padding: 0.5rem;
+}
+
+.custumise {
+  width: 15rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+}
+
+label {
+  width: 15rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  padding-right: 0.7rem;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 0.125rem 0.3123rem;
 }
 
 /*# sourceMappingURL=style.css.map */

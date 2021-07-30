@@ -29,7 +29,7 @@
                 <a href="" title="Choix du vernis"><i id="brush" class="fas fa-brush"></i></a>
               </li>
               <li>
-                <a href="./basket.html" title="Votre panier"><i class="fas fa-cart-arrow-down"></i></a>
+                <a href="./basket.html" title="Votre panier"><i class="fa fa-cart-arrow-down"></i></a>
               </li>
               <li>
                 <a href="./order.html" title="Finalisez votre commande"><i class="fas fa-check"></i></a>
@@ -42,19 +42,22 @@
     <main>
       <h2 class="model">Personnalisez votre article.</h2>
       <div class="furniture" id="furniture"> 
-        <template id="templateArticle">
-          <article class="item">
-            <div><img src="" alt="" id="imageUrl" class="picture"/></div></a>   
+        <div id="templateArticle">
+          <article class="item-prod">
+            <div>
+              <img src="  XXX  " alt="  XXX  " id="imageUrl" class="picture-prod"/>
+            </div>   
             <div class="nameprice">
-              <h3 id="name" class="name"></h3> 
+              <h3 id="name" class="name">   XXX   </h3> 
               <div id="price" class="price"></div>
             </div>               
           </article>
           <form method="post" action="traitement.php" id="varnish-form">
-            <p>
-              <label for="varnish-label">Customisez le !</label><br />
-              <select name="varnish_ton" id="varnish_ton">
-                <option value=""></option>
+            <p class="custumise">
+              <label for="varnish-ton">Chosissez votre finition :</label><br />
+              <select name="varnishs" id="varnish-ton">
+                <option value="">--Choisissez votre verni--</option>
+                <option value=""> x </option>
               </select>
             </p>
           </form>
