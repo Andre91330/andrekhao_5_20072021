@@ -15,7 +15,7 @@ function getArticles() {
         .then(function(articles) {                  // promise 2 grace au retour du 1
             return articles              
         })
-        .catch(function(error) {                    // renvoi d'erreur                
+        .catch(function(error) {                    // gestion d'erreur                
             alert(error)
         })
 }
@@ -27,18 +27,23 @@ function displayArticle(article) {
     
     cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     cloneItem.getElementById("name").textContent= article.name
-    cloneItem.getElementById("price").textContent= article.price
-  
-
+    cloneItem.getElementById("price").textContent= article.price  
+    cloneItem.getElementById("productLink").href += `?id=${article._id}`
+    
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
 
+
+
+
+// const price = 0;
+//console.log(new Intl.NumberFormat('fr-FR', {style: 'currency', currencyDisplay: 'EUR' }).format(price));
 
 //  let price = 'article.price';
 // function number() {
 //   return Number.parseFloat(${price}).toFixed(2);
 // }
-//   console.log(`Prix : + number + €`);  // expected output: "xx.xx €"/
+//  console.log(`Prix : + number + €`);  // expected output: "xx.xx €"
 
 
 

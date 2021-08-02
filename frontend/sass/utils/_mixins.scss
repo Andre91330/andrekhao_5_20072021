@@ -19,6 +19,13 @@
     border-radius: 5%;
 }
 
+@mixin picturesize{
+    width: 98%;
+    border-radius: 5% 5% 0 0;
+    margin: auto;
+    object-fit: cover;
+}
+
 @mixin mobile{
     @media screen and(min-width: map-get($breakpoints, mobile)){
         @content;

@@ -16,7 +16,7 @@
     <header>
       <div>
         <div class="logohead">
-          <h1 class ="logohead_logo">Orioakfurniture</h1>     
+          <h1 class ="logohead_logo">ORIOAKFURNITURE</h1>     
         </div>
       </div>
       <nav class="navbarre">
@@ -37,8 +37,7 @@
             </ul>
           </div>
       </nav>
-    </header> 
-      
+    </header>   
     <main>
       <h2 class="model">Personnalisez votre article.</h2>
       <div class="furniture" id="furniture"> 
@@ -46,23 +45,27 @@
           <article class="item-prod">
             <div>
               <img src="" alt="" id="imageUrl" class="picture-prod"/>
-            </div>   
+            </div> 
+            <div id="description">
+              <h2 class="description-title">Description :</h2>
+              <p id="description-text" class="description-text"></p> 
+            </div>
             <div class="nameprice">
               <h3 id="name" class="name"></h3> 
               <div id="price" class="price"></div>
-            </div>               
+            </div>                 
           </article>
-          <form method="post" action="traitement.php" id="varnish-form">
+          <form id="varnish-form">
             <p class="custumise">
               <label for="varnish-ton">Chosissez votre finition :</label><br />
-              <select name="varnishs" id="varnish-ton">
+              <select name="varnish" id="varnish-ton">
                 <option value="">--Choisissez votre verni--</option>
                 <option value=""> x </option>
               </select>
             </p>
           </form>
-        </template>
-      </div>  
+        </div>  
+      </div>
     </main>
   <script src="../js/product.js"></script> 
 </body>

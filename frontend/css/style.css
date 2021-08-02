@@ -21,7 +21,6 @@ body {
 }
 
 .logohead_logo {
-  font-family: "Shrikhand";
   font-size: 1.5rem;
   color: white;
   width: auto;
@@ -47,10 +46,25 @@ li {
 
 i {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 25%;
   transform: scale(1);
   transition: transform 1s;
+}
+@media screen and (min-width: 760px) {
+  i {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1020px) {
+  i {
+    font-size: 1.7rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  i {
+    font-size: 2rem;
+  }
 }
 i:hover {
   color: black;
@@ -74,10 +88,6 @@ i:hover {
   color: blue;
 }
 
-@font-face {
-  font-family: "shrikhand";
-  src: url("/fonts/shrikhand/Shrikhand-Regular.ttf");
-}
 .model {
   color: white;
   text-align: center;
@@ -87,7 +97,7 @@ i:hover {
 
 .item {
   width: 80%;
-  height: 10rem;
+  height: 13rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -98,9 +108,16 @@ i:hover {
   transform: scale(1);
   transition: transform 1s;
 }
-@media screen and (min-width: 420px) {
+@media screen and (min-width: 535px) {
   .item {
-    width: 13rem;
+    width: 15rem;
+    height: 13rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .item {
+    width: 20rem;
+    height: 18rem;
   }
 }
 .item:hover {
@@ -110,11 +127,21 @@ i:hover {
 
 .picture {
   width: 98%;
-  height: 7rem;
   border-radius: 5% 5% 0 0;
-  display: flex;
   margin: auto;
   object-fit: cover;
+  height: 10rem;
+  display: flex;
+}
+@media screen and (min-width: 535px) {
+  .picture {
+    height: 10rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .picture {
+    height: 15rem;
+  }
 }
 
 .nameprice {
@@ -136,6 +163,11 @@ i:hover {
   padding: 0.7rem;
   font-size: 0.8rem;
 }
+@media screen and (min-width: 535px) {
+  .name, .price {
+    font-size: 1rem;
+  }
+}
 
 @media screen and (min-width: 420px) {
   .furniture {
@@ -146,8 +178,8 @@ i:hover {
 }
 
 .item-prod {
-  width: 17rem;
-  height: 14rem;
+  width: 85%;
+  height: 25rem;
   background: white;
   margin: auto;
   margin-bottom: 1.5rem;
@@ -155,11 +187,25 @@ i:hover {
 }
 
 .picture-prod {
-  width: 16.4rem;
-  height: 13.4rem;
-  border-radius: 5%;
-  margin: 0.3rem;
+  width: 98%;
+  border-radius: 5% 5% 0 0;
+  margin: auto;
   object-fit: cover;
+  height: 12rem;
+  display: flex;
+  margin-top: 0.2rem;
+}
+
+.description-title {
+  font-size: 1rem;
+  text-decoration: underline;
+  padding-left: 0.5rem;
+}
+
+.description-text {
+  font-size: 0.8rem;
+  width: 95%;
+  margin: auto;
 }
 
 .custumise {
