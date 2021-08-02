@@ -86,8 +86,11 @@ i:hover {
 }
 
 .item {
-  width: 15rem;
-  height: 12rem;
+  width: 80%;
+  height: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   background: white;
   margin: auto;
   margin-bottom: 1.5rem;
@@ -95,9 +98,51 @@ i:hover {
   transform: scale(1);
   transition: transform 1s;
 }
+@media screen and (min-width: 420px) {
+  .item {
+    width: 13rem;
+  }
+}
 .item:hover {
   box-shadow: 0 0.3rem 1rem #1a1a1a;
   transform: scale(1.1);
+}
+
+.picture {
+  width: 98%;
+  height: 7rem;
+  border-radius: 5% 5% 0 0;
+  display: flex;
+  margin: auto;
+  object-fit: cover;
+}
+
+.nameprice {
+  display: flex;
+  width: 96%;
+  height: 2.5rem;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.name {
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name, .price {
+  padding: 0.7rem;
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 420px) {
+  .furniture {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
 }
 
 .item-prod {
@@ -109,32 +154,12 @@ i:hover {
   border-radius: 5%;
 }
 
-.picture {
-  width: 14.4rem;
-  height: 8rem;
-  border-radius: 5% 5% 0 0;
-  margin: 0.3rem;
-  object-fit: cover;
-}
-
 .picture-prod {
   width: 16.4rem;
   height: 13.4rem;
   border-radius: 5%;
   margin: 0.3rem;
   object-fit: cover;
-}
-
-.nameprice {
-  display: flex;
-  width: 13rem;
-  height: 3rem;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.name, .price {
-  padding: 0.5rem;
 }
 
 .custumise {

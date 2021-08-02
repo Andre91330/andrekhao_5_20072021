@@ -7,7 +7,6 @@
     src:url('/fonts/shrikhand/Shrikhand-Regular.ttf');
 }
 
-
 .model{
     color: white;
     text-align: center;
@@ -16,9 +15,15 @@
 }
 
 .item{
-    width: 15rem;
-    height: 12rem;
+    width: 80%;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     @include itembox;
+    @include mobile{
+        width: 13rem;
+    }
     transform: scale(1);
     transition: transform 1s;
     &:hover{
@@ -27,19 +32,49 @@
     }
 }
 
+.picture{
+    width: 98%;
+    height: 7rem;
+    border-radius: 5% 5% 0 0;
+    display: flex;
+    margin: auto;
+    object-fit: cover;
+}
+
+.nameprice{
+    display: flex;
+    width: 96%;
+    height: 2.5rem;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.name{
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.name, .price{
+    padding: .7rem;
+    font-size: .8rem;
+}
+
+.furniture{
+    @include mobile{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+}
+
+
 .item-prod{
     width: 17rem;
     height: 14rem;
     @include itembox;
 
-}
-
-.picture{
-    width: 14.4rem;
-    height: 8rem;
-    border-radius: 5% 5% 0 0;
-    margin: .3rem;
-    object-fit: cover;
 }
 
 .picture-prod{
@@ -48,18 +83,6 @@
     border-radius: 5%;
     margin: .3rem;
     object-fit: cover;
-}
-
-.nameprice{
-    display: flex;
-    width: 13rem;
-    height: 3rem;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-
-.name, .price{
-    padding: .5rem;
 }
 
 // choix du vernis

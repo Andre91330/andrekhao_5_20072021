@@ -18,3 +18,33 @@
     margin-bottom: 1.5rem;
     border-radius: 5%;
 }
+
+@mixin mobile{
+    @media screen and(min-width: map-get($breakpoints, mobile)){
+        @content;
+    }
+}
+
+@mixin duo{
+    @media screen and(min-width: map-get($breakpoints, duo)){
+        @content;
+    }
+}
+
+@mixin pad{
+    @media screen and(min-width: map-get($breakpoints, pad)){
+        @content;
+    }
+}
+
+@mixin ppro{
+    @media screen and(min-width: map-get($breakpoints, ppro)){
+        @content;
+    }
+}
+
+@mixin xxl{
+    @media screen and(min-width: map-get($breakpoints, xxl)){
+        @content;
+    }
+}
