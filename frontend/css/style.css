@@ -208,6 +208,10 @@ i:hover {
   margin: auto;
 }
 
+.varnish-form {
+  text-align: center;
+}
+
 .custumise {
   width: 15rem;
   font-size: 1.2rem;
