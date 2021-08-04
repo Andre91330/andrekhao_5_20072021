@@ -27,7 +27,16 @@ function hydrateArticle(article) {
     document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
     document.getElementById("name").textContent= article.name
-    document.getElementById("price").textContent= article.price    
+    document.getElementById("price").textContent= article.price  
+}
+
+function displayArticle(article) {
+    const templateItem = document.getElementById("templateArticle")
+    const cloneItem = document.importNode(templateItem.content, true)
+
+    cloneItem.getElementById("varnish").textContent= article.price  
+
+document.getElementById("varnish").appendChild(cloneItem)
 }
 
 const espaceMessage = document.getElementById("message");      // element de message
@@ -63,14 +72,6 @@ let varnishsTableau = [];
             })
     }
 
-    function displayArticle(){
-        const templateVarnish = document.getElementById("templateVarnish")
-        const cloneVarnish = document.importNode(templateVarnish.content, true)
-    
-        cloneVarnish.getElementById("varnish").textContent= article.varnish
-    
-        document.getElementById("color").appendChild(cloneVarnish)         // creation d'un enfant
-    }
 
 function valider(){
     espaceMessage.immerHTML = "Merci du choix de finition";                // message de validation

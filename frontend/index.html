@@ -26,7 +26,7 @@
                 <a href="" title="Accueil, Orioakfurniture"><i id="home" class="fas fa-home"></i></a>
               </li>
               <li>
-                <a href="./home/product.html" title="Choix du vernis" class="custumise"><i id="brush" class="fas fa-brush"></i></a>
+                <a href="./home/product.html" title="Choix du vernis"><i class="fas fa-brush brush"></i></a>
               </li>
               <li>
                 <a href="./home/basket.html" title="Votre panier"><i id="cart" class="fas fa-shopping-cart"></i></a>
@@ -39,21 +39,22 @@
       </nav>
     </header>
     <main>
-      <h2 class="model">Choisissez votre modèle</h2>
+      <h2 class="model">Bienvenue sur notre site<br/>
+        Choisissez votre modèle</h2>
       <div class="furniture" id="furniture"> 
         <template id="templateArticle">
           <article class="item">
             <a  href="./home/product.html" id="productLink" class="productLink">
-            <div><img src="" alt="" id="imageUrl" class="picture"/></div></a>  
+            <div><img src="http://localhost:3000/api/furniture" alt="ameublement en chene massif" id="imageUrl" class="picture"/></div></a>  
             <div class="nameprice">
               <h3 id="name" class="name"></h3> 
-              <div id="price" class="price"> €</div>
+              <div id="price" class="price"></div>
               <div id="description" class="description"></div>
             </div>               
           </article>
         </template>
       </div>  
     </main>
-    <script src="js/index.js"></script>
+    <script src="js/index.js" defer></script>
   </body>
 </html>

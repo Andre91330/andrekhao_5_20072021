@@ -5,12 +5,12 @@
       <meta name="description" content="meubles en chêne massif en ligne, meubles personnalisables, livraison rapide">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="canonical" href="index.html">    <!--a modifier-->
+      <link rel="canonical" href="/index.html">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
         crossorigin="anonymous"> 
       <link rel="stylesheet" href="../css/style.css"> 
-      <title>Orioakfurniture, ameublement en chêne massif, personnalisable. </title>
+      <title>Orioakfurniture, ameublement en chêne massif personnalisé.</title>
   </head>
   <body>
     <header>
@@ -26,10 +26,10 @@
                 <a href="../index.html" title="accueil, Orioakfurniture"><i class="fas fa-home"></i></a>
               </li>
               <li>
-                <a href="./product.html" title="choix du vernis"><i class="fas fa-brush"></i></a>
+                <a href="./product.html" title="choix du vernis"><i class="fas fa-brush brush"></i></a>
               </li>
               <li>
-                <a href="" title="panier"><i class="fas fa-cart-arrow-down"></i></a>
+                <a href="" title="panier"><i id="cart-down" class="fas fa-cart-arrow-down"></i></a>
               </li>
               <li>
                 <a href="./order.html" title="commande"><i class="fas fa-check"></i></a>
@@ -38,10 +38,19 @@
           </div>
       </nav>
     </header> 
-    
-    <footer>
+    <main>
+      <h1 class="model">Panier</h1>
+      <p id="merci" class="mercipanier">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
+      <!--recap choix-->
+      <div id="formulaire">
+        <label>Vos informations personnelles</label>
+        <input type="text" id="nom" placeholder="  Nom" required><br/>
+        <input type="text" id="prenom" placeholder="  Prénom" required><br/>
+        <input type="email" id="mail" placeholder=" ...@mail.com" required><br/>
 
-    </footer>
-    <script src="index.js"></script>
+        <button id="enregistrer">ENREGISTRER</button>
+      </div>
+    </main>
+    <script src="../js/basket.js"></script>
 </body>
 </html>

@@ -76,7 +76,7 @@ i:hover {
   color: blue;
 }
 
-.custumise {
+.brush {
   visibility: hidden;
 }
 
@@ -84,15 +84,24 @@ i:hover {
   border-bottom: 0.125rem solid grey;
 }
 
-#brush {
+#brush-prod {
   color: blue;
 }
 
-.model {
+#cart-down {
+  color: blue;
+}
+
+.mercipanier {
   color: white;
   text-align: center;
+}
+
+.model {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  color: white;
+  text-align: center;
 }
 
 .item {
@@ -121,7 +130,7 @@ i:hover {
   }
 }
 .item:hover {
-  box-shadow: 0 0.3rem 1rem #1a1a1a;
+  box-shadow: 0 0.3rem 1rem #3333ff;
   transform: scale(1.1);
 }
 
@@ -179,11 +188,24 @@ i:hover {
 
 .item-prod {
   width: 85%;
-  height: 25rem;
+  height: 22rem;
   background: white;
   margin: auto;
   margin-bottom: 1.5rem;
   border-radius: 5%;
+}
+@media screen and (min-width: 318px) {
+  .item-prod {
+    height: 21rem;
+  }
+}
+@media screen and (min-width: 760px) {
+  .item-prod {
+    height: 30rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .picture-prod {
@@ -193,13 +215,23 @@ i:hover {
   object-fit: cover;
   height: 12rem;
   display: flex;
-  margin-top: 0.2rem;
+  padding-top: 0.2rem;
+}
+@media screen and (min-width: 760px) {
+  .picture-prod {
+    height: 22rem;
+  }
 }
 
 .description-title {
   font-size: 1rem;
   text-decoration: underline;
   padding-left: 0.5rem;
+}
+@media screen and (min-width: 535px) {
+  .description-title {
+    padding-top: 0.5rem;
+  }
 }
 
 .description-text {
@@ -208,11 +240,23 @@ i:hover {
   margin: auto;
 }
 
+.varnish-ton, .varnish-valid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.varnish-valid:hover {
+  box-shadow: 0 0.3rem 1rem #3333ff;
+}
+
 .varnish-form {
   text-align: center;
 }
 
-.custumise {
+.custumise-prod {
   width: 15rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -220,18 +264,9 @@ i:hover {
   margin: auto;
 }
 
-label {
-  width: 15rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  margin: auto;
-  padding-right: 0.7rem;
-}
-
-select {
+.varnish-ton {
   font-size: 0.9rem;
-  padding: 0.125rem 0.3123rem;
+  padding: 0.125rem;
 }
 
 /*# sourceMappingURL=style.css.map */

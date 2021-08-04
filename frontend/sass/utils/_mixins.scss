@@ -2,9 +2,10 @@
 
 @mixin fond_body{
     background-image: url("/image/oak_4.jpg");
+    opacity: .9;
 }
 
-@mixin itemshadow($color: black){
+@mixin itemshadow($color: blue){
     box-shadow: 0 .3rem 1rem lighten($color: $color, $amount: 10%);
 }
 
@@ -26,6 +27,16 @@
     object-fit: cover;
 }
 
+@mixin modelfont{
+    color: white;
+    text-align: center;
+}
+
+@mixin small{
+    @media screen and(min-width: map-get($breakpoints, small)){
+        @content;
+    }
+}
 @mixin mobile{
     @media screen and(min-width: map-get($breakpoints, mobile)){
         @content;

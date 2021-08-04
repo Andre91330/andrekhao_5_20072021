@@ -2,12 +2,12 @@
 @import "./utils/mixins";
 @import "./base/confs";
 @import "./layout/product";
+@import "./layout/basket";
 
 .model{
-    color: white;
-    text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    @include modelfont;
 }
 
 .item{
@@ -78,21 +78,36 @@
 
 .item-prod{
     width: 85%;
-    height: 25rem;
+    height: 22rem;
     @include itembox;
+    @include small{
+        height: 21rem;
+    }
+    @include pad{
+        height: 30rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .picture-prod{
     @include picturesize;
     height: 12rem;
     display: flex;
-    margin-top: .2rem;
+    padding-top: .2rem;
+    @include pad{
+        height: 22rem;
+    }
 }
 
 .description-title{
     font-size: 1rem;
     text-decoration: underline;
     padding-left: .5rem;
+    @include duo{
+        padding-top: .5rem;
+    }
 }
 
 .description-text{
@@ -101,11 +116,25 @@
     margin:auto;
 }
 
+.varnish-ton, .varnish-valid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.varnish-valid:hover{
+    @include itemshadow;
+}
+
+
 // choix du vernis
 .varnish-form{
     text-align: center;
 }
-.custumise{
+
+.custumise-prod{
     width: 15rem;
     font-size: 1.2rem;
     font-weight: bold;
@@ -113,16 +142,7 @@
     margin: auto;
 }
 
-label{
-    width: 15rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    margin: auto;
-    padding-right: .7rem;
-}
-
-select{
+.varnish-ton{
     font-size: .9rem;
-    padding: .125rem .3123rem;
+    padding: .125rem;
 }
