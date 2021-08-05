@@ -55,17 +55,17 @@
               <div id="price" class="price"></div>
             </div>                 
           </article>
-          <div id="quantité">
-            <h3 class="model">Combien de pièce, désirez-vous ?</h3><br/>
-              <input type="number" id="quantiteproduit" placeholder="1"><br/>
-          </div>
-          <div class="custumise-prod">
+          <div>
+            <h3 class="model">Combien de pièce, désirez-vous ?</h3>
+              <input type="number" id="quantite" placeholder="1">
             <h4 class="model">Choisissez votre finition.</h4>
-            <select name="varnish-ton" id="varnish-ton" title="varnish-ton">
-              <option value="defaut" class="varnish" selected autofocus>--Choix du verni--</option>
-              <option value="" class="varnish"> x </option>
-            </select> 
-            <button class="varnish-valid">Envoyer au panier</button>
+          </div>
+          <div class="varnish-form">
+            <select id="varnish" name="varnish">
+              <option disabled selected>--Choix du vernis--</option>
+            </select>
+            <button class="varnish-choice">Confirmer votre choix</button>
+            <p><a class="varnish-valid" href="./basket.html" title="ajouter au panier">Ajouter au panier</a></p>
           </div>
         </div>  
       </div>

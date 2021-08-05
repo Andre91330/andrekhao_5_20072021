@@ -27,50 +27,16 @@ function hydrateArticle(article) {
     document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
     document.getElementById("name").textContent= article.name
-    document.getElementById("price").textContent= article.price  
+    document.getElementById("price").textContent= article.price 
+    
+    for (let i = article.varnish.length; i--;) {
+        const varnish = article.vanish[i];
+        const option = document.createElement('option');
+        option.setAttribute('value', varnish);
+        option.innerText = varnish;
+        document.querySelector("#varnish").appendChild(option);
+    }
 }
-
-function displayArticle(article) {
-    const templateItem = document.getElementById("templateArticle")
-    const cloneItem = document.importNode(templateItem.content, true)
-
-    cloneItem.getElementById("varnish").textContent= article.price  
-
-document.getElementById("varnish").appendChild(cloneItem)
-}
-
-const espaceMessage = document.getElementById("message");      // element de message
-const bouton = document.getElementById("bouton");               // element bouton
-const varnishInput = document.getElementById("varnish");             // champs de choix
-
-let varnish;
-let varnishsTableau = [];
-
-    for (let varnishTableau of varnishsTableau) {
-    console.log(varnishTableau);
-    }
-
-    // fonction 
-    function getVarnishs() {                         
-        const varnish = getVarnishs()           // constantes 
-        for (varnish of varnishs) {             // boucle pour crée chaque produits
-        displayArticle(varnish)             // affichage des produits
-        }
-    }
-
-    // fonction de requete et réponse
-    function getVarnishs(varnish) {
-        fetch(`http://localhost:3000/api/furniture/${varnish}`) // requete vers le lien et reponse
-            .then(function(httpResponse) {              // promise 1
-                return httpResponse.json()              // type des données de la réponse
-            })
-            .then(function(varnishs) {                  // promise 2 grace au retour du 1
-            return varnishs              
-            })
-            .catch(function(error) {                    // gestion d'erreur                
-                alert(error)
-            })
-    }
 
 
 function valider(){

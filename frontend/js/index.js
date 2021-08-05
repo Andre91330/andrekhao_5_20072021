@@ -33,6 +33,8 @@ function displayArticle(article) {
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
 
+const number = JSON.parse(price.value);
+    price.textcontent = (`Prix : + (number/100) + €`);
 
 
 

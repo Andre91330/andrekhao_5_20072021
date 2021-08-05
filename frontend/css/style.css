@@ -130,7 +130,7 @@ i:hover {
   }
 }
 .item:hover {
-  box-shadow: 0 0.3rem 1rem #3333ff;
+  box-shadow: 0 0.3rem 1rem #00b300;
   transform: scale(1.1);
 }
 
@@ -240,16 +240,27 @@ i:hover {
   margin: auto;
 }
 
-.varnish-ton, .varnish-valid {
+.varnish-valid, #quantite, .varnish-choice {
   display: block;
+  width: 12rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 }
 
+.varnish-choice:hover {
+  box-shadow: 0 0.3rem 1rem #00b300;
+}
+
+.varnish-valid {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background-color: white;
+}
 .varnish-valid:hover {
-  box-shadow: 0 0.3rem 1rem #3333ff;
+  box-shadow: 0 0.3rem 1rem #00b300;
 }
 
 .varnish-form {
@@ -262,11 +273,6 @@ i:hover {
   font-weight: bold;
   color: white;
   margin: auto;
-}
-
-.varnish-ton {
-  font-size: 0.9rem;
-  padding: 0.125rem;
 }
 
 /*# sourceMappingURL=style.css.map */

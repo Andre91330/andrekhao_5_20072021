@@ -116,18 +116,24 @@
     margin:auto;
 }
 
-.varnish-ton, .varnish-valid{
+.varnish-valid, #quantite, .varnish-choice{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    @include bouton;   
 }
 
-.varnish-valid:hover{
+.varnish-choice:hover{
     @include itemshadow;
 }
 
+.varnish-valid{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    &:hover{
+        @include itemshadow;
+    }
+}
 
 // choix du vernis
 .varnish-form{
@@ -142,7 +148,4 @@
     margin: auto;
 }
 
-.varnish-ton{
-    font-size: .9rem;
-    padding: .125rem;
-}
+
