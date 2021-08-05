@@ -27,16 +27,27 @@ function hydrateArticle(article) {
     document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
     document.getElementById("name").textContent= article.name
-    document.getElementById("price").textContent= article.price 
+    document.getElementById("price").textContent= displayPrice(article.price) 
     
+
     for (let i = article.varnish.length; i--;) {
-        const varnish = article.vanish[i];
+        const varnish = article.varnish[i];
         const option = document.createElement('option');
         option.setAttribute('value', varnish);
         option.innerText = varnish;
-        document.querySelector("#varnish").appendChild(option);
+        document.querySelector('#varnish').appendChild(option);
     }
 }
+
+function displayPrice(price) {
+    return `${price/100} €`;
+}
+
+
+// if(localStorage.getItem("nom") != null)
+//     merci.textContent = `Merci, pour votre enregistrement ${localStorage.getItem("nom")} ${localStorage.getItem("prenom")}`;
+
+
 
 
 function valider(){

@@ -47,7 +47,7 @@
 
 .nameprice{
     display: flex;
-    width: 96%;
+    width: 95%;
     height: 2.5rem;
     align-items: flex-end;
     justify-content: space-between;
@@ -62,7 +62,7 @@
 
 .name, .price{
     padding: .7rem;
-    font-size: .8rem;
+    font-size: .6rem;
     @include duo{
         font-size: 1rem;
     }
@@ -78,14 +78,13 @@
 
 .item-prod{
     width: 85%;
-    height: 22rem;
+    height: 23rem;
     @include itembox;
     @include small{
         height: 21rem;
     }
     @include pad{
         height: 30rem;
-        display: block;
         margin-left: auto;
         margin-right: auto;
     }
@@ -116,16 +115,16 @@
     margin:auto;
 }
 
-.varnish-valid, #quantite, .varnish-choice{
+#varnish-valid, #quantity, #varnish-choice{
     display: block;
     @include bouton;   
 }
 
-.varnish-choice:hover{
+#varnish-choice:hover{
     @include itemshadow;
 }
 
-.varnish-valid{
+ #varnish-valid{
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -135,17 +134,8 @@
     }
 }
 
-// choix du vernis
 .varnish-form{
     text-align: center;
-}
-
-.custumise-prod{
-    width: 15rem;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: white;
-    margin: auto;
 }
 
 

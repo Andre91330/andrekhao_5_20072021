@@ -155,7 +155,7 @@ i:hover {
 
 .nameprice {
   display: flex;
-  width: 96%;
+  width: 95%;
   height: 2.5rem;
   align-items: flex-end;
   justify-content: space-between;
@@ -170,7 +170,7 @@ i:hover {
 
 .name, .price {
   padding: 0.7rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 @media screen and (min-width: 535px) {
   .name, .price {
@@ -188,7 +188,7 @@ i:hover {
 
 .item-prod {
   width: 85%;
-  height: 22rem;
+  height: 23rem;
   background: white;
   margin: auto;
   margin-bottom: 1.5rem;
@@ -202,7 +202,6 @@ i:hover {
 @media screen and (min-width: 760px) {
   .item-prod {
     height: 30rem;
-    display: block;
     margin-left: auto;
     margin-right: auto;
   }
@@ -240,7 +239,7 @@ i:hover {
   margin: auto;
 }
 
-.varnish-valid, #quantite, .varnish-choice {
+#varnish-valid, #quantity, #varnish-choice {
   display: block;
   width: 12rem;
   margin-left: auto;
@@ -249,30 +248,22 @@ i:hover {
   margin-bottom: 3rem;
 }
 
-.varnish-choice:hover {
+#varnish-choice:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
 
-.varnish-valid {
+#varnish-valid {
   text-decoration: none;
   color: black;
   font-weight: bold;
   background-color: white;
 }
-.varnish-valid:hover {
+#varnish-valid:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
 
 .varnish-form {
   text-align: center;
-}
-
-.custumise-prod {
-  width: 15rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  margin: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -42,13 +42,13 @@
       <h1 class="model">Panier</h1>
       <p id="merci" class="mercipanier">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
       <!--recap choix-->
-      <div id="formulaire">
+      <form id="formulaire">
         <label>Vos informations personnelles</label>
-        <input id="nom" type="text" name="nom" placeholder="  Nom" required><br/>
-        <input id="prenom" type="text" name="prenom" placeholder="  Prénom" required><br/>
-        <input id="mail" type="email" name="mail" placeholder=" ...@mail.com" required><br/>
-        <button id="enregistrer">ENREGISTRER</button>
-      </div>
+        <input id="nom" type="text" name="nom" placeholder="  Nom" required /><br/>
+        <input id="prenom" type="text" name="prenom" placeholder="  Prénom" required /><br/>
+        <input id="mail" type="email" name="mail" placeholder=" ...@mail.com" required /><br/>
+        <input type="submit" id="enregistrer" value="Enregister"/>
+      </form>
     </main>
     <script src="../js/basket.js"></script>
 </body>

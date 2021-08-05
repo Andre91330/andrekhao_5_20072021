@@ -51,22 +51,22 @@
               <p id="description-text" class="description-text"></p> 
             </div>
             <div class="nameprice">
-              <div id="name" class="name"></div> 
-              <div id="price" class="price"></div>
+              <div id="name" class="nameprod"></div> 
+              <div id="price" class="priceprod"></div>
             </div>                 
           </article>
           <div>
             <h3 class="model">Combien de pièce, désirez-vous ?</h3>
-              <input type="number" id="quantite" placeholder="1">
-            <h4 class="model">Choisissez votre finition.</h4>
+              <input type="number" id="quantity" placeholder="--Utilisez les fleches--" min="1">
+            <h3 class="model">Choisissez votre finition.</h3>
           </div>
-          <div class="varnish-form">
-            <select id="varnish" name="varnish">
+          <form class="varnish-form">
+            <select id="varnish" name="varnish" title="vernis">
               <option disabled selected>--Choix du vernis--</option>
             </select>
-            <button class="varnish-choice">Confirmer votre choix</button>
-            <p><a class="varnish-valid" href="./basket.html" title="ajouter au panier">Ajouter au panier</a></p>
-          </div>
+            <button id="varnish-choice" type="button">Confirmer votre choix</button>
+            <p><a id="varnish-valid" href="./basket.html" title="ajouter au panier">Ajouter au panier</a></p>
+          </form>
         </div>  
       </div>
     </main>

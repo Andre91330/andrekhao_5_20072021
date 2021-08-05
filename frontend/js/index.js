@@ -27,25 +27,16 @@ function displayArticle(article) {
     
     cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     cloneItem.getElementById("name").textContent= article.name
-    cloneItem.getElementById("price").textContent= article.price  
+    cloneItem.getElementById("price").textContent= displayPrice(article.price)
     cloneItem.getElementById("productLink").href += `?id=${article._id}`
     
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
 
-const number = JSON.parse(price.value);
-    price.textcontent = (`Prix : + (number/100) + €`);
+function displayPrice(price) {
+    return `${price/100} €`;
+}
 
-
-
-// const price = 0;
-//console.log(new Intl.NumberFormat('fr-FR', {style: 'currency', currencyDisplay: 'EUR' }).format(price));
-
-//  let price = 'article.price';
-// function number() {
-//   return Number.parseFloat(${price}).toFixed(2);
-// }
-//  console.log(`Prix : + number + €`);  // expected output: "xx.xx €"
 
 
 
