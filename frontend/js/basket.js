@@ -2,8 +2,8 @@
 // localStorage.getItem("clé")
 // localStoragr.clear();
 
-if(localStorage.getItem("nom") != null)
-    merci.textContent = `Merci, pour votre enregistrement ${localStorage.getItem("nom")} ${localStorage.getItem("prenom")}`;
+if(localStorage.getItem("prenom") != null)
+    merci.textContent = `Merci, pour votre enregistrement ${localStorage.getItem("prenom")}.`;
 
 
 enregistrer.onclick = () =>{

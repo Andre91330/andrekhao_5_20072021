@@ -1,8 +1,6 @@
 (async function(){
     const articleId = getArticleId()
-    console.log(articleId)
     const article = await getArticle(articleId)
-    console.log(article)
     hydrateArticle(article)             // on change le contenu du l'article deja existant et non la recrée
 })()
 
@@ -30,7 +28,7 @@ function hydrateArticle(article) {
     document.getElementById("price").textContent= displayPrice(article.price) 
     
 
-    for (let i = article.varnish.length; i--;) {
+    for (let i = article.varnish.length; i--;) {                // pour afficher toutes les options
         const varnish = article.varnish[i];
         const option = document.createElement('option');
         option.setAttribute('value', varnish);
@@ -44,10 +42,35 @@ function displayPrice(price) {
 }
 
 
-// if(localStorage.getItem("nom") != null)
-//     merci.textContent = `Merci, pour votre enregistrement ${localStorage.getItem("nom")} ${localStorage.getItem("prenom")}`;
 
 
+//--------gestion du panier
+// recuperation des donnée selectionné et envoi au panier
+
+// selection de l'id du formulaire
+//      const idForm = document.querySelector("#option_produit");
+// cosole.log(idForm)
+
+// selection  du bouton  dans  le dom
+//      const envoyerPanier = document.querySelector("#envoyer");
+
+// addEventListener - écouter le bouton et envoyer le panier
+//      envoyerPanier.addEventListener("click",(event) =>{
+//      event.preventDefault(); 
+
+    // mettre le choix de l'utilisateur dans une variable
+//      const choixFormulaire = idForm.value;
+// console.log(choixFormulaire);
+   
+// ------- récupération des valeurs du formulaires
+//         let optionsProduit = {
+//         nomProduit: idProduitSelectionner.nomProduit,
+//         id_ProduitSelectionner: idProduitSelectionner._id,
+//         option_produit: choixFormulaire,
+//         prix: idProduitSelectionner.prix,
+//      };
+    // console.log(optionsProduits);
+//  });
 
 
 function valider(){
@@ -57,3 +80,6 @@ function valider(){
 function refuser(){
     alert("Veuillez choisir votre verni");                                 // message de non validation
 }
+
+//-----------------local storage-------
+// stocker la recupération des valeurs du formulaire 

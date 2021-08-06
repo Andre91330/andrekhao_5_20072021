@@ -43,10 +43,30 @@
       <p id="merci" class="mercipanier">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
       <!--recap choix-->
       <form id="formulaire">
-        <label>Vos informations personnelles</label>
-        <input id="nom" type="text" name="nom" placeholder="  Nom" required /><br/>
-        <input id="prenom" type="text" name="prenom" placeholder="  Prénom" required /><br/>
-        <input id="mail" type="email" name="mail" placeholder=" ...@mail.com" required /><br/>
+        <fieldset>
+          <legend>Vos informations personnelles</legend>
+          <p>
+            <label for="mister">Monsieur</label> 
+            <input type="radio" name="genre" id="mister" value="mister" />
+          </p>
+          <p>
+            <label for="madame">Madame</label>
+            <input type="radio" name="genre" id="madame" value="madame" />  
+          </p>
+          <legend>Nom et Prénom</legend>
+          <p>
+            <label for="nom">Nom :</label>
+            <input type="text" name="nom" id="nom" placeholder="  Nom" required /><br/>
+          </p>
+          <p>
+            <label for="prenom">Prénom :</label>
+            <input type="text" name="nom" id="prenom" placeholder="  Prénom" required /><br/>
+          </p>
+          <p>
+            <label for="mail">E-mail :</label>
+            <input type="email" name="email" id="email" placeholder=" ...@..." required /><br/>
+          </p>  
+        </fieldset>
         <input type="submit" id="enregistrer" value="Enregister"/>
       </form>
     </main>
