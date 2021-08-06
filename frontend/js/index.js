@@ -28,17 +28,17 @@ function displayArticle(article) {
     cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     cloneItem.getElementById("name").textContent= article.name
     cloneItem.getElementById("price").textContent= displayPrice(article.price)
-    cloneItem.getElementById("productLink").href += `?id=${article._id}`
+    cloneItem.getElementById("productLink").href += `?id=${article._id}`        // recuperation/id
     
     document.getElementById("furniture").appendChild(cloneItem)         // creation d'un enfant
 }
 
+
+
 function displayPrice(price) {
+    
     return `${price/100} €`;
 }
-
-
-
 
 
 
