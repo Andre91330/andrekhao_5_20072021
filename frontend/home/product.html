@@ -54,22 +54,18 @@
               <h2 class="description-title">Description :</h2>
               <p id="description-text" class="description-text"></p> 
             </div>                
-          </article>
-          <div>
-            <h3 class="model">Combien de pièce, désirez-vous ?</h3>
-              <input type="number" id="quantity" placeholder="--Utilisez les fleches--" min="1">
+          </article>    
             <h3 class="model">Choisissez votre finition.</h3>
-          </div>
-          <form class="varnish-form">
+          <form class="varnishform">
             <select id="varnish" name="varnish" title="vernis">
-              <option disabled selected>--Choix du vernis--</option>
+              <option disabled selected id="choice">--Choix du vernis--</option>  
             </select>
-            <button id="varnishchoice" type="button">Confirmer votre choix</button>
-            <p><a id="varnish-valid" href="./basket.html" title="ajouter au panier">Ajouter au panier</a></p>
+            <button id="itemcustumise" type="button">Confirmer votre choix</button>
+            <p><a id="sendbasket" href="./basket.html" title="ajouter au panier">Ajouter au panier</a></p>
           </form>
         </div>  
       </div>
-    </main>
+    </main> 
   <script src="../js/product.js" defer></script> 
 </body>
 </html>

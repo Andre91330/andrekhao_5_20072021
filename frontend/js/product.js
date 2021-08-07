@@ -1,7 +1,6 @@
 (async function(){
     const articleId = getArticleId()
     const article = await getArticle(articleId)
-    console.log
     hydrateArticle(article)             // on change le contenu de l'article deja existant et non la recrée
 })()
 
@@ -9,7 +8,8 @@ function getArticleId() {
     return new URL(location.href).searchParams.get("id")
 }
 
-function getArticle(articleId) {
+
+function getArticle(articleId) {                //affichage du produit (objet) sélectionné par id
     return fetch(`http://localhost:3000/api/furniture/${articleId}`) // requete vers le lien et reponse
     .then(function(httpResponse) {              // promise 1
         return httpResponse.json()              // type des données de la réponse
@@ -20,6 +20,10 @@ function getArticle(articleId) {
     .catch(function(error) {                    // gestion d'erreur                
         alert(error)
     })
+}
+
+function displayPrice(price) {
+    return `${price/100} €`;
 }
 
 function hydrateArticle(article) {
@@ -38,45 +42,50 @@ function hydrateArticle(article) {
     }
 }
 
-function displayPrice(price) {
-    return `${price/100} €`;
-}
-
-
-
 
 //--------gestion du panier
 // recuperation des donnée selectionné et envoi au panier
 
 // selection de l'id du formulaire      
-const varnish = document.querySelector("#varnishchoice");
-console.log(varnish);
+const idVarnish = document.querySelector("#varnish");
 
-// selection  du bouton  dans  le dom
-//      const envoyerPanier = document.querySelector("#envoyer");
+
+
+// selection du bouton Ajouter au panier dans le dom
+const validerPanier = document.querySelector("#sendbasket");
+console.log(validerPanier);
 
 // addEventListener - écouter le bouton et envoyer le panier
-//      envoyerPanier.addEventListener("click",(event) =>{
-//      event.preventDefault(); 
+validerPanier.addEventListener("click",(event) =>{
+    event.preventDefault();
+     
+// Mettre le choix dans une variable
+const tonVernis = idVarnish.value;
+console.log(tonVernis);
+    
+// ------- récupération des valeurs du formulaire
+let custumiseItem = {
+    produitChoisi: article.produitChosi,
+    nomProduit: article.nomProduit,
+    tonProduit: tonVernis.choixFormulaire,
+    prix: article.prix/100
+};
 
-    // mettre le choix de l'utilisateur dans une variable
-//      const choixFormulaire = idForm.value;
-// console.log(choixFormulaire);
-   
-// ------- récupération des valeurs du formulaires
-//         let optionsProduit = {
-//         nomProduit: idProduitSelectionner.nomProduit,
-//         id_ProduitSelectionner: idProduitSelectionner._id,
-//         option_produit: choixFormulaire,
-//         prix: idProduitSelectionner.prix,
-//      };
-    // console.log(optionsProduits);
-//  });
+console.log(cutumiseItem);
+});
 
+// localStorage.setItem(clé, valeur)      enregister une valeur dans le storage
+// localStorage.getItem(clé)              récupère la valeur de la clé
+// localStorage.clear()                   efface le storage
+
+// varnishchoice.onclick =() =>{
+//  localStorage.setItem("vernischoisi", choice.value);
+// }
 
 function valider(){
     espaceMessage.immerHTML = "Merci du choix de finition";                // message de validation
 }
+
 
 function refuser(){
     alert("Veuillez choisir votre verni");                                 // message de non validation
