@@ -1,7 +1,8 @@
 (async function(){
     const articleId = getArticleId()
     const article = await getArticle(articleId)
-    hydrateArticle(article)             // on change le contenu du l'article deja existant et non la recrée
+    console.log
+    hydrateArticle(article)             // on change le contenu de l'article deja existant et non la recrée
 })()
 
 function getArticleId() {
@@ -47,9 +48,9 @@ function displayPrice(price) {
 //--------gestion du panier
 // recuperation des donnée selectionné et envoi au panier
 
-// selection de l'id du formulaire
-//      const idForm = document.querySelector("#option_produit");
-// cosole.log(idForm)
+// selection de l'id du formulaire      
+const varnish = document.querySelector("#varnishchoice");
+console.log(varnish);
 
 // selection  du bouton  dans  le dom
 //      const envoyerPanier = document.querySelector("#envoyer");
