@@ -39,47 +39,43 @@ function hydrateArticle(article) {
         option.setAttribute('value', varnish);
         option.innerText = varnish;
         document.querySelector('#varnish').appendChild(option);
-    }
-}
+    }     
+} 
 
+// selection du bouton confirmer le produit dans le dom
+const confirmerChoix = document.querySelector("#varnish");
+console.log(confirmerChoix);   // ok
 
-//--------gestion du panier 
-// recuperation des donnée selectionné 
-
-// selection de l'id du formulaire      
-// const idVarnish = document.querySelector("#varnish");
-
- // Mettre le choix dans une variable
-const tonVernis = choice.value;
-
- for (i = 0; i < choice.length; i++) {
-    if (choice[i].checked === true) {
-        tonVernis = choice[i].value;
-     }
- }
+// Memoriser le choix
+const tonVernis = confirmerChoix.value;
  
- console.log(tonVernis);
 
- // selection du bouton confirmer le produit dans le dom
-const confirmerChoix = document.querySelector("#itemCustumise");
-    console.log(confirmerChoix);
+for (i = 0; i< choice.length ; i++) {
+   if (choice[i].checked === true) {
+       tonVernis = choice[i].value;
+    }    
+};
+console.log(tonVernis); 
 
 // addEventListener - écouter le bouton et confirmer le panier
-confirmerChoix.addEventListener("click",(event) =>{
-     event.preventDefault();
- 
-   
-    
-// ------- récupération des valeurs du formulaire
-let custumiseItem = {
-//   produitChoisi: article.value,
-    nomProduit: article.nomProduit,
-    tonProduit: tonVernis.value,
-    prix: article.prix/100
-};
+//confirmerChoix.addEventListener("click",(event) =>{
+//    event.preventDefault();
+//});
 
-console.log(cutumiseItem);
-});
+      
+// ------- récupération des valeurs du formulaire
+//let custumiseItem = {
+//   produitChoisi: article.value,
+//   nomProduit: article.nomProduit,
+//   tonProduit: tonVernis.value,
+//   prix: article.prix/100
+//};
+
+// localStorage.setItem("referenceProduit", document.querySelector("#furniture").value);
+// localStorage.setItem("nomProduit", document.querySelector("name").value);
+// localStorage.setItem("prixProduit", document.querySelector("price").value);
+// localStorage.setItem("vernisproduit", tonVernis.value);
+
 
 // localStorage.setItem(clé, valeur)      enregister une valeur dans le storage
 // localStorage.getItem(clé)              récupère la valeur de la clé

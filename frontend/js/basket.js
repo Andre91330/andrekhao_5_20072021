@@ -2,12 +2,12 @@
 // localStorage.getItem("clé")
 // localStoragr.clear();
 
-let enregistrerFormulaire = document.querySelector("button");    
+const enregistrerFormulaire = document.querySelector("button");    
 console.log(enregistrerFormulaire);
 
 enregistrerFormulaire.addEventListener("click", () =>{
-// recuperer les donnees du formulaire
-    let genre = document.querySelectorAll("input[name = 'genre']");
+
+const genre = document.querySelectorAll("input[name = 'genre']"); // recuperer les donnees du formulaire
 
 for (i = 0; i < genre.length; i++) {
     if (genre[i].checked === true) {
@@ -15,15 +15,10 @@ for (i = 0; i < genre.length; i++) {
     }
 }
 
-// stocker le saisie dans le local storage
-
-localStorage.setItem("genre", leGenre);
+localStorage.setItem("genre", leGenre);                         // stocker le saisie dans le local storage
 localStorage.setItem("nom", nom.value);
 localStorage.setItem("prenom", prenom.value);
 localStorage.setItem("mail", mail.value);
 
-// récupérer et afficher les donées sur la page Web
-
-console.log(document.querySelector("nom"));
-
+console.log(document.querySelector("nom"));                     // récupérer et afficher les donées sur la page Web
 });
