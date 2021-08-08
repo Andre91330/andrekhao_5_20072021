@@ -41,20 +41,21 @@
     <main>
       <h1 class="model">Panier</h1>
       <p id="merci" class="mercipanier">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
-      <!-- <div>
+ 
+      <form id="formulaire">
+        <!-- <div>
             <h3 class="model">Combien de pièce, désirez-vous ?</h3>
               <input type="number" id="quantity" placeholder="--Utilisez les fleches--" min="1"> -->   
       <!--recap choix-->
-      <form id="formulaire">
         <fieldset>
           <legend>Vos informations personnelles</legend>
           <p>
-            <label for="mister">Monsieur</label> 
-            <input type="radio" name="genre" id="mister" value="mister" />
+            <input type="radio" name="genre" id="homme" value="mister" />
+            <label for="homme">Monsieur</label> 
           </p>
-          <p>
-            <label for="madame">Madame</label>
-            <input type="radio" name="genre" id="madame" value="madame" />  
+          <p> 
+            <input type="radio" name="genre" id="femme" value="madame" />  
+            <label for="femme">Madame</label>
           </p>
           <legend>Nom et Prénom</legend>
           <p>
@@ -67,10 +68,10 @@
           </p>
           <p>
             <label for="mail">E-mail :</label>
-            <input type="email" name="email" id="email" placeholder=" ...@..." required /><br/>
+            <input type="email" name="email" id="mail" placeholder=" ...@..." required /><br/>
           </p>  
         </fieldset>
-        <input type="submit" id="enregistrer" value="Enregister"/>
+        <button type="submit" id="enregistrer">Enregistrer</button>
       </form>
     </main>
     <script src="../js/basket.js"></script>

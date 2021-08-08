@@ -43,31 +43,38 @@ function hydrateArticle(article) {
 }
 
 
-//--------gestion du panier
-// recuperation des donnée selectionné et envoi au panier
+//--------gestion du panier 
+// recuperation des donnée selectionné 
 
 // selection de l'id du formulaire      
-const idVarnish = document.querySelector("#varnish");
+// const idVarnish = document.querySelector("#varnish");
 
+ // Mettre le choix dans une variable
+const tonVernis = choice.value;
 
+ for (i = 0; i < choice.length; i++) {
+    if (choice[i].checked === true) {
+        tonVernis = choice[i].value;
+     }
+ }
+ 
+ console.log(tonVernis);
 
-// selection du bouton Ajouter au panier dans le dom
-const validerPanier = document.querySelector("#sendbasket");
-console.log(validerPanier);
+ // selection du bouton confirmer le produit dans le dom
+const confirmerChoix = document.querySelector("#itemCustumise");
+    console.log(confirmerChoix);
 
-// addEventListener - écouter le bouton et envoyer le panier
-validerPanier.addEventListener("click",(event) =>{
-    event.preventDefault();
-     
-// Mettre le choix dans une variable
-const tonVernis = idVarnish.value;
-console.log(tonVernis);
+// addEventListener - écouter le bouton et confirmer le panier
+confirmerChoix.addEventListener("click",(event) =>{
+     event.preventDefault();
+ 
+   
     
 // ------- récupération des valeurs du formulaire
 let custumiseItem = {
-    produitChoisi: article.produitChosi,
+//   produitChoisi: article.value,
     nomProduit: article.nomProduit,
-    tonProduit: tonVernis.choixFormulaire,
+    tonProduit: tonVernis.value,
     prix: article.prix/100
 };
 
