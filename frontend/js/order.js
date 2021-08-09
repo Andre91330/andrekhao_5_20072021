@@ -10,3 +10,10 @@
 //      localStorage.setItem("mail", mail.value);
 //      document.location.reload();
 //  }
+
+//const tonVernis = document.querySelectorAll("option[name='varnish']");   // selection de l'id du formulaire des vernis   
+//for (i = 0; i < tonVernis.length; i++) {
+//if (tonVernis[i].checked === true) {      
+//  tonVernis = tonVernis[i].value;
+//}
+//}

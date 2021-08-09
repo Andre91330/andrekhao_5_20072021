@@ -42,34 +42,48 @@ function hydrateArticle(article) {
     }     
 } 
 
+const varnishChoice = document.querySelector("#itemcustumise");
+   
+varnishChoice.addEventListener("click", (event) =>{
+    event.preventDefault();
+    
+const yourVarnish = document.querySelectorAll("#varnish"); // recuperer les donnees du formulaire
+    
+    for (i = 0; i < varnish.length; i++) {
+        if (varnish[i].localName == "select"){
+            yourVarnish = varnish[i].value;
+        }
+    }
+    console.log(yourVarnish);
+
+});
+
 // selection du bouton confirmer le produit dans le dom
-const confirmerChoix = document.querySelector("#varnish");
-console.log(confirmerChoix);   // ok
+//const confirmerChoix = document.querySelector("#itemcustumise");
+// console.log(confirmerChoix);  
 
-// Memoriser le choix
-const tonVernis = confirmerChoix.value;
- 
-
-for (i = 0; i< choice.length ; i++) {
-   if (choice[i].checked === true) {
-       tonVernis = choice[i].value;
-    }    
-};
-console.log(tonVernis); 
-
-// addEventListener - écouter le bouton et confirmer le panier
-//confirmerChoix.addEventListener("click",(event) =>{
+//confirmerChoix.addEventListener("click",(event) =>{     // addEventListener - écouter le bouton et confirmer le panier
 //    event.preventDefault();
-//});
 
-      
-// ------- récupération des valeurs du formulaire
+//const lesVernis = document.querySelector("#varnish");   // selection de l'id du formulaire des vernis   
+
+//console.log(lesVernis);
+
+//const tonVernis = tonVernis.value;                       // selection du choix client
+
+
+
+
+//-----------------local storage-------
+// stocker la recupération des valeurs du formulaire 
 //let custumiseItem = {
 //   produitChoisi: article.value,
 //   nomProduit: article.nomProduit,
 //   tonProduit: tonVernis.value,
 //   prix: article.prix/100
-//};
+//   });
+      
+
 
 // localStorage.setItem("referenceProduit", document.querySelector("#furniture").value);
 // localStorage.setItem("nomProduit", document.querySelector("name").value);
@@ -93,6 +107,3 @@ function valider(){
 function refuser(){
     alert("Veuillez choisir votre verni");                                 // message de non validation
 }
-
-//-----------------local storage-------
-// stocker la recupération des valeurs du formulaire 
