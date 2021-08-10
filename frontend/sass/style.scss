@@ -53,14 +53,14 @@
     justify-content: space-between;
 }
 
-.name{
+.nameitem{
     width: 55%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.name, .price{
+.nameitem, .price{
     padding: .7rem;
     font-size: .8rem;
     font-weight: bold;

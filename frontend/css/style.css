@@ -161,20 +161,20 @@ i:hover {
   justify-content: space-between;
 }
 
-.name {
+.nameitem {
   width: 55%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.name, .price {
+.nameitem, .price {
   padding: 0.7rem;
   font-size: 0.8rem;
   font-weight: bold;
 }
 @media screen and (min-width: 535px) {
-  .name, .price {
+  .nameitem, .price {
     font-size: 1rem;
   }
 }

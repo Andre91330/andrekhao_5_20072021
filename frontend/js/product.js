@@ -29,7 +29,7 @@ function displayPrice(price) {
 function hydrateArticle(article) {
     document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
-    document.getElementById("name").textContent= article.name
+    document.getElementById("nameitem").textContent= article.name
     document.getElementById("price").textContent= displayPrice(article.price) 
     
 
@@ -42,68 +42,55 @@ function hydrateArticle(article) {
     }     
 } 
 
+//localStorage.setItem("Article", document.querySelector("#nameitem").value);
+// localStorage.setItem("Prix", price.value);
+//localStorage.setItem("refProduit", document.querySelector("#furniture").value);
+
+//console.log(document.querySelector("#nameitem").value;
+
+//------Finition
 const varnishChoice = document.querySelector("#itemcustumise");
-   
+
 varnishChoice.addEventListener("click", (event) =>{
     event.preventDefault();
     
-const yourVarnish = document.querySelectorAll("#varnish"); // recuperer les donnees du formulaire
-    
-    for (i = 0; i < varnish.length; i++) {
-        if (varnish[i].localName == "select"){
-            yourVarnish = varnish[i].value;
+const yourVarnish = document.querySelectorAll("option"); // recuperer le vernis choisi
+
+    for (i = 0; i < yourVarnish.length; i++) {
+        if (yourVarnish[i].selected === true){
+            option = yourVarnish[i].value;
         }
     }
-    console.log(yourVarnish);
+
+//console.log(yourVarnish);     //  ok
+ 
+localStorage.setItem("Finition", option);   // ok   stocker le vernis dans le local storage
 
 });
-
-// selection du bouton confirmer le produit dans le dom
-//const confirmerChoix = document.querySelector("#itemcustumise");
-// console.log(confirmerChoix);  
-
-//confirmerChoix.addEventListener("click",(event) =>{     // addEventListener - écouter le bouton et confirmer le panier
-//    event.preventDefault();
-
-//const lesVernis = document.querySelector("#varnish");   // selection de l'id du formulaire des vernis   
-
-//console.log(lesVernis);
-
-//const tonVernis = tonVernis.value;                       // selection du choix client
 
 
 
 
 //-----------------local storage-------
 // stocker la recupération des valeurs du formulaire 
-//let custumiseItem = {
+
+ //let custumiseItem = {
 //   produitChoisi: article.value,
 //   nomProduit: article.nomProduit,
 //   tonProduit: tonVernis.value,
 //   prix: article.prix/100
-//   });
-      
-
-
-// localStorage.setItem("referenceProduit", document.querySelector("#furniture").value);
-// localStorage.setItem("nomProduit", document.querySelector("name").value);
-// localStorage.setItem("prixProduit", document.querySelector("price").value);
-// localStorage.setItem("vernisproduit", tonVernis.value);
-
+//   });     
 
 // localStorage.setItem(clé, valeur)      enregister une valeur dans le storage
 // localStorage.getItem(clé)              récupère la valeur de la clé
 // localStorage.clear()                   efface le storage
 
-// varnishchoice.onclick =() =>{
-//  localStorage.setItem("vernischoisi", choice.value);
+
+
+// function valider(){
+//     espaceMessage.immerHTML = "Merci du choix de finition";                // message de validation
 // }
 
-function valider(){
-    espaceMessage.immerHTML = "Merci du choix de finition";                // message de validation
-}
-
-
-function refuser(){
-    alert("Veuillez choisir votre verni");                                 // message de non validation
-}
+// function refuser(){
+//    alert("Veuillez choisir votre verni");                                 // message de non validation
+// }
