@@ -58,20 +58,29 @@ let yourVarnish = document.querySelectorAll("option"); // recuperer le vernis ch
         }
     }
 
-localStorage.setItem("Finition", option);   // BON
-localStorage.setItem("Appellation", document.querySelector("#nameitem").value);
+// let reference = document.querySelector(`furniture/${articleId}`);
+// let appellation = ("#nameitem").value;
+// let prix = "/";
+// let photo = "/";
 
-//  a.addEventListener("click", (event) =>{
-//   event.preventDefault();
+const votreProduit = {
+//    reference: reference,
+//    appellation: appellation,
+    finition: option,
+//    photo: ("#imageUrl").value,
+    quantité: 1,
+//    prix: ("#price").value 
+  } 
 
-//  let votreProduit = {
-//    Référence: productlink.value,
-//    Appellation: nameitem.value,
-//    Finition: option,
-//    Photo: imageUrl.value,
-//    Prix: price.value 
-//  }  
-//localStorage.setItem("votreProduit",JSON.stringify(votreProduit));
+ localStorage.setItem("votreProduit",JSON.stringify(votreProduit));
+
+});
+
+
+
+
+ 
+
 
 
 
@@ -82,7 +91,7 @@ localStorage.setItem("Appellation", document.querySelector("#nameitem").value);
 
   
 
-});
+
 
 
 
