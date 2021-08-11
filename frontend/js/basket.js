@@ -1,24 +1,39 @@
 // localStorage.setItem("clé", "valeur")
 // localStorage.getItem("clé")
 // localStoragr.clear();
+const itemlocal = JSON.parse(localStorage.getItem("guest"));
 
-const enregistrerFormulaire = document.querySelector("button");    
+const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
 
-enregistrerFormulaire.addEventListener("click", () =>{
+if(itemlocal != null)
+{
+    formulaire.style.display ="none";
+    thk.textContent = `Merci, ${itemlocal.prenom}.`;   // ok
+}
+enregistrerFormulaire.addEventListener("click", (event) =>{
+    event.preventDefault();
+    document.location.reload();
 
-const genre = document.querySelectorAll("input[name = 'genre']"); // recuperer les donnees du formulaire
-
-for (i = 0; i < genre.length; i++) {
-    if (genre[i].checked === true) {
-        leGenre = genre[i].value;
+const yourgenre = document.querySelectorAll("input[name = 'genre']"); // recuperer les donnees du formulaire
+    for (i = 0; i < yourgenre.length; i++) {
+        if (yourgenre[i].checked === true) {
+            genre = yourgenre[i].value;
+        }
     }
+
+const guest = {
+    genre: genre,
+    nom: nom.value,
+    prenom: prenom.value,
+    mail: mail.value
 }
 
-localStorage.setItem("genre", leGenre);                         // stocker le saisie dans le local storage
-localStorage.setItem("nom", nom.value);
-localStorage.setItem("prenom", prenom.value);
-localStorage.setItem("mail", mail.value);
+localStorage.setItem("guest",JSON.stringify(guest));  // stocker
+    
+clear.onclick = () =>{
+    localStorage.clear();
+    document.location.reload();
+}
 
-console.log(document.querySelector("nom"));                     // récupérer et afficher les donées sur la page Web
 });

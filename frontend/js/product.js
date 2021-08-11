@@ -42,19 +42,15 @@ function hydrateArticle(article) {
     }     
 } 
 
-//localStorage.setItem("Article", document.querySelector("#nameitem").value);
-// localStorage.setItem("Prix", price.value);
-//localStorage.setItem("refProduit", document.querySelector("#furniture").value);
-
 //console.log(document.querySelector("#nameitem").value;
 
 //------Finition
-const varnishChoice = document.querySelector("#itemcustumise");
+let varnishChoice = document.querySelector("#itemcustumise");
 
 varnishChoice.addEventListener("click", (event) =>{
     event.preventDefault();
     
-const yourVarnish = document.querySelectorAll("option"); // recuperer le vernis choisi
+let yourVarnish = document.querySelectorAll("option"); // recuperer le vernis choisi
 
     for (i = 0; i < yourVarnish.length; i++) {
         if (yourVarnish[i].selected === true){
@@ -62,24 +58,38 @@ const yourVarnish = document.querySelectorAll("option"); // recuperer le vernis 
         }
     }
 
-//console.log(yourVarnish);     //  ok
- 
-localStorage.setItem("Finition", option);   // ok   stocker le vernis dans le local storage
+localStorage.setItem("Finition", option);   // BON
+localStorage.setItem("Appellation", document.querySelector("#nameitem").value);
+
+//  a.addEventListener("click", (event) =>{
+//   event.preventDefault();
+
+//  let votreProduit = {
+//    Référence: productlink.value,
+//    Appellation: nameitem.value,
+//    Finition: option,
+//    Photo: imageUrl.value,
+//    Prix: price.value 
+//  }  
+//localStorage.setItem("votreProduit",JSON.stringify(votreProduit));
+
+
+
+
+//localStorage.setItem("Article", (document.querySelector("#nameitem").value);
+//localStorage.setItem("Prix", price.value);
+//localStorage.setItem("Réf.Produit", (document.querySelector("#furniture").value);    
+
+  
 
 });
-
 
 
 
 //-----------------local storage-------
 // stocker la recupération des valeurs du formulaire 
 
- //let custumiseItem = {
-//   produitChoisi: article.value,
-//   nomProduit: article.nomProduit,
-//   tonProduit: tonVernis.value,
-//   prix: article.prix/100
-//   });     
+    
 
 // localStorage.setItem(clé, valeur)      enregister une valeur dans le storage
 // localStorage.getItem(clé)              récupère la valeur de la clé

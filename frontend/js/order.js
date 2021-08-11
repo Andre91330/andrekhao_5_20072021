@@ -1,19 +1,32 @@
+
+
+//  BON
 //  nafrijss fonctionne
-//  if(localStorage.getItem("prenom") != null)
+//  if(localStorage.getItem("prenom") != null)   
 //      merci.textContent = `Merci, pour votre enregistrement ${localStorage.getItem("prenom")}.`;
 
-
+//   BON
 //  enregistrer.onclick = () =>{
-//      localStorage.setItem("genre", genre.value);
-//      localStorage.setItem("nom", nom.value);
-//      localStorage.setItem("prenom", prenom.value);
-//      localStorage.setItem("mail", mail.value);
-//      document.location.reload();
+//      localStorage.setItem("genre", genre);              // stocker le saisie dans le local storage
+//      localStorage.setItem("nom", nom.value);  
+//      localStorage.setItem("prenom", prenom.value);  
+//      localStorage.setItem("mail", mail.value);   
+//      document.location.reload();   
 //  }
 
-//const tonVernis = document.querySelectorAll("option[name='varnish']");   // selection de l'id du formulaire des vernis   
-//for (i = 0; i < tonVernis.length; i++) {
-//if (tonVernis[i].checked === true) {      
-//  tonVernis = tonVernis[i].value;
-//}
-//}
+//   BON
+//   for (let i = article.varnish.length; i--;) {            // pour afficher toutes les options
+//   const varnish = article.varnish[i];                
+//   const option = document.createElement('option');   
+//   option.setAttribute('value', varnish);             
+//   option.innerText = varnish;                        
+//   document.querySelector('#varnish').appendChild(option); 
+//   }    
+
+//   BON
+//   const yourVarnish = document.querySelectorAll("option"); // recuperer le vernis choisi
+//     for (i = 0; i < yourVarnish.length; i++) {
+//        if (yourVarnish[i].selected === true){
+//            option = yourVarnish[i].value;
+//        }
+  
