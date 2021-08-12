@@ -1,15 +1,19 @@
 // localStorage.setItem("clé", "valeur")
 // localStorage.getItem("clé")
 // localStoragr.clear();
-const itemlocal = JSON.parse(localStorage.getItem("guest"));
+
+const 
+
+// ---formulaire-------
+const guestLocal = JSON.parse(localStorage.getItem("guest"));
 
 const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
 
-if(itemlocal != null)
+if(guestLocal != null)
 {
     formulaire.style.display ="none";
-    thk.textContent = `Merci, ${itemlocal.prenom}.`;   // ok
+    thk.textContent = `Merci, ${guestLocal.prenom}.`;   // ok
 }
 enregistrerFormulaire.addEventListener("click", (event) =>{
     event.preventDefault();

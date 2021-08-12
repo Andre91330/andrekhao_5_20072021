@@ -42,6 +42,12 @@ function hydrateArticle(article) {
     }     
 } 
 
+
+const articleId = getArticleId();
+console.log(articleId);
+
+const article = getArticle(articleId);
+console.log(article);
 //console.log(document.querySelector("#nameitem").value;
 
 //------Finition
@@ -58,18 +64,26 @@ let yourVarnish = document.querySelectorAll("option"); // recuperer le vernis ch
         }
     }
 
+   if(option != "--Choix du vernis--")
+  {
+        varnish.style.display ="none";
+        itemcustumise.textContent = "Merci, votre finition a bien été pris en compte";   // ok
+    }else{
+        itemcustumise.textContent = "Vous avez oublié de choisir votre finition";
+    }
+
 // let reference = document.querySelector(`furniture/${articleId}`);
 // let appellation = ("#nameitem").value;
 // let prix = "/";
 // let photo = "/";
 
 const votreProduit = {
-//    reference: reference,
-//    appellation: appellation,
+    reference: articleId,       // ok
+    appellation: article.name,
     finition: option,
 //    photo: ("#imageUrl").value,
-    quantité: 1,
-//    prix: ("#price").value 
+    quantité: 1
+//   prix: price.value 
   } 
 
  localStorage.setItem("votreProduit",JSON.stringify(votreProduit));
