@@ -1,9 +1,30 @@
+// if(produitchoisi == null)
+//{
+//    produitchoisi.style.display ="none";
+//    infoguest.style.display ="none";
+//    panier.textContent = "Vous n'avez pas encore choisi d'article ?"
+//}
+
 // localStorage.setItem("clé", "valeur")
 // localStorage.getItem("clé")
 // localStoragr.clear();
 
-const 
+const displayBasket = (basket) => {
+    document.getElementById("totalPrice").innerText = basket.price_total;   // setAttribute -> img
+const productsElt = document.querySelector("#products");
 
+    for (let i = basket.productsElt.length; i--;) {
+        const product = basket.products[i];
+        const divElt = document.createElement('div');
+        productsElt.innerText = JSON.stringify(product);
+        productsElt.appendChild(divElt);
+    }
+};
+
+(async() => {
+    const basket = JSON.parse(locaal.getItem("baskt"));
+    displayBasket(basket);
+})();
 // ---formulaire-------
 const guestLocal = JSON.parse(localStorage.getItem("guest"));
 

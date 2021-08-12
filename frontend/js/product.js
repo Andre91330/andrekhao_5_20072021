@@ -1,15 +1,8 @@
-(async function(){
-    const articleId = getArticleId()
-    const article = await getArticle(articleId)
-    hydrateArticle(article)             // on change le contenu de l'article deja existant et non la recrée
-})()
-
-function getArticleId() {
+const getArticleId =  function () {
     return new URL(location.href).searchParams.get("id")
 }
 
-
-function getArticle(articleId) {                //affichage du produit (objet) sélectionné par id
+const getArticle = function (articleId) {                //affichage du produit (objet) sélectionné par id
     return fetch(`http://localhost:3000/api/furniture/${articleId}`) // requete vers le lien et reponse
     .then(function(httpResponse) {              // promise 1
         return httpResponse.json()              // type des données de la réponse
@@ -23,7 +16,7 @@ function getArticle(articleId) {                //affichage du produit (objet) s
 }
 
 function displayPrice(price) {
-    return `${price/100} €`;
+    return `${(price/100).toFixed(2)} €`;
 }
 
 function hydrateArticle(article) {
@@ -42,88 +35,49 @@ function hydrateArticle(article) {
     }     
 } 
 
-
-const articleId = getArticleId();
-console.log(articleId);
-
-const article = getArticle(articleId);
-console.log(article);
-//console.log(document.querySelector("#nameitem").value;
-
-//------Finition
-let varnishChoice = document.querySelector("#itemcustumise");
-
-varnishChoice.addEventListener("click", (event) =>{
-    event.preventDefault();
-    
-let yourVarnish = document.querySelectorAll("option"); // recuperer le vernis choisi
-
-    for (i = 0; i < yourVarnish.length; i++) {
-        if (yourVarnish[i].selected === true){
-            option = yourVarnish[i].value;
-        }
-    }
-
-   if(option != "--Choix du vernis--")
-  {
-        varnish.style.display ="none";
-        itemcustumise.textContent = "Merci, votre finition a bien été pris en compte";   // ok
+const getBasketFromLocaleStorage = () => {
+    let basket;
+    if(localStorage.getItem("basket")) {
+        basket = JSON.parse(localStorage.getItem("basket"));
     }else{
-        itemcustumise.textContent = "Vous avez oublié de choisir votre finition";
+        basket = {
+            nb_products : 0,
+            price_total: 0,
+            products: [],
+        };
     }
+    return basket;
+}
 
-// let reference = document.querySelector(`furniture/${articleId}`);
-// let appellation = ("#nameitem").value;
-// let prix = "/";
-// let photo = "/";
+const setBasketInLocalStorage = (article, basket) => {
+    article.varnish = document.querySelector("#varnish").value;
+    basket.nb_productss++;
+    basket.price_total += article.price;
+    basket.products.push(article);
+    localStorage.setItem("basket",JSON.stringify(basket));
 
-const votreProduit = {
-    reference: articleId,       // ok
-    appellation: article.name,
-    finition: option,
-//    photo: ("#imageUrl").value,
-    quantité: 1
-//   prix: price.value 
-  } 
-
- localStorage.setItem("votreProduit",JSON.stringify(votreProduit));
-
-});
-
-
-
-
+//   if(option != "--Choix du vernis--")
+//  {
+//       varnish.style.visibility ="hidden";
+//        itemcustumise.textContent = "Merci, votre finition a bien été pris en compte";   // ok
+//        sendbasket.style.visibility = "visible";
+//    }else{
+//        itemcustumise.textContent = "Vous avez oublié de choisir votre finition";
+//    };
+//}
  
+(async function () {
+    const articleId = getArticleId();
+    const article = await getArticle(articleId);
+    hydrateArticle(article);             // on change le contenu de l'article deja existant et non la recrée
 
+const handleAddToBasket = () => { 
+    const basket = getBasketFromLocalStorage();
+    setBasketInLocalStorage(article, basket);
+    location.replace("../home/basket.html");
+}
 
+const addToBasket = document.querySelector("#sendbasket");
+    addToBasket.removeaddEvenListener("click",handleAddToBasket);
 
-
-
-//localStorage.setItem("Article", (document.querySelector("#nameitem").value);
-//localStorage.setItem("Prix", price.value);
-//localStorage.setItem("Réf.Produit", (document.querySelector("#furniture").value);    
-
-  
-
-
-
-
-
-//-----------------local storage-------
-// stocker la recupération des valeurs du formulaire 
-
-    
-
-// localStorage.setItem(clé, valeur)      enregister une valeur dans le storage
-// localStorage.getItem(clé)              récupère la valeur de la clé
-// localStorage.clear()                   efface le storage
-
-
-
-// function valider(){
-//     espaceMessage.immerHTML = "Merci du choix de finition";                // message de validation
-// }
-
-// function refuser(){
-//    alert("Veuillez choisir votre verni");                                 // message de non validation
-// }
+})();
