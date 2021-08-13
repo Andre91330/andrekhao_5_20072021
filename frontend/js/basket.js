@@ -1,19 +1,8 @@
-// if(produitchoisi == null)
-//{
-//    produitchoisi.style.display ="none";
-//    infoguest.style.display ="none";
-//    panier.textContent = "Vous n'avez pas encore choisi d'article ?"
-//}
-
-// localStorage.setItem("clé", "valeur")
-// localStorage.getItem("clé")
-// localStoragr.clear();
-
 const displayBasket = (basket) => {
-    document.getElementById("totalPrice").innerText = basket.price_total;   // setAttribute -> img
+    document.getElementById("totalPrice").innerText = basket.price_total;  
 const productsElt = document.querySelector("#products");
 
-    for (let i = basket.productsElt.length; i--;) {
+    for (let i = basket.products.length; i--;) {
         const product = basket.products[i];
         const divElt = document.createElement('div');
         productsElt.innerText = JSON.stringify(product);
@@ -22,9 +11,10 @@ const productsElt = document.querySelector("#products");
 };
 
 (async() => {
-    const basket = JSON.parse(locaal.getItem("baskt"));
+    const basket = JSON.parse(localStorage.getItem("basket"));
     displayBasket(basket);
 })();
+
 // ---formulaire-------
 const guestLocal = JSON.parse(localStorage.getItem("guest"));
 

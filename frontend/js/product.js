@@ -1,5 +1,5 @@
 const getArticleId =  function () {
-    return new URL(location.href).searchParams.get("id")
+   return new URL(location.href).searchParams.get("id")     // on change le contenu de l'article deja existant et non la recrée
 }
 
 const getArticle = function (articleId) {                //affichage du produit (objet) sélectionné par id
@@ -23,8 +23,7 @@ function hydrateArticle(article) {
     document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
     document.getElementById("nameitem").textContent= article.name
-    document.getElementById("price").textContent= displayPrice(article.price) 
-    
+    document.getElementById("price").textContent= displayPrice(article.price)    
 
     for (let i = article.varnish.length; i--;) {                // pour afficher toutes les options
         const varnish = article.varnish[i];
@@ -47,7 +46,7 @@ const getBasketFromLocaleStorage = () => {
         };
     }
     return basket;
-}
+};
 
 const setBasketInLocalStorage = (article, basket) => {
     article.varnish = document.querySelector("#varnish").value;
@@ -55,22 +54,13 @@ const setBasketInLocalStorage = (article, basket) => {
     basket.price_total += article.price;
     basket.products.push(article);
     localStorage.setItem("basket",JSON.stringify(basket));
+}
 
-//   if(option != "--Choix du vernis--")
-//  {
-//       varnish.style.visibility ="hidden";
-//        itemcustumise.textContent = "Merci, votre finition a bien été pris en compte";   // ok
-//        sendbasket.style.visibility = "visible";
-//    }else{
-//        itemcustumise.textContent = "Vous avez oublié de choisir votre finition";
-//    };
-//}
- 
 (async function () {
     const articleId = getArticleId();
     const article = await getArticle(articleId);
-    hydrateArticle(article);             // on change le contenu de l'article deja existant et non la recrée
-
+    hydrateArticle(article); 
+        
 const handleAddToBasket = () => { 
     const basket = getBasketFromLocalStorage();
     setBasketInLocalStorage(article, basket);
@@ -81,3 +71,4 @@ const addToBasket = document.querySelector("#sendbasket");
     addToBasket.removeaddEvenListener("click",handleAddToBasket);
 
 })();
+

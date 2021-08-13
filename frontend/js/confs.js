@@ -1,10 +1,10 @@
 //---objet
-let storeItem ={
-    itemName : '',
-    itemPrice: 1,
-    itemNumber: 1,
-    itemTon: ''
-};
+// let storeItem ={
+//    itemName : '',
+//    itemPrice: 1,
+//    itemNumber: 1,
+//    itemTon: ''
+// };
 
 
 
