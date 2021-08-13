@@ -20,9 +20,9 @@ function displayPrice(price) {
 }
 
 function hydrateArticle(article) {
-    document.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
+    document.getElementById("pictureProd").setAttribute("src", article.imageUrl) // setAttribute ->img
     document.getElementById("description-text").textContent= article.description
-    document.getElementById("nameitem").textContent= article.name
+    document.getElementById("nameItem").textContent= article.name
     document.getElementById("price").textContent= displayPrice(article.price)    
 
     for (let i = article.varnish.length; i--;) {                // pour afficher toutes les options
@@ -31,7 +31,7 @@ function hydrateArticle(article) {
         option.setAttribute('value', varnish);
         option.innerText = varnish;
         document.querySelector('#varnish').appendChild(option);
-    }     
+    }   
 } 
 
 const getBasketFromLocaleStorage = () => {
@@ -67,8 +67,8 @@ const handleAddToBasket = () => {
     location.replace("../home/basket.html");
 }
 
-const addToBasket = document.querySelector("#sendbasket");
-    addToBasket.removeaddEvenListener("click",handleAddToBasket);
+const addToBasket = document.querySelector("#sendBasket");
+addToBasket.addEvenListener("click",handleAddToBasket);
 
 })();
 

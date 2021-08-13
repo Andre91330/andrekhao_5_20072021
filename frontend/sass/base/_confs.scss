@@ -14,12 +14,12 @@ body{
     @include fond_body;
 }
 
-.logohead{
+.logoHead{
     width: 100%;
     height: 4rem;
 }
 
-.logohead_logo{
+.logoHead-logo{
     font-size: 1.5rem;
     color: white;
     width: auto;
@@ -73,6 +73,6 @@ i{
     visibility: hidden;
 }
 
-.navbarre{
+.navBarre{
     border-bottom: 0.125rem solid grey; 
 }

@@ -25,8 +25,8 @@ function displayArticle(article) {
     const templateItem = document.getElementById("templateArticle")
     const cloneItem = document.importNode(templateItem.content, true)
     
-    cloneItem.getElementById("imageUrl").setAttribute("src", article.imageUrl) // setAttribute ->img
-    cloneItem.getElementById("nameitem").textContent= article.name
+    cloneItem.getElementById("picture").setAttribute("src", article.imageUrl) // setAttribute ->img
+    cloneItem.getElementById("nameItem").textContent= article.name
     cloneItem.getElementById("price").textContent= displayPrice(article.price)
     cloneItem.getElementById("productLink").href += `?id=${article._id}`        // recuperation/id
     

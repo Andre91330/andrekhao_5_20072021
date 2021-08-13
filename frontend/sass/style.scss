@@ -45,24 +45,30 @@
     }
 }
 
-.nameprice{
+.namePrice{
     display: flex;
     width: 95%;
     height: 2.5rem;
     align-items: flex-end;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-.nameitem{
-    width: 55%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.nameItem{
+    width: 55%;  
 }
 
-.nameitem, .price{
-    padding: .7rem;
+h3{
     font-size: .8rem;
+    @include ellipsis;
+}
+
+.price{
+    font-size: .7rem; 
+    @include  ellipsis;
+}
+
+.nameItem .price{
+    padding: .7rem;
     font-weight: bold;
     @include duo{
         font-size: 1rem;
@@ -116,16 +122,16 @@
     margin:auto;
 }
 
-#quantity, #itemcustumise, #sendbasket{
+#quantity, #itemCustumise, #sendBasket{
     display: block;
     @include bouton;   
 }
 
-#itemcustumise:hover{
+#itemCustumise:hover{
     @include itemshadow;
 }
 
- #sendbasket{
+ #sendBasket{
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -135,7 +141,7 @@
     }
 }
 
-.varnishform{
+.varnishForm{
     text-align: center;
 }
 

@@ -40,6 +40,12 @@
     margin-bottom: 3rem;
 }
 
+@mixin ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 @mixin small{
     @media screen and(min-width: map-get($breakpoints, small)){
         @content;
