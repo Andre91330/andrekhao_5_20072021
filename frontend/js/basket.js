@@ -5,7 +5,7 @@ const productsElt = document.querySelector("#products");
     for (let i = basket.products.length; i--;) {
         const product = basket.products[i];
         const divElt = document.createElement('div');
-        productsElt.innerText = JSON.stringify(product);
+        divElt.innerText = JSON.stringify(product);
         productsElt.appendChild(divElt);
     }
 };

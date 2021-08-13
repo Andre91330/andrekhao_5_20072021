@@ -68,7 +68,7 @@ const handleAddToBasket = () => {
 }
 
 const addToBasket = document.querySelector("#sendBasket");
-addToBasket.addEvenListener("click",handleAddToBasket);
-
+addToBasket.addEventListener("click",handleAddToBasket);
+  
 })();
 
