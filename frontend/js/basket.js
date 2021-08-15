@@ -1,10 +1,11 @@
 const displayBasket = (basket) => {
-    document.getElementById("totalPrice").innerText = basket.price_total;  
+    document.getElementById("totalPrice").innerText = basket.priceTotal;  
+
 const productsElt = document.querySelector("#products");
 
     for (let i = basket.products.length; i--;) {
         const product = basket.products[i];
-        const divElt = document.createElement('div');
+        const divElt = document.createElement("div");
         divElt.innerText = JSON.stringify(product);
         productsElt.appendChild(divElt);
     }
@@ -34,21 +35,21 @@ const yourgenre = document.querySelectorAll("input[name = 'genre']"); // recuper
     for (i = 0; i < yourgenre.length; i++) {
         if (yourgenre[i].checked === true) {
             genre = yourgenre[i].value;
-        }
     }
+};
 
 const guest = {
     genre: genre,
     nom: nom.value,
     prenom: prenom.value,
     mail: mail.value
-}
+};
 
 localStorage.setItem("guest",JSON.stringify(guest));  // stocker
     
 clear.onclick = () =>{
     localStorage.clear();
     document.location.reload();
-}
+};
 
 });

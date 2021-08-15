@@ -1,5 +1,5 @@
 const getArticleId =  function () {
-   return new URL(location.href).searchParams.get("id")     // on change le contenu de l'article deja existant et non la recrée
+   return new URL(location.href).searchParams.get("id")     
 }
 
 const getArticle = function (articleId) {                //affichage du produit (objet) sélectionné par id
@@ -16,7 +16,7 @@ const getArticle = function (articleId) {                //affichage du produit 
 }
 
 function displayPrice(price) {
-    return `${(price/100).toFixed(2)} €`;
+    return (`${(price/100).toFixed(2)} €`);
 }
 
 function hydrateArticle(article) {
@@ -27,48 +27,49 @@ function hydrateArticle(article) {
 
     for (let i = article.varnish.length; i--;) {                // pour afficher toutes les options
         const varnish = article.varnish[i];
-        const option = document.createElement('option');
-        option.setAttribute('value', varnish);
+        const option = document.createElement("option");
+        option.setAttribute("value", varnish);
         option.innerText = varnish;
-        document.querySelector('#varnish').appendChild(option);
-    }   
+        document.querySelector("#varnish").appendChild(option);
+    } 
 } 
 
 const getBasketFromLocaleStorage = () => {
     let basket;
     if(localStorage.getItem("basket")) {
         basket = JSON.parse(localStorage.getItem("basket"));
-    }else{
+    } else {
         basket = {
-            nb_products : 0,
-            price_total: 0,
+            nbProducts : 0,
+            priceTotal: 0,
             products: [],
         };
     }
     return basket;
+
 };
 
 const setBasketInLocalStorage = (article, basket) => {
     article.varnish = document.querySelector("#varnish").value;
-    basket.nb_productss++;
-    basket.price_total += article.price;
+    basket.nbProducts++;
+    basket.priceTotal += article.price;
     basket.products.push(article);
-    localStorage.setItem("basket",JSON.stringify(basket));
+    localStorage.setItem("basket", JSON.stringify(basket));
 }
 
 (async function () {
     const articleId = getArticleId();
     const article = await getArticle(articleId);
     hydrateArticle(article); 
-        
+
 const handleAddToBasket = () => { 
     const basket = getBasketFromLocalStorage();
     setBasketInLocalStorage(article, basket);
     location.replace("../home/basket.html");
-}
+};
 
 const addToBasket = document.querySelector("#sendBasket");
 addToBasket.addEventListener("click",handleAddToBasket);
-  
+
 })();
 
