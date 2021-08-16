@@ -27,6 +27,7 @@ if(guestLocal != null)
     formulaire.style.display ="none";
     thk.textContent = `Merci, ${guestLocal.prenom}.`;   // ok
 }
+
 enregistrerFormulaire.addEventListener("click", (event) =>{
     event.preventDefault();
     document.location.reload();
@@ -45,10 +46,10 @@ const guest = {
     mail: mail.value
 };
 
-localStorage.setItem("guest",JSON.stringify(guest));  // stocker
+localStorage.setItem("guest", JSON.stringify(guest));  // stocker
     
 clear.onclick = () =>{
-    localStorage.clear();
+    localeStorage.clear();
     document.location.reload();
 };
 

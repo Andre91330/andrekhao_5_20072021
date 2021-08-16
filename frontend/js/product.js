@@ -16,7 +16,7 @@ const getArticle = function (articleId) {                //affichage du produit 
 }
 
 function displayPrice(price) {
-    return (`${(price/100).toFixed(2)} €`);
+    return `${(price/100).toFixed(2)} €`;
 }
 
 function hydrateArticle(article) {
@@ -34,7 +34,7 @@ function hydrateArticle(article) {
     } 
 } 
 
-const getBasketFromLocaleStorage = () => {
+const getBasketFromLocalStorage = () => {
     let basket;
     if(localStorage.getItem("basket")) {
         basket = JSON.parse(localStorage.getItem("basket"));
@@ -46,12 +46,11 @@ const getBasketFromLocaleStorage = () => {
         };
     }
     return basket;
-
 };
 
 const setBasketInLocalStorage = (article, basket) => {
     article.varnish = document.querySelector("#varnish").value;
-    basket.nbProducts++;
+    basket.nbProducts ++ ;
     basket.priceTotal += article.price;
     basket.products.push(article);
     localStorage.setItem("basket", JSON.stringify(basket));
@@ -65,7 +64,7 @@ const setBasketInLocalStorage = (article, basket) => {
 const handleAddToBasket = () => { 
     const basket = getBasketFromLocalStorage();
     setBasketInLocalStorage(article, basket);
-    location.replace("../home/basket.html");
+    location.replace("../home/basket.html");  // 
 };
 
 const addToBasket = document.querySelector("#sendBasket");
