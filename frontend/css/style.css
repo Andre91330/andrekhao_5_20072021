@@ -11,16 +11,13 @@ body {
 }
 
 body {
-  background-image: url("/image/oak_4.jpg");
+  background: url("/image/oak_4.jpg") fixed;
   opacity: 0.9;
 }
 
-.logoHead {
+.h1 {
   width: 100%;
   height: 4rem;
-}
-
-.logoHead-logo {
   font-size: 1.5rem;
   color: white;
   width: auto;
@@ -138,6 +135,7 @@ i:hover {
   width: 98%;
   border-radius: 5% 5% 0 0;
   margin: auto;
+  margin-top: 0.2rem;
   object-fit: cover;
   height: 10rem;
   display: flex;
@@ -159,6 +157,7 @@ i:hover {
   height: 2.5rem;
   align-items: flex-end;
   justify-content: space-around;
+  padding-bottom: 0.5rem;
 }
 
 .nameItem {
@@ -222,6 +221,7 @@ h3 {
   width: 98%;
   border-radius: 5% 5% 0 0;
   margin: auto;
+  margin-top: 0.2rem;
   object-fit: cover;
   height: 12rem;
   display: flex;
@@ -275,6 +275,38 @@ h3 {
 
 .varnishForm {
   text-align: center;
+}
+
+#titreadresse {
+  padding-left: 0.5rem;
+}
+
+.coordonnees .formadresse {
+  color: white;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: auto;
+}
+
+caption {
+  font-weight: bold;
+}
+
+td {
+  border: 0.05rem solid white;
+  padding-left: 0.5rem;
+}
+
+fieldset {
+  padding: 1rem;
+}
+
+label {
+  display: inline-block;
+  width: 5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

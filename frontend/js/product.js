@@ -30,9 +30,9 @@ function hydrateArticle(article) {
         const option = document.createElement("option");
         option.setAttribute("value", varnish);
         option.innerText = varnish;
-        document.querySelector("#varnish").appendChild(option);
-    } 
-} 
+        document.querySelector("#varnish").appendChild(option); 
+    }
+}
 
 const getBasketFromLocalStorage = () => {
     let basket;
@@ -69,6 +69,5 @@ const handleAddToBasket = () => {
 
 const addToBasket = document.querySelector("#sendBasket");
 addToBasket.addEventListener("click",handleAddToBasket);
-
 })();
 

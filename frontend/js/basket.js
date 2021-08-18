@@ -1,14 +1,18 @@
 const displayBasket = (basket) => {
-    document.getElementById("totalPrice").innerText = basket.priceTotal;  
+    document.getElementById("productsNumber").innerText = basket.nbProducts;  
+    document.getElementById("totalPrice").innerText = basket.priceTotal; 
 
-const productsElt = document.querySelector("#products");
-
-    for (let i = basket.products.length; i--;) {
-        const product = basket.products[i];
-        const divElt = document.createElement("div");
-        divElt.innerText = JSON.stringify(product);
-        productsElt.appendChild(divElt);
+let productsElt = '<ul>';
+    for (let i = basket.products.length; i--;) {   
+        productsElt += `<li>${basket.products}</li>`;
     }
+    productsElt += `</ul>`; 
+    document.querySelector("#basketProducts").innerHTML = JSON.stringify(basket.products);
+    console.log(basket.products);
+
+function displayTotalPrice(totalPrice) {
+    return `${(totalPrice/100).toFixed(2)} €`;
+   }      
 };
 
 (async() => {
@@ -46,11 +50,15 @@ const guest = {
     mail: mail.value
 };
 
+// const codePostal = document.querySelector("#codepostal");
+//  if (codePostal.length == 5){     
+//  }
+//};
+
 localStorage.setItem("guest", JSON.stringify(guest));  // stocker
-    
+});
+
 clear.onclick = () =>{
-    localeStorage.clear();
+    localStorage.clear();
     document.location.reload();
 };
-
-});

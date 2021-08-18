@@ -4,6 +4,9 @@
 @import "./layout/product";
 @import "./layout/basket";
 
+
+
+
 .model{
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -51,6 +54,7 @@
     height: 2.5rem;
     align-items: flex-end;
     justify-content: space-around;
+    padding-bottom: .5rem;
 }
 
 .nameItem{
@@ -145,3 +149,34 @@ h3{
     text-align: center;
 }
 
+#titreadresse{
+    padding-left: .5rem;
+}
+
+.coordonnees .formadresse{
+    color: white;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+caption{
+    font-weight: bold;
+}
+
+td{
+    border: .05rem solid white;
+    padding-left: .5rem;
+}
+
+fieldset{
+    padding: 1rem;
+}
+
+label{
+    display: inline-block;
+    width: 5rem;
+}
