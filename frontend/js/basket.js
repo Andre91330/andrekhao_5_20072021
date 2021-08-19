@@ -2,17 +2,27 @@ const displayBasket = (basket) => {
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
     document.getElementById("totalPrice").innerText = basket.priceTotal; 
 
-let productsElt = '<ul>';
-    for (let i = basket.products.length; i--;) {   
-        productsElt += `<li>${basket.products}</li>`;
-    }
-    productsElt += `</ul>`; 
-    document.querySelector("#basketProducts").innerHTML = JSON.stringify(basket.products);
-    console.log(basket.products);
+    let productsEltName = '<th>';
+        for (let i = basket.products.length; i--;) {   
+            productsEltName += `<td>${basket.products[i].name}, ${basket.products[i].varnish}</td>`;          
+            console.log(basket.products[i].name);
+        }
+        productsEltName += '</th>'; 
+        document.querySelector("#finalItem").innerHTML = productsEltName;
+        console.log(basket.products);
 
-function displayTotalPrice(totalPrice) {
-    return `${(totalPrice/100).toFixed(2)} €`;
-   }      
+    let productsEltPrice = '<th>';
+        for (let i = basket.products.length; i--;) {   
+            productsEltPrice += `<td>${basket.products[i].price}</td>`;
+            console.log(basket.products[i].price);
+        }
+        productsEltPrice += '</th>'; 
+        document.querySelector("#unitPrice").innerHTML = productsEltPrice;
+        console.log(basket.products); 
+        
+function displayPrice(price) {        
+    return `${(price/100).toFixed(2)} €`;
+    } 
 };
 
 (async() => {
@@ -20,17 +30,20 @@ function displayTotalPrice(totalPrice) {
     displayBasket(basket);
 })();
 
+ 
+
 // ---formulaire-------
 const guestLocal = JSON.parse(localStorage.getItem("guest"));
+//const guestHome = JSON.parse(localStorage.getItem("home"));
 
 const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
 
-if(guestLocal != null)
-{
-    formulaire.style.display ="none";
-    thk.textContent = `Merci, ${guestLocal.prenom}.`;   // ok
-}
+//if(guestLocal != null)      a modifier
+//{
+//    formulaire.style.display ="none";
+//    thk.textContent = `Merci, ${guestLocal.prenom}.`;   // ok
+//}
 
 enregistrerFormulaire.addEventListener("click", (event) =>{
     event.preventDefault();
@@ -50,13 +63,25 @@ const guest = {
     mail: mail.value
 };
 
-// const codePostal = document.querySelector("#codepostal");
-//  if (codePostal.length == 5){     
-//  }
+//const home = {
+//    rue: rue.value,
+//    complementrue: complement.value,
+//    cp: cp,
+//    ville: ville
 //};
 
+// const codePostal
+// document.querySelector("#codepostal").addEventListener('input, function () {
+//  if (codePostal.length == 5){ 
+//   "on enregitre en ls"    
+//}
+//}) 
+
+
 localStorage.setItem("guest", JSON.stringify(guest));  // stocker
+//localStorage.setItem("home", JSON.stringify(home));
 });
+
 
 clear.onclick = () =>{
     localStorage.clear();
