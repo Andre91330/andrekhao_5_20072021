@@ -1,25 +1,25 @@
 const displayBasket = (basket) => {
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
-    document.getElementById("totalPrice").innerText = basket.priceTotal; 
+    document.getElementById("totalPrice").innerText = `${(basket.priceTotal/100).toFixed(2)} €`; 
 
-    let productsEltName = '<th>';
-        for (let i = basket.products.length; i--;) {   
-            productsEltName += `<td>${basket.products[i].name}, ${basket.products[i].varnish}</td>`;          
-            console.log(basket.products[i].name);
-        }
-        productsEltName += '</th>'; 
-        document.querySelector("#finalItem").innerHTML = productsEltName;
-        console.log(basket.products);
+const productsEltName = document.querySelector(".finalItem");
+    for (let i = basket.products.length; i--;) {       
+        const productName = basket.products[i].name        
+        let trElt = document.createElement("tr"); 
+        trElt.innerText = `${basket.products[i].name}, ${basket.products[i].varnish} :`;
+        productsEltName.appendChild(trElt);
+        console.log(basket.products[i].name);
+    }
 
-    let productsEltPrice = '<th>';
-        for (let i = basket.products.length; i--;) {   
-            productsEltPrice += `<td>${basket.products[i].price}</td>`;
-            console.log(basket.products[i].price);
-        }
-        productsEltPrice += '</th>'; 
-        document.querySelector("#unitPrice").innerHTML = productsEltPrice;
-        console.log(basket.products); 
-        
+const productsEltPrice = document.querySelector(".unitPrice");
+    for (let i = basket.products.length; i--;) {       
+        const productPrice = basket.products[i].price        
+        let trElt = document.createElement("tr"); 
+        trElt.innerText = `${((basket.products[i].price)/100).toFixed(2)} €`;
+        productsEltPrice.appendChild(trElt);
+        console.log(basket.products[i].price);
+    }
+    
 function displayPrice(price) {        
     return `${(price/100).toFixed(2)} €`;
     } 
@@ -29,8 +29,6 @@ function displayPrice(price) {
     const basket = JSON.parse(localStorage.getItem("basket"));
     displayBasket(basket);
 })();
-
- 
 
 // ---formulaire-------
 const guestLocal = JSON.parse(localStorage.getItem("guest"));
