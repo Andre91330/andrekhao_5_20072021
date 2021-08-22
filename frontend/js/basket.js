@@ -37,12 +37,6 @@ const guestLocal = JSON.parse(localStorage.getItem("guest"));
 const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
 
-//if(guestLocal != null)      a modifier
-//{
-//    formulaire.style.display ="none";
-//    thk.textContent = `Merci, ${guestLocal.prenom}.`;   // ok
-//}
-
 enregistrerFormulaire.addEventListener("click", (event) =>{
     event.preventDefault();
     document.location.reload();
