@@ -295,7 +295,7 @@ caption {
   font-weight: bold;
 }
 
-th, tr, td {
+th, td {
   border: 0.05rem solid white;
   padding-left: 0.5rem;
 }
