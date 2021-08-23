@@ -69,11 +69,11 @@
       </div>
             <!-- <div>  <h3 class="model">Combien de pièce, désirez-vous ?</h3>   <input type="number" id="quantity" placeholder="  Utilisez les fleches  " min="1"> -->
             <!--recap choix-->   
-      <section id="infoguest">
-        <br/><p id="thk" class="thkbasket p3">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
-        <form id="formulaire"> 
+      <section id="infoGuest">
+        <br/><p id="thk" class="thkBasket p3">Merci de remplir ce formulaire pour valider votre commande.</p><br/>
+        <form methode="post" action="#" id="formulaire"> 
           <fieldset class="coordonnees">
-            <h2>Vos informations personnelles</h2>
+            <legend>Vos informations personnelles</legend>
             <p>
               <input type="radio" name="genre" id="homme" value="mister" />
               <label for="homme">Monsieur</label> 
@@ -93,25 +93,22 @@
             <p>
               <label for="mail">E-mail :</label>
               <input type="email" name="email" id="mail" placeholder=" ...@..." required /><br/>
-            </p>  
-          </fieldset>
-          <fieldset>
-            <h2 id="titreadresse">Votre adresse</h2>
+            </p><br/>
             <p>
-              <label for="nomrue"></label>
-              <input type="text" name="nomrue" id="nomrue" class="formadresse" placeholder="  Nom de la rue" required />
+              <label for="nomRue">Adresse :</label>
+              <input type="text" name="nomRue" id="nomRue" class="formAdresse" placeholder="  Nom de la rue" required />
             </p>
             <p>
-            <label for="complementrue"></label>
-            <input type="text" name="complementrue" class="formadresse" placeholder=" Appt. , Entrée..." />
+            <label for="complementRue">Compl. adresse :</label>
+            <input type="text" name="complementRue" class="formAdresse" placeholder=" Appt. , Entrée..." />
             </p> 
             <p>
-              <label for="codepostal"></label>
-              <input type="text" name="codepostal" maxlength="5" id="codepostal" class="formadresse" placeholder="  12345" required />
+              <label for="codePostal">Code postal</label>
+              <input type="text" name="codePostal" maxlength="5" id="codePostal" class="formAdresse" placeholder="  12345" required />
             </p>
             <p>
-              <label for="ville"></label>
-              <input type="text" name="ville" id="ville" class="formadresse" placeholder="  Ville" required />
+              <label for="ville">Ville</label>
+              <input type="text" name="ville" id="ville" class="formAdresse" placeholder="  Ville" required />
             </p> 
           </fieldset>
           <button type="submit" id="enregistrer">Enregistrer</button><br/>  

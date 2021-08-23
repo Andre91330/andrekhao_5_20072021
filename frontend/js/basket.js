@@ -32,7 +32,6 @@ function displayPrice(price) {
 
 // ---formulaire-------
 const guestLocal = JSON.parse(localStorage.getItem("guest"));
-//const guestHome = JSON.parse(localStorage.getItem("home"));
 
 const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
@@ -48,30 +47,26 @@ const yourgenre = document.querySelectorAll("input[name = 'genre']"); // recuper
     }
 };
 
+//const codePostal
+//    document.querySelector("#codepostal").addEventListener('input, function () {
+//    if (codePostal.length == 5){ 
+//   "on enregitre en ls"    
+//    }
+//};
+
 const guest = {
     genre: genre,
     nom: nom.value,
     prenom: prenom.value,
     mail: mail.value
-};
-
-//const home = {
-//    rue: rue.value,
-//    complementrue: complement.value,
-//    cp: cp,
-//    ville: ville
-//};
-
-// const codePostal
-// document.querySelector("#codepostal").addEventListener('input, function () {
-//  if (codePostal.length == 5){ 
-//   "on enregitre en ls"    
-//}
-//}) 
+//    adresse: adresse.value,
+//    complement: complementRue.value,
+ //   cp: codePostal.value,
+//    ville: ville.value
+}
 
 
 localStorage.setItem("guest", JSON.stringify(guest));  // stocker
-//localStorage.setItem("home", JSON.stringify(home));
 });
 
 
@@ -79,3 +74,4 @@ clear.onclick = () =>{
     localStorage.clear();
     document.location.reload();
 };
+
