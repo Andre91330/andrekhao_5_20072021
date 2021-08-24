@@ -47,24 +47,23 @@ const yourgenre = document.querySelectorAll("input[name = 'genre']"); // recuper
     }
 };
 
-//const codePostal
-//    document.querySelector("#codepostal").addEventListener('input, function () {
-//    if (codePostal.length == 5){ 
-//   "on enregitre en ls"    
-//    }
+//const cPostal
+//    document.querySelector("#codePostal").addEventListener('input, function () {
+//    if (cPostal.length == 5){ 
+ //  "on enregitre en ls"    
+ //   }
 //};
 
 const guest = {
     genre: genre,
-    nom: nom.value,
+    nom: nomClient.value,
     prenom: prenom.value,
-    mail: mail.value
-//    adresse: adresse.value,
-//    complement: complementRue.value,
- //   cp: codePostal.value,
-//    ville: ville.value
+    mail: mail.value,
+    adresse: rue.value,
+    adresseSuite: rueSuite.value,
+    cp: codePostal.value,
+    ville: ville.value
 }
-
 
 localStorage.setItem("guest", JSON.stringify(guest));  // stocker
 });
