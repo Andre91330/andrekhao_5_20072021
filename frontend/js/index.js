@@ -1,4 +1,4 @@
-// fonction permettant de se lancer seul
+ // fonction permettant de se lancer seul
 (async function() {                         // async pour attendre les reponse des promises
     const articles = await getArticles()    // constantes + et attente des reponses
     for (article of articles) {             // boucle pour crée chaque produits

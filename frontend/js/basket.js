@@ -36,6 +36,7 @@ const guestLocal = JSON.parse(localStorage.getItem("guest"));
 const enregistrerFormulaire = document.querySelector("#enregistrer");    
 console.log(enregistrerFormulaire);
 
+
 enregistrerFormulaire.addEventListener("click", (event) =>{
     event.preventDefault();
     document.location.reload();
@@ -47,26 +48,27 @@ const yourgenre = document.querySelectorAll("input[name = 'genre']"); // recuper
     }
 };
 
-//const cPostal
-//    document.querySelector("#codePostal").addEventListener('input, function () {
-//    if (cPostal.length == 5){ 
- //  "on enregitre en ls"    
- //   }
-//};
+var valid = true;
+for(let input of document.querySelectorAll(".coordonnees input")){
+    valid &= input.reportValidity();
+    if(!valid) {
+        break;
+    }
+};
 
-const guest = {
-    genre: genre,
-    nom: nomClient.value,
-    prenom: prenom.value,
-    mail: mail.value,
-    adresse: rue.value,
-    adresseSuite: rueSuite.value,
-    cp: codePostal.value,
-    ville: ville.value
-}
+const data = {
+    contact: {
+        firstName: prenom.value,
+        lastName: genre + " " + nomClient.value,
+        address: rue.value + " " + rueSuite.value,
+        city: codePostal.value + " " +ville.value,
+        email: mail.value
+        },   
+    }
 
-localStorage.setItem("guest", JSON.stringify(guest));  // stocker
+localStorage.setItem("guest", JSON.stringify(data));  // stocker
 });
+
 
 
 clear.onclick = () =>{

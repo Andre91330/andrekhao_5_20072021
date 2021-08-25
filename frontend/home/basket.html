@@ -12,9 +12,7 @@
         crossorigin="anonymous"> 
       <link rel="stylesheet" href="../css/style.css"> 
 
-      <script src="../js/basket.js" defer></script>
-      <script src="../js/form.js" defer></script>
-
+     
       <title>Orioakfurniture, ameublement en chêne massif personnalisé.</title>
   </head>
   <body>
@@ -80,16 +78,16 @@
           <fieldset class="coordonnees">
             <legend>Vos informations personnelles</legend>
             <p>
-              <input type="radio" name="genre" id="homme" value="mister" />
+              <input type="radio" name="genre" id="homme" class="formGenre" value="mister" />
               <label for="homme">Monsieur</label> 
             </p>
             <p> 
-              <input type="radio" name="genre" id="femme" value="madame" />  
+              <input type="radio" name="genre" id="femme" class="formGenre"  value="madame" />  
               <label for="femme">Madame</label>
             </p>
             <p>
               <label for="nomClient">Nom :</label>
-              <input type="text" name="nom" id="nomClient" placeholder="  Nom" required /><br/>
+              <input type="text" name="nom" id="nomClient" placeholder="  Nom" value ="" required /><br/>
             </p>
             <p>
               <label for="prenom">Prénom :</label>
@@ -100,7 +98,7 @@
               <input type="email" name="email" id="mail" placeholder=" ...@..." required /><br/>
             </p><br/>
           </fieldset>
-          <fieldset>
+          <fieldset class="coordonnees">
             <legend>Adresse :</legend>
             <p>
               <label for="rue">Voie :</label>
@@ -112,7 +110,7 @@
             </p> 
             <p>
               <label for="codePostal">Code postal</label>
-              <input type="text" name="codePostal" maxlength="5" id="codePostal" class="formAdresse" placeholder="  12345" required />
+              <input type="text" name="codePostal" id="codePostal" class="formAdresse" pattern="[0-9]{5}" maxlength="5" placeholder="  12345" required />
             </p>
             <p>
               <label for="ville">Ville</label>
@@ -123,6 +121,9 @@
         </form>        
       </section>
       <button type="button" id="clear">clear storage</button>
-    </main>  
+    </main> 
+     
+    <script src="../js/basket.js"></script> 
+
   </body>
 </html>
