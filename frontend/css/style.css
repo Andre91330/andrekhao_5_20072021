@@ -263,13 +263,13 @@ h3 {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
 
-#sendBasket {
+#sendBasket, #enregistrer {
   text-decoration: none;
   color: black;
   font-weight: bold;
   background-color: white;
 }
-#sendBasket:hover {
+#sendBasket:hover, #enregistrer:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
 
@@ -277,11 +277,7 @@ h3 {
   text-align: center;
 }
 
-#titreadresse {
-  padding-left: 0.5rem;
-}
-
-.coordonnees .formadresse {
+.coordonnees {
   color: white;
 }
 
@@ -307,6 +303,41 @@ fieldset {
 label {
   display: inline-block;
   width: 5rem;
+}
+
+input, textarea {
+  size: 35rem;
+}
+input:hover, textarea:hover {
+  box-shadow: 0 0.3rem 1rem #00b300;
+}
+input:focus, textarea:focus {
+  background-color: #dff5d7;
+}
+input:not(:focus):invalid, textarea:not(:focus):invalid {
+  border: 0.2rem solid #ee5b2e;
+}
+
+#sendOrder, #guest {
+  width: 12rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+#sendOrder:hover, #guest:hover {
+  box-shadow: 0 0.3rem 1rem #00b300;
+}
+
+#guest {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#clearBasket {
+  width: 10rem;
+  margin: 1rem;
+  color: white;
+  background-color: grey;
 }
 
 /*# sourceMappingURL=style.css.map */

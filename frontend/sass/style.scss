@@ -135,7 +135,7 @@ h3{
     @include itemshadow;
 }
 
- #sendBasket{
+ #sendBasket, #enregistrer{
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -149,11 +149,7 @@ h3{
     text-align: center;
 }
 
-#titreadresse{
-    padding-left: .5rem;
-}
-
-.coordonnees .formadresse{
+.coordonnees{
     color: white;
 }
 
@@ -179,4 +175,39 @@ fieldset{
 label{
     display: inline-block;
     width: 5rem;
+}
+
+input, textarea{
+    size: 35rem;
+    &:hover{
+    @include itemshadow;
+    }
+    &:focus{
+        background-color: rgb(223, 245, 215);
+    }
+    &:not(:focus):invalid{
+       border: .2rem solid rgb(238, 91, 46);
+    }
+}
+
+#sendOrder, #guest{
+    width: 12rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    &:hover{
+        @include itemshadow;
+    }
+}
+
+#guest{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#clearBasket{
+    width: 10rem; 
+    margin: 1rem;
+    color: white;
+    background-color: grey;
 }

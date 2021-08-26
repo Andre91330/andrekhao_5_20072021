@@ -61,13 +61,13 @@ const setBasketInLocalStorage = (article, basket) => {
     const article = await getArticle(articleId);
     hydrateArticle(article); 
 
-const handleAddToBasket = () => { 
-    const basket = getBasketFromLocalStorage();
-    setBasketInLocalStorage(article, basket);
-    location.replace("../home/basket.html");  // 
-};
+    const handleAddToBasket = () => { 
+        const basket = getBasketFromLocalStorage();
+        setBasketInLocalStorage(article, basket);
+        location.replace("../home/basket.html");  // 
+    };
 
-const addToBasket = document.querySelector("#sendBasket");
-addToBasket.addEventListener("click",handleAddToBasket);
+    const addToBasket = document.querySelector("#sendBasket");
+    addToBasket.addEventListener("click",handleAddToBasket);
 })();
 

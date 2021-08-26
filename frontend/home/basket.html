@@ -52,13 +52,19 @@
               <th>Prix unitaire:</th>
             </tr>
           </thead>
-          <tr>
-              <td class="finalItem"></td>
-              <td class="unitPrice"></td> 
-          </tr>          
+          <tbody>
+            <tr>
+                <td class="finalItem"></td>
+                <td class="unitPrice"></td> 
+            </tr>          
           </tbody>             
         </table>
-        <br/><table class="totaux p31">
+      </div>
+      <div>
+      <button type="button" id="clearBasket">Annuler le panier.</button>
+      </div>   
+      <div>
+        <table class="totaux p31">
           <caption>Récapitulatif de votre panier :</caption>
           <tr>
             <td>Nombre d'article(s) commandé(s) :</td>
@@ -78,14 +84,6 @@
           <fieldset class="coordonnees">
             <legend>Vos informations personnelles</legend>
             <p>
-              <input type="radio" name="genre" id="homme" class="formGenre" value="mister" />
-              <label for="homme">Monsieur</label> 
-            </p>
-            <p> 
-              <input type="radio" name="genre" id="femme" class="formGenre"  value="madame" />  
-              <label for="femme">Madame</label>
-            </p>
-            <p>
               <label for="nomClient">Nom :</label>
               <input type="text" name="nom" id="nomClient" placeholder="  Nom" value ="" required /><br/>
             </p>
@@ -99,28 +97,20 @@
             </p><br/>
           </fieldset>
           <fieldset class="coordonnees">
-            <legend>Adresse :</legend>
+            <legend>Coordonnées :</legend>
             <p>
-              <label for="rue">Voie :</label>
-              <input type="text" name="rue" id="rue" placeholder="  Nom de la rue" required />
-            </p>
-            <p>
-            <label for="rueSuite">Compl. adresse :</label>
-            <input type="text" name="rueSuite" id="rueSuite" placeholder=" Appt. , Entrée..." />
-            </p> 
-            <p>
-              <label for="codePostal">Code postal</label>
-              <input type="text" name="codePostal" id="codePostal" class="formAdresse" pattern="[0-9]{5}" maxlength="5" placeholder="  12345" required />
+              <label for="address">Adresse :</label>
+              <input name="address" id="address" placeholder="  Adresse" required />
             </p>
             <p>
               <label for="ville">Ville</label>
-              <input type="text" name="ville" id="ville" class="formAdresse" placeholder="  Ville" required />
+              <input type="text" name="ville" id="ville" placeholder="  Ville" required />
             </p> 
           </fieldset>
-          <button type="submit" id="enregistrer">Enregistrer</button><br/>  
         </form>        
       </section>
-      <button type="button" id="clear">clear storage</button>
+      <button type="submit" id="guest">Confirmer ces coordonnées</button>
+      <button type="submit" id="sendOrder">Envoyer sa commande</button>  
     </main> 
      
     <script src="../js/basket.js"></script> 
