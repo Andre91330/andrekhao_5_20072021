@@ -31,27 +31,29 @@ clearBasket.onclick = () =>{
 };
 
 // ---formulaire-------
-const guest = json.stringify(localStorage.setItem("guest"));
+const confContactDetails = document.querySelector('#guest');
 
-const validGuest = document.querySelector('#guest');
-    validGuest.addEventListener('click',guest);
-
+confContactDetails.onclick = () => { 
+    const contactDetails = () => {
+    localStorage.setItem('contactDetails',JSON.stringify(contactDetails));           // stocker le saisie dans le local storage
+    }
+}; 
 
 const buildContactData=() =>{
 //        check sur les input
-    var checkValid = true;
-    for(let input of document.querySelectorAll(".coordonnees input")){
-        checkValid &= input.reportValidity();
-        if(!checkValid) {
-            break;
-        }
-    };
+//   var checkValid = true;
+//    for(let input of document.querySelectorAll(".coordonnees input")){
+//        checkValid &= input.reportValidity();
+//        if(!checkValid) {
+//            break;
+//        }
+//    };
 
 //      si tout est valid
     return {
         firstName: document.querySelector("#nomClient").value,
         lastName: document.querySelector("#prenom").value,
-        address: document.querySelector("#address").value,
+        address: document.querySelector("#adresse").value,
         city: document.querySelector("#ville").value,
         email: document.querySelector("#mail").value,
     };
