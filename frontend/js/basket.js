@@ -31,33 +31,48 @@ clearBasket.onclick = () =>{
 };
 
 // ---formulaire-------
-const confContactDetails = document.querySelector('#guest');
 
-confContactDetails.onclick = () => { 
-    const contactDetails = () => {
-    localStorage.setItem('contactDetails',JSON.stringify(contactDetails));           // stocker le saisie dans le local storage
-    }
-}; 
+const buildContactData = () =>{                       // creation du data client
 
-const buildContactData=() =>{
-//        check sur les input
-//   var checkValid = true;
-//    for(let input of document.querySelectorAll(".coordonnees input")){
-//        checkValid &= input.reportValidity();
-//        if(!checkValid) {
-//            break;
-//        }
-//    };
+    const sendGuestValidToLocalStorage = () => {    
+    
+        const displayLastNameToUpperCase = (lastName) => {
+            let lastNameToUpperCase = null;
+            try {
+                lastNameToUpperCase = lastName.toUpperCase ();
+            } catch (error) {
+                console.error(error);
+            } finally {
+                return lastNameToUpperCase;
+            }
+        }
 
-//      si tout est valid
+        const displayFirstNameToCapitalize = (firstName) => {
+            let firstNameToCapitalize = null;
+            try {
+                firstNameToCapitalize = firstName.toCapitalize ();
+            } catch (error) {
+                console.error(error);
+            } finally {
+                return firstNameToCapitalize;
+            }
+        }
+    };
+
     return {
-        firstName: document.querySelector("#nomClient").value,
-        lastName: document.querySelector("#prenom").value,
+        lastName: document.querySelector("#nomClient").value,
+        firstName: document.querySelector("#prenom").value,
         address: document.querySelector("#adresse").value,
         city: document.querySelector("#ville").value,
         email: document.querySelector("#mail").value,
     };
-};
+                    
+    localStorage.setItem('contact',JSON.stringify(sendGuestValidToLocalStorage));
+          
+    const guestValid = document.querySelector('#guest');
+    guestValid.addEventListener('click', sendGuestValidToLocalStorage);
+    };
+
 
 const buildProductsData = (basket) => {
     const ids = [];
@@ -66,8 +81,9 @@ const buildProductsData = (basket) => {
     }
     return ids;
 }
+// const buildObjetsForOrder = (basket) => basket.products.map(product => product_id);
 
-const buildObjetsForOrder = (basket) => {
+const buildObjectsForOrder = (basket) => {
     const contact = buildContactData();
     const products = buildProductsData(basket);
     return {
@@ -81,22 +97,25 @@ const buildObjetsForOrder = (basket) => {
     const basket = JSON.parse(localStorage.getItem("basket"));
     displayBasket(basket);
   
-    const data = buildObjetsForOrder(basket);
+    const data = buildObjectsForOrder(basket);
 
     const sendOrder = () => {
-        console.log(data);
+//       console.log(data);
         fetch("http://localhost:3000/api/furniture/order", {
-            method: 'POST',
+            method: "post",
             body: JSON.stringify(data)
-        }).then(function (httpResponse) {
-            return httpResponse.json();
-        }).then(function (order) {
-            localStorage.setItem('order',JSON.stringify(order));
+        })
+            .then(function (httpResponse) {
+                return httpResponse.json();
+        })
+            .then(function (order) {
+            localStorage.setItem('order', JSON.stringify(order));
             localStorage.removeItem('basket');
             location.replace('/home/order.html');
-            return order;
-        }).catch(function (error) {
-            alert(error);
+                return order;
+        })
+            .catch(function (error) {
+                alert(error);
         });
     };
 
