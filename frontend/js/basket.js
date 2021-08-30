@@ -46,6 +46,7 @@ const buildContactData = () =>{                       // creation du data client
                 return lastNameToUpperCase;
             }
         }
+        console.log(lastName);
 
         const displayFirstNameToCapitalize = (firstName) => {
             let firstNameToCapitalize = null;
@@ -57,6 +58,7 @@ const buildContactData = () =>{                       // creation du data client
                 return firstNameToCapitalize;
             }
         }
+        console.log(firstName);
     };
 
     return {
