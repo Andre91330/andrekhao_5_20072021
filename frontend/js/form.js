@@ -1,13 +1,8 @@
-// clear
+// bouton clear  ok
 //   clear.onclick = () =>{
 //        localStorage.clear();
 //        document.location.reload();
 //    };
-
-
-// genre
-
-
 
 // basket debut
 //const confirmCommande = document.querySelector("#order"); 
@@ -74,15 +69,6 @@
 //            return false;
 //    };
 
-// const buildContactData = () =>{
- //   class contact {
- //       firstName = '';
- //       lastName = '';
- //       address = '';
- //       city = '';
- //       email = '';
- //   }
-
 
 // localStorage.setItem("lastName". lastName.value);
 // localStorage.setItem("firstName", firstName.value);
@@ -100,12 +86,50 @@
 //    email: document.querySelector("#mail").value,
 //};
 
-//       postContact();
-//            {
+
+
+ //        const displayLastNameToUpperCase = (lastName) => {
+//            let lastNameToUpperCase = null;
+//            try {
+//                lastNameToUpperCase = lastName.toUpperCase ();
+//            } catch (error) {
+//                console.error(error);
+//            } finally {
+//                return lastNameToUpperCase;
+//            }
+//       }
+//        console.log(lastName);
+
+//        const displayFirstNameToCapitalize = (firstName) => {
+//            let firstNameToCapitalize = null;
+//            try {
+//                firstNameToCapitalize = firstName.toCapitalize ();
+//            } catch (error) {
+//                console.error(error);
+//            } finally {
+//                return firstNameToCapitalize;
+//            }
+//        }
+//        console.log(firstName);
+
+
+// const buildContactData = () => {
+
+//    class contact {
+//        lastName = '';
+//        firstName = '';
+//        address = '';
+//        city = '';
+//        email = '';
+//    }
+//        contact() ;
+//        {
 //            return {
 //                lastName : this.lastName,
 //                firstName : this.firstName,
 //                address : this.address,
 //                city : this.city,
-//            email : this.email
-//            }       
+//                email : this.email
+//            }
+//        }
+    

@@ -8,21 +8,21 @@ const displayBasket = (basket) => {
             let trElt = document.createElement("tr"); 
             trElt.innerText = `${productName}, ${basket.products[i].varnish} :`;
             productsEltName.appendChild(trElt);
-            console.log(productName);
+        console.log(productName);
         }
-
+       
     const productsEltPrice = document.querySelector(".unitPrice");
         for (let i = basket.products.length; i--;) {       
             const productPrice = basket.products[i].price        
             let trElt = document.createElement("tr"); 
             trElt.innerText = displayPrice(productPrice);
-            productsEltPrice.appendChild(trElt);
-            console.log(productPrice);
-        }
+            productsEltPrice.appendChild(trElt); 
+        console.log(productPrice); 
+        }        
     
     function displayPrice(price) {        
         return `${(price/100).toFixed(2)} €`;
-        } 
+    } 
 };
 
 clearBasket.onclick = () =>{
@@ -30,97 +30,79 @@ clearBasket.onclick = () =>{
     document.location.reload();
 };
 
-// ---formulaire-------
-
-const buildContactData = () =>{                       // creation du data client
-
-    const sendGuestValidToLocalStorage = () => {    
-    
-        const displayLastNameToUpperCase = (lastName) => {
-            let lastNameToUpperCase = null;
-            try {
-                lastNameToUpperCase = lastName.toUpperCase ();
-            } catch (error) {
-                console.error(error);
-            } finally {
-                return lastNameToUpperCase;
+const guestDetails = document.querySelector("#guest"); 
+    guestDetails.addEventListener("submit", function(){
+    var validDetails = true;
+        for(let input of document.querySelectorAll(".contactDetails input")){
+            valid &= input.reportValidity();
+            if(!validDetails){
+                break;
             }
         }
-        console.log(lastName);
-
-        const displayFirstNameToCapitalize = (firstName) => {
-            let firstNameToCapitalize = null;
-            try {
-                firstNameToCapitalize = firstName.toCapitalize ();
-            } catch (error) {
-                console.error(error);
-            } finally {
-                return firstNameToCapitalize;
-            }
+       if(validDetails){ 
+        alert("Merci, vos coordonnées ont bien été prises en compte.");
         }
-        console.log(firstName);
-    };
+        localStorage.setItem("contactDetails", JSON.stringify(contactDetails));
+        console.log(contactDetails);
+    });
 
-    return {
-        lastName: document.querySelector("#nomClient").value,
-        firstName: document.querySelector("#prenom").value,
-        address: document.querySelector("#adresse").value,
-        city: document.querySelector("#ville").value,
-        email: document.querySelector("#mail").value,
-    };
-                    
-    localStorage.setItem('contact',JSON.stringify(sendGuestValidToLocalStorage));
-          
-    const guestValid = document.querySelector('#guest');
-    guestValid.addEventListener('click', sendGuestValidToLocalStorage);
-    };
-
-
-const buildProductsData = (basket) => {
-    const ids = [];
-    for (let i = basket.products.length; i--;) {
-        ids.push(basket.products[i]._id);
+const buildContactData = () => {
+    class contact {
+        lastName = '';
+        firstName = '';
+        address = '';
+        city = '';
+        email = '';
     }
-    return ids;
-}
-// const buildObjetsForOrder = (basket) => basket.products.map(product => product_id);
-
-const buildObjectsForOrder = (basket) => {
-    const contact = buildContactData();
-    const products = buildProductsData(basket);
-    return {
-        contact: contact,
-        products: products,
-    };   
+        contact() ;
+        {
+            return {
+                lastName : this.lastName,
+                firstName : this.firstName,
+                address : this.address,
+                city : this.city,
+                email : this.email
+            localStorage.setItem("contact", JSON.stringify(contact));   
+            }
+        }
+           
 };
 
-// a modifier
-(() => {
-    const basket = JSON.parse(localStorage.getItem("basket"));
-    displayBasket(basket);
-  
-    const data = buildObjectsForOrder(basket);
 
-    const sendOrder = () => {
-//       console.log(data);
-        fetch("http://localhost:3000/api/furniture/order", {
-            method: "post",
-            body: JSON.stringify(data)
-        })
-            .then(function (httpResponse) {
-                return httpResponse.json();
-        })
-            .then(function (order) {
-            localStorage.setItem('order', JSON.stringify(order));
-            localStorage.removeItem('basket');
-            location.replace('/home/order.html');
-                return order;
-        })
-            .catch(function (error) {
-                alert(error);
-        });
-    };
 
-    const btn = document.querySelector('#sendOrder');
-    btn.addEventListener('click', sendOrder);
-})();
+//    const sendContactToLocalStorage = () => {   
+
+//    localStorage.setItem("guestDetails", JSON.stringify(sendContactToLocalStorage));
+//    contactValid.addEventListener('onclick', sendContactToLocalStorage);
+//    document.location.reload();
+
+ 
+
+
+
+// formulaire
+// const buildContactData = () =>{ 
+//    const guestValid = document.querySelector('#guest');
+//    guestValid.addEventListener('submit', sendContactValidToLocalStorage);
+//    localStorage.setItem('contactDetails',JSON.stringify(sendContactValidToLocalStorage));
+//    };
+
+
+//const buildProductsData = (basket) => {
+//    const ids = [];
+//    for (let i = basket.products.length; i--;) {
+//        ids.push(basket.products[i]._id);
+//    }
+//    return ids;
+//};
+
+
+// const buildContactData = () =>{  
+
+//const buildProductsData = (basket) => {
+//    const ids = [];
+//    for (let i = basket.products.length; i--;) {
+//        ids.push(basket.products[i]._id);
+//    }
+//    return ids;
+//}
