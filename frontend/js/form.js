@@ -1,8 +1,3 @@
-// bouton clear  ok
-//   clear.onclick = () =>{
-//        localStorage.clear();
-//        document.location.reload();
-//    };
 
 // basket debut
 //const confirmCommande = document.querySelector("#order"); 
@@ -16,36 +11,9 @@
 //  };
 
 
-//    const data = {
-//        contact: {                              // a modifier 'string'
-//            firstName: prenom.value,
-//            lastName: nomClient.value,
-//            address: rue.value,
-//            city: ville.value,
-//            email: mail.value
-//            },   
-//        }
-
-//    localStorage.setItem("contact", JSON.stringify(data));  // stocker
-//    });
-
-
-
     // checkinput
 //   
-//            const checkForm =() => {
-//                const checkFirstName = checkValid("")
-//                const checkLastName = checkValid("")
-//                const checkAddress = checkValid("")
-//                const checkCity = checkValid("")
-//                const checkEmail= checkEmail("")
-            
- //               if(!checkFirstName) return 'firstName';
- //               if(!checkLastName) return 'lastName';
- //               if(!checkAddress) return 'address';
- //              if(!checkCity) return 'city';
- //               if(!checkEmail) return 'email';      
- //           }
+//           
         //      si tout est valid
  //           return {
  //               const guestValid = document.querySelector('#guest');
@@ -58,47 +26,7 @@
  //                       } 
  //                   }  
 //       }
-
-//    constructor(newGuest){
-//        if(!this.validNewGuest(newGuest)) throw "argument 'objet' de la classe n'est pas valide";
-//        object.assign(this, newGuest);
-//    };
-
-//    validNewGuest(newGuest){
-//        if(!(typeof newGuest === 'object') || newGuest === null);
-//            return false;
-//    };
-
-
-// localStorage.setItem("lastName". lastName.value);
-// localStorage.setItem("firstName", firstName.value);
-// localStorage.setItem("address", address.value);
-// localStorage.setItem("city", city.value);
-// localStorage.setItem("email", email.value);
-// merci.textContent = `Merci  ${localStorage.getItem("prenom")}, vos coordonnées ont bien été prises en compte.`;
-
-
-//  /_\return {
-//    lastName: document.querySelector("#nomClient").value,
-//    firstName: document.querySelector("#prenom").value,
-//    address: document.querySelector("#adresse").value,
-//    city: document.querySelector("#ville").value,
-//    email: document.querySelector("#mail").value,
-//};
-
-
-
- //        const displayLastNameToUpperCase = (lastName) => {
-//            let lastNameToUpperCase = null;
-//            try {
-//                lastNameToUpperCase = lastName.toUpperCase ();
-//            } catch (error) {
-//                console.error(error);
-//            } finally {
-//                return lastNameToUpperCase;
-//            }
-//       }
-//        console.log(lastName);
+     
 
 //        const displayFirstNameToCapitalize = (firstName) => {
 //            let firstNameToCapitalize = null;
@@ -112,24 +40,46 @@
 //        }
 //        console.log(firstName);
 
-
-// const buildContactData = () => {
-
-//    class contact {
-//        lastName = '';
-//        firstName = '';
-//        address = '';
-//        city = '';
-//        email = '';
-//    }
-//        contact() ;
-//        {
-//            return {
-//                lastName : this.lastName,
-//                firstName : this.firstName,
-//                address : this.address,
-//                city : this.city,
-//                email : this.email
-//            }
-//        }
     
+const guestDetails = document.querySelector("#guest"); 
+    guestDetails.addEventListener("submit", function(){
+    var validDetails = true;
+        for(let input of document.querySelectorAll(".contactDetails input")){
+            valid &= input.reportValidity();
+            if(!validDetails){
+                break;
+            }
+        }
+       if(validDetails){ 
+        alert("Merci, vos coordonnées ont bien été prises en compte.");
+        }
+        localStorage.setItem("contactDetails", JSON.stringify(contactDetails));
+        console.log(contactDetails);
+    });
+
+ 
+    return {
+        lastName: document.querySelector("#lastName").value,
+        firstName: document.querySelector("#firstName").value,
+        address: document.querySelector("#address").value,
+        city: document.querySelector("#city").value,
+        email: document.querySelector("#email").value
+    }
+
+    const contact = {
+        lastName: lastName.value,
+        firstName: firstName.value,
+        address: address.value,
+        city: city.value,
+        email: email.value
+    } 
+    localStorage.setItem("contact", JSON.stringify(contact));
+    document.location.reload();
+
+    return {
+        lastName: document.querySelector("#lastName").value,
+        firstName: document.querySelector("#firstName").value,
+        address: document.querySelector("#address").value,
+        city: document.querySelector("#city").value,
+        email: document.querySelector("#email").value
+    }

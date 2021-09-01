@@ -39,9 +39,52 @@
       </nav>
     </header>
     <main>
-      <div id="basketProducts" class="p31">
-        <ul></ul>             
-      </div>
+
+      <section id="infoGuest">
+        <div>
+          <h2>Adresse de livraison : </h2>
+          <p>Nom :</p>
+          <p>Prénom :</p>
+          <p>Adresse :</p>
+          <p>Ville :</p>
+          <p>e-mail :</p>
+        </div> 
+      </section> 
+
+      <section id="indent">
+        <p><strong>Numéro de commande :</strong></p>
+        <div id="basketProducts" class="p31">    
+          <table id="basketItem" class="p31">
+            <caption>Votre/s produit(s) personnalisé(s) :</caption>
+            <thead>
+              <tr>
+                <th>Article(s) personnalisé(s) :</th>
+                <th>Prix unitaire:</th>
+              </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="finalItem"></td>
+                  <td class="unitPrice"></td> 
+                </tr>          
+              </tbody>             
+            </table>
+          </div>
+          <div>
+            <table class="totaux p31">
+              <caption>Récapitulatif de votre commande :</caption>
+              <tr>
+                <td>Nombre d'article(s) commandé(s) :</td>
+                <td id="productsNumber"></td>
+              </tr>
+              <tr>
+                <td><strong>Montant a régler :</strong></td>
+                <td id="totalPrice"></td>
+              </tr>              
+            </table>
+          </div>
+        </section>
+              
     </main>
 
     <footer>
