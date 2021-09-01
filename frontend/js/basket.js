@@ -8,7 +8,7 @@ const displayBasket = (basket) => {
             let trElt = document.createElement("tr"); 
             trElt.innerText = `${productName}, ${basket.products[i].varnish} :`;
             productsEltName.appendChild(trElt);
-            console.log(productName);
+        console.log(productName);
         }
 
     const productsEltPrice = document.querySelector(".unitPrice");
@@ -17,7 +17,7 @@ const displayBasket = (basket) => {
             let trElt = document.createElement("tr"); 
             trElt.innerText = displayPrice(productPrice);
             productsEltPrice.appendChild(trElt);
-            console.log(productPrice);
+        console.log(productPrice);
         }
     
     function displayPrice(price) {        
@@ -57,8 +57,9 @@ const buildContactData = () => {
             city: city.value,
             email: email.value
         } 
-        localStorage.setItem("contact", JSON.stringify(contact));
-        document.location.reload();
+
+    localStorage.setItem("contact", JSON.stringify(contact));
+    document.location.reload();
 
         return {
             lastName: document.querySelector("#lastName").value,
@@ -70,6 +71,7 @@ const buildContactData = () => {
     }        
 }
 
+//const buildProductsData = (basket) => basket.products.map(product => product_id);
 const buildProductsData = (basket) => {
     const ids = [];
     for (let i = basket.products.length; i--;) {
@@ -77,13 +79,12 @@ const buildProductsData = (basket) => {
     }
     return ids;
 };
-// const buildProductsData = (basket) => basket.products.map(product => product_id);
 
 const buildObjectsForOrder = (basket) => {
     const contact = buildContactData();
-    console.log(contact);
+console.log(contact);
     const products = buildProductsData(basket);
-    console.log(products);
+console.log(products);
     return {
         contact: contact,
         products: products,
