@@ -1,5 +1,3 @@
-const { render } = require("sass");
-
 const displayBasket = (basket) => {
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
     document.getElementById("totalPrice").innerText = displayPrice(basket.priceTotal); 
@@ -32,12 +30,13 @@ clearBasket.onclick = () => {
     document.location.reload();
 };
 
-// --- formulaire-------
+// --- controle du formulaire-------
 const checkInputName = (input) => {
     if (input.length <=1 || input.match(/[0-9]/g)) {    // verifie <1 lettre et pas de chiffre
-        return false;
+        alert("Nom ou Prénom mal saisi"); 
+        return false;       
     }
-    return true;
+    return true;   
 }
 
 const checkInputAddress = (input) => {
@@ -48,13 +47,14 @@ const checkInputAddress = (input) => {
 }
 
 const checkInputEmail = (input) => {
-    if (input.length <=1 || !input.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {           // verifie <1lettre et pas de chiffre
+    if (input.length <=1 || !input.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {           // verifie format mail
+        alert("Mail erronné");
         return false;
     }
     return true;
 }
 
- // creation du data client
+ //--- creation du data client ---
  const getValueFromInput = (input) =>
     document.querySelector(`#${input}`).value;
 
@@ -83,7 +83,8 @@ const buildContactData = () => {                        // creation des variable
     };
 };
 
-//const buildProductsData = (basket) => basket.products.map(product => product_id);
+//--- const buildProductsData = (basket) => basket.products.map(product => product_id);
+
 const buildProductsData = (basket) => {
     const ids = [];
     for (let i = basket.products.length; i--;) {
@@ -132,7 +133,7 @@ const buildObjectsForOrder = (basket) => {
                 alert(error);
             });   
         } else {
-            alert('Formulaire mal rempli');       /// a corriger
+            alert('Votre formulaire est mal rempli');       /// a corriger
         }
     };
     const btn = document.querySelector('#sendOrder');
