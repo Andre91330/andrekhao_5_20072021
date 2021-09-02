@@ -1,5 +1,6 @@
-const displayBasket = (basket) => {
+const { render } = require("sass");
 
+const displayBasket = (basket) => {
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
     document.getElementById("totalPrice").innerText = displayPrice(basket.priceTotal); 
 
@@ -13,7 +14,7 @@ const displayBasket = (basket) => {
             let trElt = document.createElement("tr"); 
             trElt.innerText = `${productName} -  ${basket.products[i].varnish} :`;
             productsEltName.appendChild(trElt);
-        console.log(productName);
+    console.log(productName);
         }
 
     const productsEltPrice = document.querySelector(".unitPrice");
@@ -22,7 +23,7 @@ const displayBasket = (basket) => {
             let trElt = document.createElement("tr"); 
             trElt.innerText = displayPrice(productPrice);
             productsEltPrice.appendChild(trElt);
-        console.log(productPrice);
+    console.log(productPrice);
         }        
 };
 
@@ -31,7 +32,7 @@ clearBasket.onclick = () => {
     document.location.reload();
 };
 
-// ---verification formulaire-------
+// --- formulaire-------
 const checkInputName = (input) => {
     if (input.length <=1 || input.match(/[0-9]/g)) {    // verifie <1 lettre et pas de chiffre
         return false;
@@ -46,7 +47,7 @@ const checkInputAddress = (input) => {
     return true;
 }
 
-const checkEmail = (input) => {
+const checkInputEmail = (input) => {
     if (input.length <=1 || !input.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {           // verifie <1lettre et pas de chiffre
         return false;
     }
@@ -54,19 +55,15 @@ const checkEmail = (input) => {
 }
 
  // creation du data client
-
-/* function getValueFromInput () {
-    const value = document.querySelector("input").value;
-} */
+ const getValueFromInput = (input) =>
+    document.querySelector(`#${input}`).value;
 
 const buildContactData = () => {                        // creation des variables contact
-    const lastName = document.querySelector("#lastName").value;
-    const firstName = document.querySelector("#firstName").value;
-    const address = document.querySelector("#address").value;
-    const city = document.querySelector("#city").value;
-    const email = document.querySelector("#email").value;
-
-console.log(lastName, checkInputName(lastName));
+    const lastName = getValueFromInput("lastName");
+    const firstName = getValueFromInput("firstName");
+    const address = getValueFromInput("address");
+    const city = getValueFromInput("city");
+    const email = getValueFromInput("email");
 
     if (
         !checkInputName(lastName) ||                    // je verifie pour chaque variable qu'il ne retourne pas false 
@@ -78,12 +75,12 @@ console.log(lastName, checkInputName(lastName));
         return false;                                   // si false
     }
     return {                                            // true
-        lastName,
-        firstName,
-        address,
-        city,
-        email
-    }
+        lastName: lastName,
+        firstName: firstName,
+        address: address,
+        city: city,
+        email: email
+    };
 };
 
 //const buildProductsData = (basket) => basket.products.map(product => product_id);
@@ -117,9 +114,9 @@ const buildObjectsForOrder = (basket) => {
                 method: "post",
                 headers: {
                     Accept: "application/json",
-                    "Content-Type":"application/json",
-                    body: JSON.stringify(data),
+                    "Content-Type":"application/json"
                 },
+                body: JSON.stringify(data),              
             })
             .then(function (httpResponse) {
                 return httpResponse.json();
@@ -135,7 +132,7 @@ const buildObjectsForOrder = (basket) => {
                 alert(error);
             });   
         } else {
-            alerte ('Formulaire mal rempli')       /// a corriger
+            alert('Formulaire mal rempli');       /// a corriger
         }
     };
     const btn = document.querySelector('#sendOrder');
