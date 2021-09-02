@@ -1,5 +1,5 @@
 
-contactIndent = `
+/* contactIndent = `
     <section id="guestIndent">
         <div>
             <h2>Adresse de livraison : </h2>
@@ -37,4 +37,4 @@ const displayBasket = (order) => {
 //afficher tous les articles commandés
 ////basketProductsIndent = `
 //}
-
+*/

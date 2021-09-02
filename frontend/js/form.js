@@ -40,25 +40,10 @@
 //        }
 //        console.log(firstName);
 
-    
-const guestDetails = document.querySelector("#guest"); 
-    guestDetails.addEventListener("submit", function(){
-    var validDetails = true;
-        for(let input of document.querySelectorAll(".contactDetails input")){
-            valid &= input.reportValidity();
-            if(!validDetails){
-                break;
-            }
-        }
-       if(validDetails){ 
-        alert("Merci, vos coordonnées ont bien été prises en compte.");
-        }
-        localStorage.setItem("contactDetails", JSON.stringify(contactDetails));
-        console.log(contactDetails);
-    });
+
 
  
-    return {
+/*    return {
         lastName: document.querySelector("#lastName").value,
         firstName: document.querySelector("#firstName").value,
         address: document.querySelector("#address").value,
@@ -83,3 +68,4 @@ const guestDetails = document.querySelector("#guest");
         city: document.querySelector("#city").value,
         email: document.querySelector("#email").value
     }
+    */
