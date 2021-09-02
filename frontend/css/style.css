@@ -340,4 +340,8 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   background-color: grey;
 }
 
+.pageBasket, .pageOrder {
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */

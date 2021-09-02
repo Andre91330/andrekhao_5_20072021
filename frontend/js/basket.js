@@ -2,6 +2,10 @@ const displayBasket = (basket) => {
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
     document.getElementById("totalPrice").innerText = displayPrice(basket.priceTotal); 
 
+    function displayPrice(price) {        
+        return `${(price/100).toFixed(2)} €`;
+    }
+    
     const productsEltName = document.querySelector(".finalItem");
         for (let i = basket.products.length; i--;) {       
             const productName = basket.products[i].name        
@@ -18,11 +22,7 @@ const displayBasket = (basket) => {
             trElt.innerText = displayPrice(productPrice);
             productsEltPrice.appendChild(trElt);
         console.log(productPrice);
-        }
-    
-    function displayPrice(price) {        
-        return `${(price/100).toFixed(2)} €`;
-        } 
+        }        
 };
 
 clearBasket.onclick = () => {
@@ -39,27 +39,22 @@ const buildContactData = () => {
     guestInput.onclick = () => { 
 
         var validInputs = true;
-        for(let input of document.querySelectorAll("contactDetails input")){
+        for(let input of document.querySelectorAll(".contactDetails input")){
             validInputs &= input.reportValidity();
             if(!validInputs){
                 break;
             }
-        };
-
-//       if(validInputs){
-//        alert ("Merci, vos coordonnées ont bien été prises en compte.");
-//        }     
-
+            
+        } 
+       
         const contact = {
             lastName: lastName.value,
             firstName: firstName.value,
             address: address.value,
             city: city.value,
             email: email.value
-        } 
-
-    localStorage.setItem("contact", JSON.stringify(contact));
-    document.location.reload();
+        }
+        localStorage.setItem("contact", JSON.stringify(contact));
 
         return {
             lastName: document.querySelector("#lastName").value,
@@ -69,7 +64,7 @@ const buildContactData = () => {
             email: document.querySelector("#email").value
         }
     }        
-}
+};
 
 //const buildProductsData = (basket) => basket.products.map(product => product_id);
 const buildProductsData = (basket) => {
@@ -88,7 +83,7 @@ console.log(products);
     return {
         contact: contact,
         products: products,
-    };   
+    }   
 };
 
 // a modifier
