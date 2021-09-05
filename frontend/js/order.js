@@ -21,8 +21,35 @@ function displaybasketItemsIndent(order) {
             productsEltName.appendChild(trElt);
             console.log(itemsIndent);
         }
-}
+} */
+const displayOrder = (order) => {
+//    document.getElementById("productsNumberIndent").innerText = order.nbProducts;  
+//    document.getElementById("totalPriceIndent").innerText = displayPrice(order.priceTotal); 
 
+    function displayPrice(price) {        
+        return `${(price/100).toFixed(2)} €`;
+    }
+ 
+    const productsIndentEltName = document.querySelector(".finalItemIndent");
+        for (let i = basket.products.length; i--;) {       
+            const productIndentName = basket.products[i].name        
+            let trElt = document.createElement("tr"); 
+            trElt.innerText = `${productIndentName} -  ${order.products[i].varnish} :`;
+            productsIndentEltName.appendChild(trElt);
+    console.log(productIndentName);
+        }
+
+    const productsEltPrice = document.querySelector(".unitPriceIndent");
+        for (let i = basket.products.length; i--;) {       
+            const productPrice = basket.products[i].price        
+            let trElt = document.createElement("tr"); 
+            trElt.innerText = displayPrice(productPrice);
+            productsEltPrice.appendChild(trElt);
+    console.log(productPrice);
+        }        
+};
+
+/* 
 const displayBasket = (order) => {
     document.getElementById("productsNumberIndent").innerText = order.nbProducts;  
     document.getElementById("totalPriceIndent").innerText = displayPrice(order.priceTotal); 

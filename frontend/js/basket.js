@@ -1,4 +1,4 @@
-const displayBasket = (basket) => {
+const displayBasket = (basket) => {                                             // affichage du panier cumul
     document.getElementById("productsNumber").innerText = basket.nbProducts;  
     document.getElementById("totalPrice").innerText = displayPrice(basket.priceTotal); 
 
@@ -6,7 +6,7 @@ const displayBasket = (basket) => {
         return `${(price/100).toFixed(2)} €`;
     }
  
-    const productsEltName = document.querySelector(".finalItem");
+    const productsEltName = document.querySelector(".finalItem");               // affichage des produits finlisés
         for (let i = basket.products.length; i--;) {       
             const productName = basket.products[i].name        
             let trElt = document.createElement("tr"); 
@@ -30,72 +30,97 @@ clearBasket.onclick = () => {
     document.location.reload();
 };
 
-// --- controle du formulaire-------
+// --- controle du formulaire avant envoi en LS
 const checkInputName = (input) => {
-    if (input.length <=1 || input.match(/[0-9]/g)) {    // verifie <1 lettre et pas de chiffre
+    if (input.length <=1 || input.match(/[0-9]/g)){            // verifie <1 lettre et pas de chiffre
         alert("Nom ou Prénom mal saisi"); 
         return false;       
     }
     return true;   
-}
-
-const checkInputAddress = (input) => {
-    if (input.length <=1) {                             // verifie <1 lettre
-        return false;
-    }
-    return true;
-}
+};
 
 const checkInputEmail = (input) => {
     if (input.length <=1 || !input.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {           // verifie format mail
-        alert("Mail erronné");
+        alert("Veuillez vérifier votre adresse E-mail.");
         return false;
     }
     return true;
-}
+};
+
+const checkInputAddress = (input) => {
+    if (input.length <=2) {                                     // verifie <1 lettre
+        alert("Veuillez vérifier votre adresse.");
+        return false;
+    }
+    return true;
+};
+
+const checkInputCity = (input) => {
+    if (input.length <=1 || !input.match(/^([0-9]{5}) (.*)$/g)){                                     // verifie <1 lettre
+        alert("Veuillez corriger votre Code postal ou ville.");
+        return false;
+    }
+    return true;
+};
 
  //--- creation du data client ---
- const getValueFromInput = (input) =>
+const getValueFromInput = (input) =>    
     document.querySelector(`#${input}`).value;
 
 const buildContactData = () => {                        // creation des variables contact
     const lastName = getValueFromInput("lastName");
     const firstName = getValueFromInput("firstName");
+    const email = getValueFromInput("email");
     const address = getValueFromInput("address");
     const city = getValueFromInput("city");
-    const email = getValueFromInput("email");
+  
 
     if (
         !checkInputName(lastName) ||                    // je verifie pour chaque variable qu'il ne retourne pas false 
         !checkInputName(firstName) ||
         !checkInputAddress(address) ||
-        !checkInputAddress(city) ||
+        !checkInputCity(city) ||
         !checkInputEmail(email) 
     ) {
         return false;                                   // si false
     }
+    alert("Merci pour votre commande");
     return {                                            // true
         lastName: lastName,
         firstName: firstName,
+        email: email,
         address: address,
-        city: city,
-        email: email
+        city: city
+        
     };
 };
 
 //--- const buildProductsData = (basket) => basket.products.map(product => product_id);
 
 const buildProductsData = (basket) => {
+    
+/*   for (let i = basket.varnish.length; i--;){
+        const varnish = basket.varnish[i];
+        const option = document.createElement("option");
+        option.setAttribute("value", varnish);
+    }   
+    basket.varnish = varnish;
+    basket.nbProducts ++ ;
+    basket.priceTotal += article.price;
+    basket.products.push(article);
+    localStorage.setItem("basket", JSON.stringify(basket));
+};   */
     const ids = [];
     for (let i = basket.products.length; i--;) {
-        ids.push(basket.products[i]._id);
+            ids.push(basket.products[i]._id);
     }
-    return ids;
-};
+        return ids;
+}; 
 
+ 
 const buildObjectsForOrder = (basket) => {
     const contact = buildContactData();
-    const products = buildProductsData(basket);
+    const products = buildProductsData(basket);  
     return {
         contact: contact,
         products: products,
