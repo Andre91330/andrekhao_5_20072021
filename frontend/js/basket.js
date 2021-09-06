@@ -33,7 +33,7 @@ clearBasket.onclick = () => {
 // --- controle du formulaire avant envoi en LS
 const checkInputName = (input) => {
     if (input.length <=1 || input.match(/[0-9]/g)){            // verifie <1 lettre et pas de chiffre
-        alert("Nom ou Prénom mal saisi"); 
+        alert("Nom ou Prénom mal saisi."); 
         return false;       
     }
     return true;   
@@ -98,18 +98,6 @@ const buildContactData = () => {                        // creation des variable
 //--- const buildProductsData = (basket) => basket.products.map(product => product_id);
 
 const buildProductsData = (basket) => {
-    
-/*   for (let i = basket.varnish.length; i--;){
-        const varnish = basket.varnish[i];
-        const option = document.createElement("option");
-        option.setAttribute("value", varnish);
-    }   
-    basket.varnish = varnish;
-    basket.nbProducts ++ ;
-    basket.priceTotal += article.price;
-    basket.products.push(article);
-    localStorage.setItem("basket", JSON.stringify(basket));
-};   */
     const ids = [];
     for (let i = basket.products.length; i--;) {
             ids.push(basket.products[i]._id);
@@ -126,6 +114,8 @@ const buildObjectsForOrder = (basket) => {
         products: products,
     }   
 };
+
+
 
 // a modifier
 (() => {
@@ -158,7 +148,7 @@ const buildObjectsForOrder = (basket) => {
                 alert(error);
             });   
         } else {
-            alert('Votre formulaire est mal rempli');       /// a corriger
+            alert('Votre formulaire est mal rempli');      
         }
     };
     const btn = document.querySelector('#sendOrder');

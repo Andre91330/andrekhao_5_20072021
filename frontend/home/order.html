@@ -43,19 +43,19 @@
       <section id="guestIndent">
         <div>
           <h2>Adresse de livraison : </h2>
-          <p id="lastNameIndent">Nom : <span></span></p>
-          <p id="firstNameIndent">Prénom : <span></span></p>
-          <p id="addressIndent">Adresse : <span></span></p>
-          <p id="cityeIndent">Ville : <span></span></p>
-          <p id="emailIndent">e-mail : <span></span></p>
+          <p>Nom : <span id="indentLastName"></span></p>
+          <p>Prénom : <span id="indentFirstName"></span></p>
+          <p>Adresse : <span id="indentAddress"></span></p>
+          <p>Code postale : <span id="indentCity"></span></p>
+          <p>e-mail : <span id="indentEmail"></span></p>
         </div> 
       </section> 
 
       <section id="indent">
         <br/>
-        <p>Numéro de commande : <span></span></p><br/>
-        <div id="basketProductsIndent" class="p31">    
-          <table id="basketItemIndent" class="p31">
+        <p>Numéro de commande : <span id="orderNumber"></span></p><br/>
+        <div id="basketIndentProducts" class="p31">    
+          <table id="basketIndentItem" class="p31">
             <caption>Votre/s produit(s) personnalisé(s) :</caption>
             <thead>
               <tr>
@@ -65,8 +65,8 @@
               </thead>
               <tbody>
                 <tr>
-                  <td class="finalItemIndent"></td>
-                  <td class="unitPriceIndent"></td> 
+                  <td class="finalIndentItem"></td>
+                  <td class="unitIndentPrice"></td> 
                 </tr>          
               </tbody>             
             </table>
@@ -77,11 +77,11 @@
               <caption>Récapitulatif de votre commande :</caption>
               <tr>
                 <td>Nombre d'article(s) commandé(s) :</td>
-                <td id="productsNumberIndent"></td>
+                <td id="indentProductsNumber"></td>
               </tr>
               <tr>
                 <td><strong>Montant a régler :</strong></td>
-                <td id="totalPriceIndent"></td>
+                <td id="indentTotalPrice"></td>
               </tr>              
             </table>
           </div>
