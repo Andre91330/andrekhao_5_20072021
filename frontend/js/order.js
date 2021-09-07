@@ -1,5 +1,4 @@
 const order = JSON.parse(localStorage.getItem("order"));
-
     document.getElementById("orderNumber").innerText = order.orderId; 
     document.getElementById("indentLastName").innerText= order.contact.lastName;
     document.getElementById("indentFirstName").innerText= order.contact.firstName;
@@ -7,33 +6,49 @@ const order = JSON.parse(localStorage.getItem("order"));
     document.getElementById("indentCity").innerText= order.contact.city;
     document.getElementById("indentEmail").innerText= order.contact.email;
 
- //   document.getElementById("indentProductsNumber").innerText = order.nbProducts;  
- //   document.getElementById("indentTotalPrice").innerText = displayPrice(order.priceTotal)
+    document.getElementById("indentProductsNumber").innerText = order.products.length;  
 
-
- 
-/*  function displayIndentItems(order) {
-    for (let i = order.products.length; i--;) {    
-        const itemsIndent = order.products[i].name;        
+const productsIndentEltName = document.querySelector(".finalIndentItem");               // affichage des produits finlisés
+    for (let i = order.products.length; i--;) {       
+        const productIndentName = order.products[i].name        
         let trElt = document.createElement("tr"); 
-        trElt.innerText = `${itemsIndent}, ${order.products[i].varnish} :`;
-        productsEltName.appendChild(trElt);
-        console.log(itemsIndent);
+        trElt.innerText = `${productIndentName}`;
+        productsIndentEltName.appendChild(trElt);
+    console.log(productIndentName);
     }
-};
-*/
 
-
-/*  const getProductsIndentFromLocalStorage = () => {              
-    const productsIndent;
-    if(localStorage.getItem("order")) {
-        productsIndent = {
-            nbProducts : 0,
-            priceTotal: 0,
-            contact: contact,
-            products: [],
-        };
+const productsIndentEltPrice = document.querySelector(".unitIndentPrice");
+    for (let i = order.products.length; i--;) {       
+        const productIndentPrice = order.products[i].price        
+        let trElt = document.createElement("tr"); 
+        trElt.innerText = displayPrice(productIndentPrice);
+        productsIndentEltPrice.appendChild(trElt);
+        console.log(productIndentPrice);
     }
-    return productsIndent;
-*/
 
+function displayPrice(price) {        
+    return `${(price/100).toFixed(2)} €`;
+}
+
+
+
+/* const getTotalPriceFromLocalStorage = () => {                                       // basket nb produit, total prix
+    
+
+   
+    document.getElementById("indentTotalPrice").innerText = displayPrice(order.priceTotal);
+
+/*    const getBasketFromLocalStorage = () => {                                       // basket nb produit, total prix
+        let basket;
+        if(localStorage.getItem("basket")) {
+            basket = JSON.parse(localStorage.getItem("basket"));
+        } else {
+            basket = {
+                nbProducts : 0,
+                priceTotal: 0,
+                products: [],
+            };
+        }
+        return basket;
+    };
+*/

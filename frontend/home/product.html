@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="meubles en chêne massif en ligne, meubles personnalisables, livraison rapide">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <meta charset="UTF-8">
+    <meta name="description" content="meubles en chêne massif en ligne, meubles personnalisables, livraison rapide">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <link rel="canonical" href="/index.html"> 
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
-        crossorigin="anonymous">   
-      <link rel="stylesheet" href="../css/style.css">
+    <link rel="canonical" href="/index.html"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
+      crossorigin="anonymous">   
+  
+    <link rel="stylesheet" href="../css/style.css">
       
-      <script src="../js/product.js" defer></script> 
+    <script src="../js/product.js" defer></script> 
 
-      <title>OrinoSweetHome, choix d'ameublement en chêne massif, personnalisable. </title>
+    <title>OrinoSweetHome, choix d'ameublement en chêne massif, personnalisable. </title>
+  
   </head>
 
   <body>
 
     <header>
 
-      <div>
-        <div class="logohead">
-          <h1 class ="logohead-logo">ORINOSWEETHOME</h1>     
-        </div>
+      <div class="logohead">
+        <h1 class ="logohead-logo">ORINOSWEETHOME</h1>     
       </div>
 
       <nav class="navbarre">
-          <div> 
-            <ul>
-              <li>
-                <a href="../index.html" title="Retour à l'accueil"><i class="fas fa-home"></i></a>
-              </li>
-              <li>
-                <a href="" title="Choix du vernis"><i id="brush-prod" class="fas fa-brush"></i></a>
-              </li>
-              <li>
-                <a href="./basket.html" title="Votre panier"><i class="fa fa-cart-arrow-down"></i></a>
-              </li>
-            </ul>
-          </div>
+        <div> 
+          <ul>
+            <li>
+              <a href="../index.html" title="Retour à l'accueil"><i class="fas fa-home"></i></a>
+            </li>
+            <li>
+              <a href="" title="Choix du vernis"><i id="brush-prod" class="fas fa-brush"></i></a>
+            </li>
+            <li>
+              <a href="./basket.html" title="Votre panier"><i class="fa fa-cart-arrow-down"></i></a>
+            </li>
+          </ul>
+        </div>
       </nav>
 
     </header> 
@@ -48,7 +50,6 @@
     <main>
 
       <h2 class="model">Personnalisez votre article.</h2>
-
       <div id="furniture" class="furniture"> 
         <div id="templateArticle">
           <article class="item-prod">
@@ -56,24 +57,31 @@
               <img src="http://localhost:3000/api/furniture" alt="meuble en chene massif" id="pictureProd" class="picture-prod"/>
             </div>  
             <div class="namePrice">
-              <div id="nameItem" class="nameItem"></div> 
-              <div id="price" class="price"></div>
+              <div id="nameItem" class="nameItem">
+              </div> 
+              <div id="price" class="price">
+              </div>
             </div> 
             <div id="description">
               <h2 class="description-title">Description :</h2>
               <p id="description-text" class="description-text"></p> 
             </div>                
           </article>    
-            <h3 class="model">Choisissez votre finition.</h3>
+          <h3 class="model">Choisissez votre finition.</h3>
           <form id="varnishForm" class="varnishForm">
             <select id="varnish" name="varnish" title="Vernis proposés"> 
             </select>
-            <p><a id="sendBasket" href="./basket.html" title="Ajouter au panier">Ajouter au panier</a></p>
+            <p>
+              <a id="sendBasket" href="./basket.html" title="Ajouter au panier">Ajouter au panier</a>
+            </p>
           </form>
         </div>  
       </div>
       
     </main> 
+
+    <footer>
+    </footer>
   
-</body>
+  </body>
 </html>

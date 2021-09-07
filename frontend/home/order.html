@@ -1,97 +1,118 @@
 <!DOCTYPE html>
 <html lang="fr">
+
   <head>
-      <meta charset="UTF-8">
-      <meta name="description" content="meubles en chêne massif en ligne, meubles personnalisables, livraison rapide">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="canonical" href="index.html">    <!--a modifier-->
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+
+    <meta charset="UTF-8">
+    <meta name="description" content="meubles en chêne massif en ligne, meubles personnalisables, livraison rapide">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="canonical" href="index.html">    <!--a modifier-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" 
       crossorigin="anonymous"> 
-      <link rel="stylesheet" href="../css/style.css"> 
-      <title>OrinoSweetHome, ameublement en chêne massif, personnalisable. </title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    
+    <title>OrinoSweetHome, ameublement en chêne massif, personnalisable. </title>
+  
   </head>
+
   <body>
+
     <header>
-      <div>
-        <div class="logohead">
-          <h1 class ="logohead_logo">ORINOSWEETHOME</h1>     
-        </div>
+
+      <div class="logohead">
+        <h1 class ="logohead_logo">ORINOSWEETHOME</h1>     
       </div>
       <nav class="navbarre">
-          <div> 
-            <ul>
-              <li>
-                <a href="../index.html" title="accueil, OrinoSweetHome"><i class="fas fa-home"></i></a>
-              </li>
-              <li>
-                <a href="" title="choix du vernis"><i class="fas fa-brush brush"></i></a>
-              </li>
-              <li>
-                <a href="./basket.html" title="panier"><i class="fas fa-cart-arrow-down"></i></a>
-              </li>
-              <li>
+        <div> 
+          <ul>
+            <li>
+              <a href="../index.html" title="accueil, OrinoSweetHome"><i class="fas fa-home"></i></a>
+            </li>
+            <li>
+              <a href="" title="choix du vernis"><i class="fas fa-brush brush"></i></a>
+            </li>
+            <li>
+              <a href="./basket.html" title="panier"><i class="fas fa-cart-arrow-down"></i></a>
+            </li>
+            <li>
                 <a href="./order.html" title="commande"><i class="fas fa-check"></i></a>
-              </li>
-            </ul>
-          </div>
+            </li>
+          </ul>
+        </div>
       </nav>
+
     </header>
+
     <main class="pageOrder">
 
       <section id="guestIndent">
         <div>
           <h2>Adresse de livraison : </h2>
-          <p>Nom : <span id="indentLastName"></span></p>
-          <p>Prénom : <span id="indentFirstName"></span></p>
-          <p>Adresse : <span id="indentAddress"></span></p>
-          <p>Code postale : <span id="indentCity"></span></p>
-          <p>e-mail : <span id="indentEmail"></span></p>
+          <p>Nom : 
+            <span id="indentLastName"></span>
+          </p>
+          <p>Prénom : 
+            <span id="indentFirstName"></span>
+          </p>
+          <p>Adresse : 
+            <span id="indentAddress"></span>
+          </p>
+          <p>Code postale : 
+            <span id="indentCity"></span>
+          </p>
+          <p>e-mail : 
+            <span id="indentEmail"></span>
+          </p>
         </div> 
       </section> 
 
       <section id="indent">
         <br/>
-        <h3>Numéro de commande : <span id="orderNumber"></span></h3><br/>
-        <div id="basketIndentProducts" class="p31">    
-          <table id="basketIndentItem" class="p31">
-            <caption>Votre/s produit(s) personnalisé(s) :</caption>
+        <h3>Numéro de commande : 
+          <span id="orderNumber"></span>*
+        </h3><br/>
+        <div id="indentProducts" class="p31">    
+          <table id="indentItem" class="p31">
+            <caption>Votre/s produit(s) commandé(s) :</caption>
             <thead>
               <tr>
-                <th>Article(s) personnalisé(s) :</th>
+                <th>Article(s) :</th>
                 <th>Prix unitaire:</th>
               </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="finalIndentItem"></td>
-                  <td class="unitIndentPrice"></td> 
-                </tr>          
-              </tbody>             
-            </table>
-          </div>
-          <div>
-            <table class="totaux p31">
-              <caption>Récapitulatif de votre commande :</caption>
+            </thead>
+            <tbody>
               <tr>
-                <td>Nombre d'article(s) commandé(s) :</td>
-                <td id="indentProductsNumber"></td>
-              </tr>
-              <tr>
-                <td><strong>Montant a régler :</strong></td>
-                <td id="indentTotalPrice"></td>
-              </tr>              
-            </table>
-          </div>
-        </section>
+                <td class="finalIndentItem"></td>
+                <td class="unitIndentPrice"></td> 
+              </tr>          
+            </tbody>             
+          </table>
+        </div>
+        <div>
+          <table class="totaux p31">
+            <caption>Récapitulatif de votre commande :</caption>
+            <tr>
+              <td>Nombre d'article(s) commandé(s) :</td>
+              <td id="indentProductsNumber"></td>
+            </tr>
+            <tr>
+              <td><strong>Montant a régler :</strong></td>
+              <td id="indentTotalPrice"></td>
+            </tr>              
+          </table>
+        </div>
+      </section>
               
     </main>
 
     <footer>
-
     </footer>
+
     <script src="/js/order.js"></script>
-</body>
+
+  </body>
 </html>
     
