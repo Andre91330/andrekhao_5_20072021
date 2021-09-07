@@ -215,3 +215,23 @@ input, textarea{
 .pageBasket, .pageOrder{
     color: white;
 }
+
+#guestIndent{
+    padding-left: 1rem;;
+}
+
+#numberOrder{
+    font-size: 1rem;
+    padding-left: 1rem;
+    white-space: pre-line;
+    text-decoration: underline;
+    padding-bottom: .5rem;
+}
+
+#indentLastName, #indentCity{
+    text-transform: uppercase;
+}
+
+#indentFirstName, #indentAddress{
+    text-transform: capitalize;
+}

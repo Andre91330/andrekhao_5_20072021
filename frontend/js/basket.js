@@ -39,6 +39,8 @@ const checkInputName = (input) => {
     return true;   
 };
 
+
+    
 const checkInputEmail = (input) => {
     if (input.length <=1 || !input.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {           // verifie format mail
         alert("Veuillez vérifier votre adresse E-mail.");

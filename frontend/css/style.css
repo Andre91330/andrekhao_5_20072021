@@ -344,4 +344,24 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   color: white;
 }
 
+#guestIndent {
+  padding-left: 1rem;
+}
+
+#numberOrder {
+  font-size: 1rem;
+  padding-left: 1rem;
+  white-space: pre-line;
+  text-decoration: underline;
+  padding-bottom: 0.5rem;
+}
+
+#indentLastName, #indentCity {
+  text-transform: uppercase;
+}
+
+#indentFirstName, #indentAddress {
+  text-transform: capitalize;
+}
+
 /*# sourceMappingURL=style.css.map */
