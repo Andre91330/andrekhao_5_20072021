@@ -164,8 +164,14 @@ caption{
 }
 
 th, td{
+    width: 70%;
     border: .05rem solid white;
     padding-left: .5rem;
+}
+
+.unitPrice tr, #productsNumber, #totalPrice{
+    display: flex;
+    justify-content: center;
 }
 
 fieldset{
@@ -178,7 +184,6 @@ label{
 }
 
 input, textarea{
-    size: 35rem;
     &:hover{
     @include itemshadow;
     }
@@ -234,4 +239,8 @@ input, textarea{
 
 #indentFirstName, #indentAddress{
     text-transform: capitalize;
+}
+
+.totaux{
+    margin-top: 1rem;
 }

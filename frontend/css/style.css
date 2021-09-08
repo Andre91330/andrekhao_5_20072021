@@ -292,8 +292,14 @@ caption {
 }
 
 th, td {
+  width: 70%;
   border: 0.05rem solid white;
   padding-left: 0.5rem;
+}
+
+.unitPrice tr, #productsNumber, #totalPrice {
+  display: flex;
+  justify-content: center;
 }
 
 fieldset {
@@ -305,9 +311,6 @@ label {
   width: 5rem;
 }
 
-input, textarea {
-  size: 35rem;
-}
 input:hover, textarea:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
@@ -362,6 +365,10 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 
 #indentFirstName, #indentAddress {
   text-transform: capitalize;
+}
+
+.totaux {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

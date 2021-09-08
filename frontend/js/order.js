@@ -7,6 +7,7 @@ const order = JSON.parse(localStorage.getItem("order"));
     document.getElementById("indentEmail").innerText= order.contact.email;
 
     document.getElementById("indentProductsNumber").innerText = order.products.length;     
+    
 
 const productsIndentEltName = document.querySelector(".finalIndentItem");               // affichage des produits
     for (let i = order.products.length; i--;) {       
@@ -19,21 +20,22 @@ const productsIndentEltName = document.querySelector(".finalIndentItem");       
 
 const productsIndentEltPrice = document.querySelector(".unitIndentPrice");             // affichage du prix unitaire
     for (let i = order.products.length; i--;) {       
-        const productIndentPrice = order.products[i].price        
+        const productIndentPrice = order.products[i].price;        
         let trElt = document.createElement("tr"); 
         trElt.innerText = displayPrice(productIndentPrice);
         productsIndentEltPrice.appendChild(trElt);
         console.log(productIndentPrice);
     }
 
-/*       MONTANT A REGLER
-const productTotalPrice = document.querySelector("#indentTotalPrice");                 // montant a régler
+//      MONTANT A REGLER
+
+let indentTotalPrice = 0;
     for (let i = order.products.length; i--;) {       
-        let indentTotalPrice += (order.products[i].price);
-        productTotalPrice.innerText = displayPrice(indentTotalPrice);
-        console.log(indentTotalPrice);
+        indentTotalPrice += order.products[i].price;
     }
-*/
+    document.querySelector("#indentTotalPrice").innerText = displayPrice(indentTotalPrice);
+console.log(indentTotalPrice);
+
 
 function displayPrice(price) {        
     return `${(price/100).toFixed(2)} €`;
