@@ -283,13 +283,6 @@ h3 {
     align-content: space-between;
   }
 }
-@media screen and (min-width: 535px) {
-  #furniture, #furnitureProduct {
-    width: 32.5rem;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 
 #brush-prod {
   color: blue;
@@ -311,8 +304,6 @@ h3 {
 @media screen and (min-width: 760px) {
   .item-prod {
     height: 30rem;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 

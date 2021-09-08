@@ -77,9 +77,4 @@ h3{
         flex-wrap: wrap;
         align-content: space-between;
     }
-    @include duo{
-        width : 32.5rem;
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
