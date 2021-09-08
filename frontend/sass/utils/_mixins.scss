@@ -47,6 +47,11 @@
     text-overflow: ellipsis;
 }
 
+@mixin center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @mixin small{
     @media screen and(min-width: map-get($breakpoints, small)){
         @content;

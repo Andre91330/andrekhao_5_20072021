@@ -1,7 +1,102 @@
+@import"../utils/mixins";
+
 #cart-down{
     color: blue;
 }
 
 .mercipanier{
     @include modelfont;
+}
+
+
+.coordonnees{
+    color: white;
+}
+
+.pageBasket, .pageOrder{
+    color: white;
+}
+
+table{
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+}
+
+caption{
+    font-weight: bold;
+}
+
+#productsNumber, #indentProductsNumber{
+    height: 3rem;
+    align-items: center;
+    @include duo{
+        height: auto;
+    }
+}
+
+th, td{
+    width: 70%;
+    border: .05rem solid white;
+    padding-left: .5rem;
+}
+
+.unitPrice tr, #productsNumber, #totalPrice, .unitIndentPrice tr, #indentProductsNumber, #indentTotalPrice{
+    display: flex;
+    justify-content: center;
+}
+
+#thk{
+    font-size: 1.2rem;
+    text-align: center;    
+}
+
+fieldset{
+    width: 90%;
+    @include center;
+}
+
+.nameDetails p, .addressDetails p{
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+
+}
+
+label{
+    display: inline-block;
+    width: 5rem;
+}
+
+input, textarea{
+    &:hover{
+    @include itemshadow;
+    }
+    &:focus{
+        background-color: rgb(223, 245, 215);
+    }
+    &:not(:focus):invalid{
+       border: .2rem solid rgb(238, 91, 46);
+    }
+}
+#sendOrder, #guest, #sendQuery{
+    width: 12rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    &:hover{
+        @include itemshadow;
+    }
+}
+
+#clearBasket{
+    width: 10rem; 
+    margin: 1rem;
+    color: white;
+    background-color: grey;
+}
+
+#sendOrder, #sendQuery{
+    display: block;
+    @include center;
 }

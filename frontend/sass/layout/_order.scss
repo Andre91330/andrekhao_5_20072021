@@ -1,0 +1,33 @@
+.fa-check{
+    color: blue;
+}
+
+#orderAddress{
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+
+#guestIndent{
+    padding-left: 1rem;;
+}
+
+#numberOrder{
+    font-size: 1rem;
+    padding-left: 1rem;
+    white-space: pre-line;
+    text-decoration: underline;
+    padding-bottom: .5rem;
+}
+
+#indentLastName, #indentCity{
+    text-transform: uppercase;
+}
+
+#indentFirstName, #indentAddress{
+    text-transform: capitalize;
+}
+
+.totaux{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}

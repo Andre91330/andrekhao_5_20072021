@@ -81,17 +81,107 @@ i:hover {
   border-bottom: 0.125rem solid grey;
 }
 
-#brush-prod {
-  color: blue;
-}
-
-#cart-down {
-  color: blue;
-}
-
-.mercipanier {
+footer {
+  padding: 1.5rem;
+  width: auto;
+  background-color: black;
+  opacity: 0.8;
   color: white;
-  text-align: center;
+  font-size: 80%;
+}
+
+footer ul {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2rem;
+}
+@media screen and (min-width: 420px) {
+  footer ul {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: small;
+    padding-left: 1rem;
+  }
+}
+
+li i {
+  width: 1.5rem;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  padding-top: 0.5rem;
+}
+
+li {
+  align-items: center;
+}
+@media screen and (min-width: 760px) {
+  li {
+    margin-bottom: 0.2rem;
+  }
+}
+
+.formail {
+  color: white;
+}
+.formail #email-input {
+  font-weight: bold;
+}
+.formail__mail {
+  padding: 1rem;
+}
+.formail__mail input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: 0.125rem solid white;
+  border-radius: 100rem;
+  color: red;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem 1.5rem;
+  width: 80%;
+}
+.formail__mail input:active, .formail__mail input:focus {
+  border: 0.125rem solid black;
+}
+.formail__mail input:not(:focus):invalid {
+  color: white;
+  border: 0.125rem solid red;
+  background-color: #e2c58e;
+  animation: nogood 100ms cubic-bezier(0.4, 0.1, 0.6, 0.9);
+  animation-iteration-count: 2;
+}
+@media screen and (min-width: 535px) {
+  .formail__mail input {
+    width: 25rem;
+  }
+}
+
+@keyframes nogood {
+  25% {
+    transform: translateX(1%);
+  }
+  75% {
+    transform: translateX(-1%);
+  }
+}
+#query {
+  width: 80%;
+  height: 10rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#query-title {
+  width: 15rem;
+  padding-left: 1rem;
 }
 
 .model {
@@ -173,9 +263,6 @@ h3 {
 
 .price {
   font-size: 0.7rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .nameItem .price {
@@ -189,11 +276,22 @@ h3 {
 }
 
 @media screen and (min-width: 420px) {
-  #furniture {
+  #furniture, #furnitureProduct {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
   }
+}
+@media screen and (min-width: 535px) {
+  #furniture, #furnitureProduct {
+    width: 32.5rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+#brush-prod {
+  color: blue;
 }
 
 .item-prod {
@@ -250,34 +348,40 @@ h3 {
   margin: auto;
 }
 
-#quantity, #itemCustumise, #sendBasket {
+.varnishForm {
+  text-align: center;
+}
+
+#sendBasket, #sendQuery {
   display: block;
   width: 12rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-}
-
-#itemCustumise:hover {
-  box-shadow: 0 0.3rem 1rem #00b300;
-}
-
-#sendBasket, #enregistrer {
   text-decoration: none;
   color: black;
   font-weight: bold;
   background-color: white;
 }
-#sendBasket:hover, #enregistrer:hover {
+#sendBasket:hover, #sendQuery:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
 }
 
-.varnishForm {
+#cart-down {
+  color: blue;
+}
+
+.mercipanier {
+  color: white;
   text-align: center;
 }
 
 .coordonnees {
+  color: white;
+}
+
+.pageBasket, .pageOrder {
   color: white;
 }
 
@@ -291,19 +395,42 @@ caption {
   font-weight: bold;
 }
 
+#productsNumber, #indentProductsNumber {
+  height: 3rem;
+  align-items: center;
+}
+@media screen and (min-width: 535px) {
+  #productsNumber, #indentProductsNumber {
+    height: auto;
+  }
+}
+
 th, td {
   width: 70%;
   border: 0.05rem solid white;
   padding-left: 0.5rem;
 }
 
-.unitPrice tr, #productsNumber, #totalPrice {
+.unitPrice tr, #productsNumber, #totalPrice, .unitIndentPrice tr, #indentProductsNumber, #indentTotalPrice {
   display: flex;
   justify-content: center;
 }
 
+#thk {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
 fieldset {
-  padding: 1rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nameDetails p, .addressDetails p {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 label {
@@ -321,19 +448,14 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   border: 0.2rem solid #ee5b2e;
 }
 
-#sendOrder, #guest {
+#sendOrder, #guest, #sendQuery {
   width: 12rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
+  text-align: center;
 }
-#sendOrder:hover, #guest:hover {
+#sendOrder:hover, #guest:hover, #sendQuery:hover {
   box-shadow: 0 0.3rem 1rem #00b300;
-}
-
-#sendOrder {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 #clearBasket {
@@ -343,8 +465,19 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   background-color: grey;
 }
 
-.pageBasket, .pageOrder {
-  color: white;
+#sendOrder, #sendQuery {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fa-check {
+  color: blue;
+}
+
+#orderAddress {
+  font-size: 1.1rem;
+  text-decoration: underline;
 }
 
 #guestIndent {
@@ -369,6 +502,7 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 
 .totaux {
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 /*# sourceMappingURL=style.css.map */

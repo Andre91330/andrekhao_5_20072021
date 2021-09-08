@@ -1,0 +1,85 @@
+@import"../utils/mixins";
+
+.model{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @include modelfont;
+}
+
+.item{
+    width: 80%;
+    height: 13rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @include itembox;
+    @include duo{
+        width: 15rem;
+        height: 13rem;
+    }
+    @include pad{
+        width: 20rem;
+        height: 18rem;
+    }
+    transform: scale(1);
+    transition: transform 1s;
+    &:hover{
+        @include itemshadow;
+        transform: scale(1.1);
+    }
+}
+
+.picture{
+    @include picturesize;
+    height: 10rem;
+    display: flex;    
+    @include duo{
+        height: 10rem;
+    }
+    @include pad{
+        height: 15rem;
+    }
+}
+
+.namePrice{
+    display: flex;
+    width: 95%;
+    height: 2.5rem;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding-bottom: .5rem;
+}
+
+.nameItem{
+    width: 55%;  
+}
+
+h3{
+    font-size: .8rem;
+    @include ellipsis;
+}
+
+.price{
+    font-size: .7rem; 
+}
+
+.nameItem .price{
+    padding: .7rem;
+    font-weight: bold;
+    @include duo{
+        font-size: 1rem;
+    }
+}
+
+#furniture, #furnitureProduct{
+    @include mobile{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+    @include duo{
+        width : 32.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,3 +1,5 @@
+@import "../utils/mixins";
+
 body {
     font-family: "Comic sans MS" , Verdana, Tahoma, sans-serif;
     font-size: 1rem;
@@ -24,6 +26,8 @@ h1{
     justify-content: center;
     padding-top: 2rem;
 }
+
+//-----Header
 
 ul{
     display: flex;
@@ -73,3 +77,102 @@ i{
 .navBarre{
     border-bottom: 0.125rem solid grey; 
 }
+
+//-----Footer
+
+footer{
+    padding: 1.5rem;
+    width: auto;
+    background-color: black;
+    opacity: .8;
+    color: white;
+    font-size: 80%;
+}
+
+footer ul{
+    list-style: none;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2rem;
+    @include mobile{
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: small;
+        padding-left: 1rem;
+    }  
+}
+
+li i{
+    width: 1.5rem;
+    cursor: $cursor;
+    margin-right: .5rem;
+}
+    
+li a{                 
+    text-decoration: none;
+    color: white;
+    padding-top: .5rem;
+}
+
+li{
+    align-items: center;
+    @include pad{
+        margin-bottom: 0.2rem;
+    }
+}
+
+.formail{
+    color: white;
+    #email-input{
+        font-weight: bold;
+    }
+    &__mail{
+        padding: 1rem;
+        & input{
+            display: block;
+            @include center;
+            border: .125rem solid white;
+            border-radius: 100rem;
+            color: red;
+            font-size: 1rem;
+            outline: none;
+            padding: .5rem 1.5rem;
+            width: 80%;
+            &:active, &:focus{
+                border: .125rem solid black;
+            }
+            &:not(:focus):invalid{
+                color: white;
+                border: .125rem solid red;
+                background-color: rgb(226, 197, 142);
+                animation: nogood 100ms cubic-bezier(.4,.1,.6,.9);
+                animation-iteration-count: 2;
+            }
+            @include duo{
+                width: 25rem;
+            }
+        }
+    }
+}
+
+@keyframes nogood{
+    25%{
+        transform: translateX($shake);
+    }
+    75%{
+        transform: translateX($shake * -1);
+    }
+}
+
+#query{
+    width: 80%;
+    height: 10rem;
+    display: block;
+    @include center;    
+    &-title{
+        width: 15rem;
+        padding-left: 1rem;
+    }
+}
+
