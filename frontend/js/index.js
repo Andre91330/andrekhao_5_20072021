@@ -33,6 +33,6 @@ function displayArticle(article) {
     document.getElementById("furniture").appendChild(cloneItem)                    // creation d'un enfant
 }
 
-function displayPrice(price) {    
+function displayPrice(price) {                                                     // format d'affichage du prix
     return `${(price/100).toFixed(2)} €`;
 }

@@ -11,10 +11,9 @@
     @include small{
         height: 21rem;
     }
-    @include pad{
+    @include duo{
+        width:30rem;
         height: 30rem;
-        margin-left: auto;
-        margin-right: auto;
     }
 }
 
@@ -23,7 +22,7 @@
     height: 12rem;
     display: flex;
     padding-top: .2rem;
-    @include pad{
+    @include duo{
         height: 22rem;
     }
 }

@@ -1,4 +1,4 @@
-const getArticleId =  function () {
+const getArticleId =  function () {                                                // récupération de l'article par l'id
    return new URL(location.href).searchParams.get("id")     
 }
 
@@ -19,8 +19,8 @@ function displayPrice(price) {
     return `${(price/100).toFixed(2)} €`;
 }
 
-function hydrateArticle(article) {
-    document.getElementById("pictureProd").setAttribute("src", article.imageUrl);   // setAttribute ->img
+function hydrateArticle(article) {                                                  // affichage du produit
+    document.getElementById("pictureProd").setAttribute("src", article.imageUrl);   
     document.getElementById("description-text").textContent= article.description;
     document.getElementById("nameItem").textContent= article.name;
     document.getElementById("price").textContent= displayPrice(article.price);    
@@ -30,11 +30,11 @@ function hydrateArticle(article) {
         const option = document.createElement("option");
         option.setAttribute("value", varnish);
         option.innerText = varnish;
-        document.querySelector("#varnish").appendChild(option);
+        document.querySelector("#varnish").appendChild(option);                     
     }
 }
 
-const getBasketFromLocalStorage = () => {                                           // basket nb produit, total prix
+const getBasketFromLocalStorage = () => {                                           // cumul du nb produit, total prix en localStorage
     let basket;
     if(localStorage.getItem("basket")) {
         basket = JSON.parse(localStorage.getItem("basket"));
