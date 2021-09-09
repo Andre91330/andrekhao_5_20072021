@@ -1,7 +1,7 @@
 @import "./variables";
 
 @mixin fond_body{
-    background: url("/image/bkg.jpg") fixed;
+    background: url("../image/bkg.jpg") fixed;
     opacity : .9;
 }
 

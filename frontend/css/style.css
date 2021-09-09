@@ -11,7 +11,7 @@ body {
 }
 
 body {
-  background: url("/image/bkg.jpg") fixed;
+  background: url("../image/bkg.jpg") fixed;
   opacity: 0.9;
 }
 
