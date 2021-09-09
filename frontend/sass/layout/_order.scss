@@ -2,7 +2,12 @@
     color: blue;
 }
 
+#cartOrder{
+    visibility: hidden;
+}
+
 #orderAddress{
+    margin-top: 4rem;
     font-size: 1.1rem;
     text-decoration: underline;
 }
@@ -12,11 +17,12 @@
 }
 
 #numberOrder{
-    font-size: 1rem;
+    @include margTop2;
+    font-size: 1.2rem;
     padding-left: 1rem;
     white-space: pre-line;
-    text-decoration: underline;
-    padding-bottom: .5rem;
+    text-align: center;
+    font-weight: lighter;
 }
 
 #indentLastName, #indentCity{
@@ -30,4 +36,17 @@
 .totaux{
     margin-top: 1rem;
     margin-bottom: 2rem;
+}
+
+#ordertIndentProducts{
+    @include margTop2;
+}
+
+.totaux{
+    @include margTop2;
+}
+
+#indentTotalPrice{
+    font-size: 1.2rem;
+    font-weight: bold;
 }

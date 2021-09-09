@@ -468,7 +468,12 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
   color: blue;
 }
 
+#cartOrder {
+  visibility: hidden;
+}
+
 #orderAddress {
+  margin-top: 4rem;
   font-size: 1.1rem;
   text-decoration: underline;
 }
@@ -478,11 +483,12 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 }
 
 #numberOrder {
-  font-size: 1rem;
+  margin-top: 2rem;
+  font-size: 1.2rem;
   padding-left: 1rem;
   white-space: pre-line;
-  text-decoration: underline;
-  padding-bottom: 0.5rem;
+  text-align: center;
+  font-weight: lighter;
 }
 
 #indentLastName, #indentCity {
@@ -496,6 +502,19 @@ input:not(:focus):invalid, textarea:not(:focus):invalid {
 .totaux {
   margin-top: 1rem;
   margin-bottom: 2rem;
+}
+
+#ordertIndentProducts {
+  margin-top: 2rem;
+}
+
+.totaux {
+  margin-top: 2rem;
+}
+
+#indentTotalPrice {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */

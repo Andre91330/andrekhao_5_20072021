@@ -52,6 +52,10 @@
     margin-right: auto;
 }
 
+@mixin margTop2{
+    margin-top: 2rem;
+}
+
 @mixin small{
     @media screen and(min-width: map-get($breakpoints, small)){
         @content;

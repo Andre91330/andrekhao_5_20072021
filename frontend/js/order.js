@@ -9,7 +9,7 @@ const order = JSON.parse(localStorage.getItem("order"));                        
     document.getElementById("indentProductsNumber").innerText = order.products.length;  // affichage du nombre de produit commandé   
     
 
-const productsIndentEltName = document.querySelector(".finalIndentItem");               // affichage du nom du produit
+const productsIndentEltName = document.querySelector(".finalIndentItem");               // affichage du nom du produits
     for (let i = order.products.length; i--;) {       
         const productIndentName = order.products[i].name        
         let trElt = document.createElement("tr"); 
