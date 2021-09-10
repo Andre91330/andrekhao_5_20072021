@@ -84,14 +84,13 @@ const buildContactData = () => {                                   // creation d
     ) {
         return false;                        
     }
-    alert("Nous vous remercçions pour votre commande");
+    alert("Nous vous remercions pour votre commande");
     return {                                           
         lastName: lastName,
         firstName: firstName,
         email: email,
         address: address,
-        city: city
-        
+        city: city        
     };
 };
 
@@ -114,7 +113,7 @@ const buildObjectsForOrder = (basket) => {                          // format du
 };
 
 const displayEmptyBasket = () => {                                  // en cas de panier vide
-    document.querySelector(".pageBasket").innerHTML = '<br/><div>Votre panier contient aucun article.</div><br/>';
+    document.querySelector(".pageBasket").innerHTML = '<br/><div>Votre panier ne contient aucun article, actuellement.</div><br/>';
 }
 
 (() => {
