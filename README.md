@@ -6,7 +6,7 @@ Réalisation du front-end, en collaboration avec Jeanne qui s'occupait de la par
 
 Contraintes :
     - technologies à utiliser : HTML, CSS, JS
-    - API : http://localhost:3000/api/furniture  (back-end)
+    - API : http://localhost:3000/api/furniture
     
 Lancement du MVP : 
     - Node et npm doivent être installés localement sur votre machine.
@@ -43,7 +43,3 @@ Page de "confirmation de commande" :
         - Identifiant de la commande ;
         - Récapitulatifs des articles 
             (Détails, cumul et Montant à régler).
-
-
-
-
