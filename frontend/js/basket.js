@@ -84,7 +84,7 @@ const buildContactData = () => {                                   // creation d
     ) {
         return false;                        
     }
-    alert("Nous vous remercçions pour votre commande");
+    alert("Merci pour votre commande");
     return {                                           
         lastName: lastName,
         firstName: firstName,
