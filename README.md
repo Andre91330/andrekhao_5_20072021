@@ -3,9 +3,9 @@ OrinoSweetHome
 VMP pour montrer le fonctionnement d'une application simulant les principaux étapes d'une commande en ligne.
 
 Lancement du VMP :
-  - Front-end : 
     Cloner ce repository sur VSCode;
     Ouvrir le fichie index.HTML ou lancer le serveur via l'extension Go Live de VSode.
+    
   ---------------------------------------------------------------------------------------------
   
   Page "d'accueil" :
