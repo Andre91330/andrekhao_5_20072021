@@ -18,15 +18,15 @@ Lancement du VMP :
  
  Page "panier" :
     Récapitulatif des produits sélectionnés
-      - Produit unitaire : nom et prix ;
-      - Totaux : nombre d'articles et montant.
+       Produit unitaire : nom et prix ;
+       Totaux : nombre d'articles et montant.
     Formulaire de récupération des coordonnées client
-      - Contrôle des saisies avant validation du panier.
+       Contrôle des saisies avant validation du panier.
  
  Page de "confirmation de commande" :
-      - Remercier le client ;
-      - Numéro de commande ;
-      - Commande
+       Remercier le client ;
+       Numéro de commande ;
+       Commande
           (Détail de l'achat, cumul et montant à régler).
       
     
