@@ -3,8 +3,8 @@ OrinoSweetHome
 VMP pour montrer le fonctionnement d'une application simulant les principaux étapes d'une commande en ligne.
 
 Lancement du VMP :
-    Cloner ce repository sur VSCode   https://github.com/Andre91330/andrekhao_5_20072021.git  ;
-    Ouvrir le fichier index.HTML ou lancer le serveur via l'extension Go Live de VSode.
+    Repository github a cloner  https://github.com/Andre91330/andrekhao_5_20072021.git  
+    Sur VSCode ouvrir le fichier index.HTML ou lancer le serveur via l'extension Go Live de VSode.
     
   ---------------------------------------------------------------------------------------------
   
