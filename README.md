@@ -4,7 +4,7 @@ VMP pour montrer le fonctionnement d'une application simulant les principaux ét
 
 Lancement du VMP :
     Cloner ce repository sur VSCode ;
-    Ouvrir le fichie index.HTML ou lancer le serveur via l'extension Go Live de VSode.
+    Ouvrir le fichier index.HTML ou lancer le serveur via l'extension Go Live de VSode.
     
   ---------------------------------------------------------------------------------------------
   
