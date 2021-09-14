@@ -7,7 +7,10 @@ const order = JSON.parse(localStorage.getItem("order"));                        
     document.getElementById("indentEmail").innerText= order.contact.email;
 
     document.getElementById("indentProductsNumber").innerText = order.products.length;  // affichage du nombre de produit commandé   
-    
+
+var date = new Date();
+    var french ={weekday: "long", year: "numeric", month: "long", day: "2-digit"};
+    document.getElementById("today").innerText=(date.toLocaleDateString("fr-FR", french));
 
 const productsIndentEltName = document.querySelector(".finalIndentItem");               // affichage du nom du produits
     for (let i = order.products.length; i--;) {       

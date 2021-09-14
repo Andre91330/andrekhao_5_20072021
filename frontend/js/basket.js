@@ -56,8 +56,8 @@ const checkInputAddress = (input) => {                             // verifie <1
 };
 
 const checkInputCity = (input) => {                                // verifie CP >5 chiffres
-    if (input.length <=1 || !input.match(/^([0-9]{5}) (.*)$/g)){               
-        alert("Veuillez corriger votre Code postal ou ville.");
+    if (!input.match(/^([0-9]{5}) (.*)$/g)){               
+        alert("Veuillez corriger votre Code postal.");
         return false;
     }
     return true;
